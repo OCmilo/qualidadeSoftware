@@ -1,0 +1,26 @@
+{
+  "quickeshopApp": {
+    "travelPlanStartForm": {
+      "home": {
+        "title": "Travel Plan Start Forms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Travel Plan Start Form",
+        "createOrEditLabel": "Create or edit a Travel Plan Start Form",
+        "notFound": "No Travel Plan Start Forms found"
+      },
+      "created": "A new Travel Plan Start Form is created with identifier {{ param }}",
+      "updated": "A Travel Plan Start Form is updated with identifier {{ param }}",
+      "deleted": "A Travel Plan Start Form is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Travel Plan Start Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Travel Plan Start Form"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date"
+    }
+  }
+}

@@ -12,6 +12,12 @@
         "processInstance": "Process Instances",
         "taskInstance": "All Tasks",
         "myCandidateTasks": "My Tasks",
+        "travelPlan": "Travel Plan",
+        "travelPlanProcess": "Travel Plan Process",
+        "travelPlanStartForm": "Travel Plan Start Form",
+        "product": "Product",
+        "purchaseProcess": "Purchase Process",
+        "purchaseForm": "Purchase Form",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

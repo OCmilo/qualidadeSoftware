@@ -1,0 +1,27 @@
+{
+  "quickeshopApp": {
+    "purchaseProcess": {
+      "home": {
+        "title": "Purchase Processes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Purchase Process",
+        "createOrEditLabel": "Create or edit a Purchase Process",
+        "notFound": "No Purchase Processes found"
+      },
+      "created": "A new Purchase Process is created with identifier {{ param }}",
+      "updated": "A Purchase Process is updated with identifier {{ param }}",
+      "deleted": "A Purchase Process is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Purchase Process {{ id }}?"
+      },
+      "detail": {
+        "title": "Purchase Process"
+      },
+      "id": "ID",
+      "name": "Name",
+      "barcode": "Barcode",
+      "price": "Price",
+      "availableQuantity": "Available Quantity"
+    }
+  }
+}

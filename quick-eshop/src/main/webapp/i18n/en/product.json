@@ -1,0 +1,19 @@
+{
+  "quickeshopApp": {
+    "product": {
+      "home": {
+        "title": "Products",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Products found"
+      },
+      "detail": {
+        "title": "Product"
+      },
+      "id": "ID",
+      "name": "Name",
+      "barcode": "Barcode",
+      "price": "Price",
+      "availableQuantity": "Available Quantity"
+    }
+  }
+}

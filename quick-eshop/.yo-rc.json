@@ -52,6 +52,7 @@
     "jwtSecretKey": "YzhkYWIxZjE4ZDE2ZDllNjNkYmY3NWRlZDExN2RjYTQ0YjdiOGQzYWY5OTE3ODcxZDJhOTkxMmUwNDc3ODFiOWRjMGFjZjY3MmUyMTYxYThkYzRjZWNhYmMwMzBmYjc3YzgwMmU1ZDZkNjU0YzFjN2RhOGJmNDZjM2Q2MDc5MjU=",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["en"]
+    "languages": ["en"],
+    "entities": ["TravelPlan", "Product"]
   }
 }
