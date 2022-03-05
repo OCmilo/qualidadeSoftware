@@ -1,9 +1,9 @@
 export interface IFreight {
   id?: number;
-  empresa?: string | null;
-  valor?: number | null;
+  freighter?: string | null;
+  freightPrice?: number | null;
 }
 
 export class Freight implements IFreight {
-  constructor(public id?: number, public empresa?: string | null, public valor?: number | null) {}
+  constructor(public id?: number, public freighter?: string | null, public freightPrice?: number | null) {}
 }

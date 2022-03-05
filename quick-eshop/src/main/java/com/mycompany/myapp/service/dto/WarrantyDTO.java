@@ -10,9 +10,9 @@ public class WarrantyDTO implements Serializable {
 
     private Long id;
 
-    private String tempo;
+    private String warrantyDesc;
 
-    private Float valor;
+    private Double warrantyMonths;
 
     public Long getId() {
         return id;
@@ -22,20 +22,20 @@ public class WarrantyDTO implements Serializable {
         this.id = id;
     }
 
-    public String getTempo() {
-        return tempo;
+    public String getWarrantyDesc() {
+        return warrantyDesc;
     }
 
-    public void setTempo(String tempo) {
-        this.tempo = tempo;
+    public void setWarrantyDesc(String warrantyDesc) {
+        this.warrantyDesc = warrantyDesc;
     }
 
-    public Float getValor() {
-        return valor;
+    public Double getWarrantyMonths() {
+        return warrantyMonths;
     }
 
-    public void setValor(Float valor) {
-        this.valor = valor;
+    public void setWarrantyMonths(Double warrantyMonths) {
+        this.warrantyMonths = warrantyMonths;
     }
 
     @Override
@@ -64,8 +64,8 @@ public class WarrantyDTO implements Serializable {
     public String toString() {
         return "WarrantyDTO{" +
             "id=" + getId() +
-            ", tempo='" + getTempo() + "'" +
-            ", valor=" + getValor() +
+            ", warrantyDesc='" + getWarrantyDesc() + "'" +
+            ", warrantyMonths=" + getWarrantyMonths() +
             "}";
     }
 }

@@ -40,27 +40,27 @@ export default class NotifyMixin extends Vue {
   }
 
   public getErrorMessageFromResponse(error: any): any {
-    const paramLength: number = error.response.headers['x-quickeshopapp-param-length'];
+    const paramLength: number = error.response.headers['x-appapp-param-length'];
     if (!paramLength || paramLength == 0) {
-      return this.$t(error.response.headers['x-quickeshopapp-error']);
+      return this.$t(error.response.headers['x-appapp-error']);
     }
 
     if (paramLength == 1) {
-      return this.$t(error.response.headers['x-quickeshopapp-error'], {
-        param: decodeURIComponent(error.response.headers['x-quickeshopapp-param'].replace(/\+/g, ' ')),
+      return this.$t(error.response.headers['x-appapp-error'], {
+        param: decodeURIComponent(error.response.headers['x-appapp-param'].replace(/\+/g, ' ')),
       });
     }
 
     const params = {};
     for (let i = 0; i < paramLength; i++) {
-      params['param' + i] = decodeURIComponent(error.response.headers['x-quickeshopapp-param' + i].replace(/\+/g, ' '));
+      params['param' + i] = decodeURIComponent(error.response.headers['x-appapp-param' + i].replace(/\+/g, ' '));
     }
-    return this.$t(error.response.headers['x-quickeshopapp-error'], params);
+    return this.$t(error.response.headers['x-appapp-error'], params);
   }
 
   public getAlertMessageFromResponse(response: any): any {
-    return this.$t(response.headers['x-quickeshopapp-alert'], {
-      param: decodeURIComponent(response.headers['x-quickeshopapp-params'].replace(/\+/g, ' ')),
+    return this.$t(response.headers['x-appapp-alert'], {
+      param: decodeURIComponent(response.headers['x-appapp-params'].replace(/\+/g, ' ')),
     });
   }
 }

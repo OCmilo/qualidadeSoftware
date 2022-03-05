@@ -15,24 +15,25 @@
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210401000001_added_entity_TravelPlan.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210401000002_added_entity_TravelPlanProcess.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210401000002_added_entity_TravelPlanStartForm.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210401000001_added_entity_Product.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000001_added_entity_Purchase.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210401000002_added_entity_PurchaseProcess.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210401000002_added_entity_PurchaseForm.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210401000002_added_entity_WarrantyForm.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210401000002_added_entity_FreightForm.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000002_added_entity_PurchaseStartForm.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_ChooseProduct.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_AddWarranty.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_ProceedCheckout.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_ChooseFreight.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_AddCoupon.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211109000001_added_entity_Product.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211109000001_added_entity_Coupon.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20211109000001_added_entity_Freight.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20211109000001_added_entity_Warranty.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20220401000002_added_entity_CoupomForm.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20221109000001_added_entity_Coupom.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210401000002_added_entity_ProductForm.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
-    <include file="config/liquibase/changelog/20210401000002_added_entity_constraints_ProductForm.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210401000002_added_entity_constraints_WarrantyForm.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210401000002_added_entity_constraints_FreightForm.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20220401000002_added_entity_constraints_CoupomForm.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000001_added_entity_constraints_Purchase.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000002_added_entity_constraints_PurchaseProcess.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_constraints_ChooseProduct.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_constraints_AddWarranty.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_constraints_ChooseFreight.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_constraints_AddCoupon.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

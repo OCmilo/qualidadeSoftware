@@ -5,8 +5,8 @@ import FreightService from './freight.service';
 
 const validations: any = {
   freight: {
-    empresa: {},
-    valor: {},
+    freighter: {},
+    freightPrice: {},
   },
 };
 
@@ -45,7 +45,7 @@ export default class FreightUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = this.$t('quickeshopApp.freight.updated', { param: param.id });
+          const message = this.$t('appApp.freight.updated', { param: param.id });
           return this.$root.$bvToast.toast(message.toString(), {
             toaster: 'b-toaster-top-center',
             title: 'Info',
@@ -60,7 +60,7 @@ export default class FreightUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = this.$t('quickeshopApp.freight.created', { param: param.id });
+          const message = this.$t('appApp.freight.created', { param: param.id });
           this.$root.$bvToast.toast(message.toString(), {
             toaster: 'b-toaster-top-center',
             title: 'Success',

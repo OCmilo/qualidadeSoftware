@@ -31,16 +31,12 @@ import TranslationService from '@/locale/translation.service';
 import UserOAuth2Service from '@/entities/user/user.oauth2.service';
 /* tslint:disable */
 
-import TravelPlanService from '@/entities/travel-plan/travel-plan.service';
-import TravelPlanProcessService from '@/entities/travel-plan-process/travel-plan-process.service';
-import ProductService from '@/entities/product/product.service';
 import PurchaseProcessService from '@/entities/purchase-process/purchase-process.service';
+import PurchaseService from '@/entities/purchase/purchase.service';
+import ProductService from '@/entities/product/product.service';
+import CouponService from '@/entities/coupon/coupon.service';
 import FreightService from '@/entities/freight/freight.service';
 import WarrantyService from '@/entities/warranty/warranty.service';
-import CoupomFormService from '@/entities/coupom-form/coupom-form.service';
-import CoupomService from '@/entities/coupom/coupom.service';
-import WarrantyFormService from '@/entities/warranty-form/warranty-form.service';
-import FreightFormService from '@/entities/freight-form/freight-form.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -104,16 +100,12 @@ new Vue({
 
     userOAuth2Service: () => new UserOAuth2Service(),
     translationService: () => translationService,
-    travelPlanService: () => new TravelPlanService(),
-    travelPlanProcessService: () => new TravelPlanProcessService(),
-    productService: () => new ProductService(),
     purchaseProcessService: () => new PurchaseProcessService(),
+    purchaseService: () => new PurchaseService(),
+    productService: () => new ProductService(),
+    couponService: () => new CouponService(),
     freightService: () => new FreightService(),
     warrantyService: () => new WarrantyService(),
-    coupomFormService: () => new CoupomFormService(),
-    coupomService: () => new CoupomService(),
-    warrantyFormService: () => new WarrantyFormService(),
-    freightFormService: () => new FreightFormService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

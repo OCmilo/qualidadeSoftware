@@ -1,0 +1,55 @@
+{
+  "fields": [
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "confirmacao",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "coupon",
+      "otherEntityName": "coupon",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "couponName"
+    },
+    {
+      "relationshipName": "freight",
+      "otherEntityName": "freight",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "freighter"
+    },
+    {
+      "relationshipName": "product",
+      "otherEntityName": "product",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "productName"
+    },
+    {
+      "relationshipName": "warranty",
+      "otherEntityName": "warranty",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "warrantyDesc"
+    }
+  ],
+  "entityType": "domain",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": true,
+  "pagination": "no",
+  "name": "Purchase",
+  "changelogDate": "20210401000001",
+  "skipFakeData": true
+}

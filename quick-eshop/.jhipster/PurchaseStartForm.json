@@ -1,0 +1,21 @@
+{
+  "fields": [
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityType": "start-form",
+  "processBpmnId": "PurchaseProcess",
+  "processEntityName": "PurchaseProcess",
+  "domainEntityName": "Purchase",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "PurchaseStartForm",
+  "changelogDate": "20210401000002",
+  "skipFakeData": true
+}

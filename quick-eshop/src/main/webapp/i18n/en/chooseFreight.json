@@ -1,0 +1,25 @@
+{
+  "appApp": {
+    "chooseFreight": {
+      "home": {
+        "title": "Choose Freights",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Choose Freight",
+        "createOrEditLabel": "Create or edit a Choose Freight",
+        "notFound": "No Choose Freights found"
+      },
+      "created": "A new Choose Freight is created with identifier {{ param }}",
+      "updated": "A Choose Freight is updated with identifier {{ param }}",
+      "deleted": "A Choose Freight is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Choose Freight {{ id }}?"
+      },
+      "detail": {
+        "title": "Choose Freight"
+      },
+      "id": "ID",
+      "userAddress": "User Address",
+      "freight": "Freight"
+    }
+  }
+}

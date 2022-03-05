@@ -14,10 +14,10 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="empresa" type="varchar(255)">
+            <column name="freighter" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="valor" type="${floatType}">
+            <column name="freight_price" type="double">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->

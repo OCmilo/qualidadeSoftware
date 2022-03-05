@@ -3,29 +3,47 @@ import { Authority } from '@/shared/security/authority';
 // prettier-ignore
 
 // prettier-ignore
-const TravelPlan = () => import('@/entities/travel-plan/travel-plan.vue');
-// prettier-ignore
-const TravelPlanDetails = () => import('@/entities/travel-plan/travel-plan-details.vue');
-// prettier-ignore
-const TravelPlanProcessDetails = () => import('@/entities/travel-plan-process/travel-plan-process-details.vue');
-// prettier-ignore
-const TravelPlanProcessList = () => import('@/entities/travel-plan-process/travel-plan-process-list.vue');
-// prettier-ignore
-const TravelPlanStartFormInit = () => import('@/entities/travel-plan-process/travel-plan-start-form-init.vue');
-// prettier-ignore
-const Product = () => import('@/entities/product/product.vue');
-// prettier-ignore
-const ProductDetails = () => import('@/entities/product/product-details.vue');
-// prettier-ignore
 const PurchaseProcessDetails = () => import('@/entities/purchase-process/purchase-process-details.vue');
 // prettier-ignore
 const PurchaseProcessList = () => import('@/entities/purchase-process/purchase-process-list.vue');
 // prettier-ignore
-const PurchaseFormInit = () => import('@/entities/purchase-process/purchase-form-init.vue');
+const Purchase = () => import('@/entities/purchase/purchase.vue');
 // prettier-ignore
-const WarrantyFormInit = () => import('@/entities/purchase-process/warranty-form-init.vue');
+const PurchaseDetails = () => import('@/entities/purchase/purchase-details.vue');
 // prettier-ignore
-const FreightFormInit = () => import('@/entities/purchase-process/freight-form-init.vue');
+const PurchaseStartFormInit = () => import('@/entities/purchase-process/purchase-start-form-init.vue');
+// prettier-ignore
+const PurchaseProcess_ChooseProductDetails = () => import('@/entities/purchase-process/choose-product/choose-product-details.vue');
+// prettier-ignore
+const PurchaseProcess_ChooseProductExecute = () => import('@/entities/purchase-process/choose-product/choose-product-execute.vue');
+// prettier-ignore
+const PurchaseProcess_AddWarrantyDetails = () => import('@/entities/purchase-process/add-warranty/add-warranty-details.vue');
+// prettier-ignore
+const PurchaseProcess_AddWarrantyExecute = () => import('@/entities/purchase-process/add-warranty/add-warranty-execute.vue');
+// prettier-ignore
+const PurchaseProcess_ProceedCheckoutDetails = () => import('@/entities/purchase-process/proceed-checkout/proceed-checkout-details.vue');
+// prettier-ignore
+const PurchaseProcess_ProceedCheckoutExecute = () => import('@/entities/purchase-process/proceed-checkout/proceed-checkout-execute.vue');
+// prettier-ignore
+const PurchaseProcess_ChooseFreightDetails = () => import('@/entities/purchase-process/choose-freight/choose-freight-details.vue');
+// prettier-ignore
+const PurchaseProcess_ChooseFreightExecute = () => import('@/entities/purchase-process/choose-freight/choose-freight-execute.vue');
+// prettier-ignore
+const PurchaseProcess_AddCouponDetails = () => import('@/entities/purchase-process/add-coupon/add-coupon-details.vue');
+// prettier-ignore
+const PurchaseProcess_AddCouponExecute = () => import('@/entities/purchase-process/add-coupon/add-coupon-execute.vue');
+// prettier-ignore
+const Product = () => import('@/entities/product/product.vue');
+// prettier-ignore
+const ProductUpdate = () => import('@/entities/product/product-update.vue');
+// prettier-ignore
+const ProductDetails = () => import('@/entities/product/product-details.vue');
+// prettier-ignore
+const Coupon = () => import('@/entities/coupon/coupon.vue');
+// prettier-ignore
+const CouponUpdate = () => import('@/entities/coupon/coupon-update.vue');
+// prettier-ignore
+const CouponDetails = () => import('@/entities/coupon/coupon-details.vue');
 // prettier-ignore
 const Freight = () => import('@/entities/freight/freight.vue');
 // prettier-ignore
@@ -38,93 +56,9 @@ const Warranty = () => import('@/entities/warranty/warranty.vue');
 const WarrantyUpdate = () => import('@/entities/warranty/warranty-update.vue');
 // prettier-ignore
 const WarrantyDetails = () => import('@/entities/warranty/warranty-details.vue');
-// prettier-ignore
-const CoupomForm = () => import('@/entities/coupom-form/coupom-form.vue');
-// prettier-ignore
-const CoupomFormUpdate = () => import('@/entities/coupom-form/coupom-form-update.vue');
-// prettier-ignore
-const CoupomFormDetails = () => import('@/entities/coupom-form/coupom-form-details.vue');
-// prettier-ignore
-const Coupom = () => import('@/entities/coupom/coupom.vue');
-// prettier-ignore
-const CoupomUpdate = () => import('@/entities/coupom/coupom-update.vue');
-// prettier-ignore
-const CoupomDetails = () => import('@/entities/coupom/coupom-details.vue');
-// prettier-ignore
-const ProductFormInit = () => import('@/entities/purchase-process/product-form-init.vue');
-// prettier-ignore
-const WarrantyForm = () => import('@/entities/warranty-form/warranty-form.vue');
-// prettier-ignore
-const WarrantyFormUpdate = () => import('@/entities/warranty-form/warranty-form-update.vue');
-// prettier-ignore
-const WarrantyFormDetails = () => import('@/entities/warranty-form/warranty-form-details.vue');
-// prettier-ignore
-const FreightForm = () => import('@/entities/freight-form/freight-form.vue');
-// prettier-ignore
-const FreightFormUpdate = () => import('@/entities/freight-form/freight-form-update.vue');
-// prettier-ignore
-const FreightFormDetails = () => import('@/entities/freight-form/freight-form-details.vue');
-// prettier-ignore
-const PurchaseProcess_CoupomFormDetails = () => import('@/entities/purchase-process/coupom-form/coupom-form-details.vue');
-// prettier-ignore
-const PurchaseProcess_CoupomFormExecute = () => import('@/entities/purchase-process/coupom-form/coupom-form-execute.vue');
-// prettier-ignore
-const PurchaseProcess_ProductFormDetails = () => import('@/entities/purchase-process/product-form/product-form-details.vue');
-// prettier-ignore
-const PurchaseProcess_ProductFormExecute = () => import('@/entities/purchase-process/product-form/product-form-execute.vue');
-// prettier-ignore
-const PurchaseProcess_WarrantyFormDetails = () => import('@/entities/purchase-process/warranty-form/warranty-form-details.vue');
-// prettier-ignore
-const PurchaseProcess_WarrantyFormExecute = () => import('@/entities/purchase-process/warranty-form/warranty-form-execute.vue');
-// prettier-ignore
-const PurchaseProcess_FreightFormDetails = () => import('@/entities/purchase-process/freight-form/freight-form-details.vue');
-// prettier-ignore
-const PurchaseProcess_FreightFormExecute = () => import('@/entities/purchase-process/freight-form/freight-form-execute.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
-  {
-    path: '/travel-plan',
-    name: 'TravelPlan',
-    component: TravelPlan,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/travel-plan/:travelPlanId/view',
-    name: 'TravelPlanView',
-    component: TravelPlanDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/TravelPlanProcess/instance/:processInstanceId/view',
-    name: 'TravelPlanProcessView',
-    component: TravelPlanProcessDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/TravelPlanProcess/instances',
-    name: 'TravelPlanProcessList',
-    component: TravelPlanProcessList,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/TravelPlanProcess/init',
-    name: 'TravelPlanStartFormInit',
-    component: TravelPlanStartFormInit,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/product',
-    name: 'Product',
-    component: Product,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/product/:productId/view',
-    name: 'ProductView',
-    component: ProductDetails,
-    meta: { authorities: [Authority.USER] },
-  },
   {
     path: '/process-definition/PurchaseProcess/instance/:processInstanceId/view',
     name: 'PurchaseProcessView',
@@ -138,21 +72,129 @@ export default [
     meta: { authorities: [Authority.USER] },
   },
   {
-    path: '/process-definition/PurchaseProcess/init',
-    name: 'PurchaseFormInit',
-    component: PurchaseFormInit,
+    path: '/purchase',
+    name: 'Purchase',
+    component: Purchase,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/purchase/:purchaseId/view',
+    name: 'PurchaseView',
+    component: PurchaseDetails,
     meta: { authorities: [Authority.USER] },
   },
   {
     path: '/process-definition/PurchaseProcess/init',
-    name: 'WarrantyFormInit',
-    component: WarrantyFormInit,
+    name: 'PurchaseStartFormInit',
+    component: PurchaseStartFormInit,
     meta: { authorities: [Authority.USER] },
   },
   {
-    path: '/process-definition/PurchaseProcess/init',
-    name: 'FreightFormInit',
-    component: FreightFormInit,
+    path: '/process-definition/PurchaseProcess/task/ChooseProduct/:taskInstanceId/view',
+    name: 'PurchaseProcess_ChooseProductDetails',
+    component: PurchaseProcess_ChooseProductDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/ChooseProduct/:taskInstanceId/execute',
+    name: 'PurchaseProcess_ChooseProductExecute',
+    component: PurchaseProcess_ChooseProductExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/AddWarranty/:taskInstanceId/view',
+    name: 'PurchaseProcess_AddWarrantyDetails',
+    component: PurchaseProcess_AddWarrantyDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/AddWarranty/:taskInstanceId/execute',
+    name: 'PurchaseProcess_AddWarrantyExecute',
+    component: PurchaseProcess_AddWarrantyExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/ProceedCheckout/:taskInstanceId/view',
+    name: 'PurchaseProcess_ProceedCheckoutDetails',
+    component: PurchaseProcess_ProceedCheckoutDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/ProceedCheckout/:taskInstanceId/execute',
+    name: 'PurchaseProcess_ProceedCheckoutExecute',
+    component: PurchaseProcess_ProceedCheckoutExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/ChooseFreight/:taskInstanceId/view',
+    name: 'PurchaseProcess_ChooseFreightDetails',
+    component: PurchaseProcess_ChooseFreightDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/ChooseFreight/:taskInstanceId/execute',
+    name: 'PurchaseProcess_ChooseFreightExecute',
+    component: PurchaseProcess_ChooseFreightExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/AddCoupon/:taskInstanceId/view',
+    name: 'PurchaseProcess_AddCouponDetails',
+    component: PurchaseProcess_AddCouponDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/AddCoupon/:taskInstanceId/execute',
+    name: 'PurchaseProcess_AddCouponExecute',
+    component: PurchaseProcess_AddCouponExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/product',
+    name: 'Product',
+    component: Product,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/product/new',
+    name: 'ProductCreate',
+    component: ProductUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/product/:productId/edit',
+    name: 'ProductEdit',
+    component: ProductUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/product/:productId/view',
+    name: 'ProductView',
+    component: ProductDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/coupon',
+    name: 'Coupon',
+    component: Coupon,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/coupon/new',
+    name: 'CouponCreate',
+    component: CouponUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/coupon/:couponId/edit',
+    name: 'CouponEdit',
+    component: CouponUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/coupon/:couponId/view',
+    name: 'CouponView',
+    component: CouponDetails,
     meta: { authorities: [Authority.USER] },
   },
   {
@@ -201,156 +243,6 @@ export default [
     path: '/warranty/:warrantyId/view',
     name: 'WarrantyView',
     component: WarrantyDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/coupom-form',
-    name: 'CoupomForm',
-    component: CoupomForm,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/coupom-form/new',
-    name: 'CoupomFormCreate',
-    component: CoupomFormUpdate,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/coupom-form/:coupomFormId/edit',
-    name: 'CoupomFormEdit',
-    component: CoupomFormUpdate,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/coupom-form/:coupomFormId/view',
-    name: 'CoupomFormView',
-    component: CoupomFormDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/coupom',
-    name: 'Coupom',
-    component: Coupom,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/coupom/new',
-    name: 'CoupomCreate',
-    component: CoupomUpdate,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/coupom/:coupomId/edit',
-    name: 'CoupomEdit',
-    component: CoupomUpdate,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/coupom/:coupomId/view',
-    name: 'CoupomView',
-    component: CoupomDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/PurchaseProcess/init',
-    name: 'ProductFormInit',
-    component: ProductFormInit,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/warranty-form',
-    name: 'WarrantyForm',
-    component: WarrantyForm,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/warranty-form/new',
-    name: 'WarrantyFormCreate',
-    component: WarrantyFormUpdate,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/warranty-form/:warrantyFormId/edit',
-    name: 'WarrantyFormEdit',
-    component: WarrantyFormUpdate,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/warranty-form/:warrantyFormId/view',
-    name: 'WarrantyFormView',
-    component: WarrantyFormDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/freight-form',
-    name: 'FreightForm',
-    component: FreightForm,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/freight-form/new',
-    name: 'FreightFormCreate',
-    component: FreightFormUpdate,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/freight-form/:freightFormId/edit',
-    name: 'FreightFormEdit',
-    component: FreightFormUpdate,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/freight-form/:freightFormId/view',
-    name: 'FreightFormView',
-    component: FreightFormDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/PurchaseProcess/task/add_coupom/:taskInstanceId/view',
-    name: 'PurchaseProcess_CoupomFormDetails',
-    component: PurchaseProcess_CoupomFormDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/PurchaseProcess/task/add_coupom/:taskInstanceId/execute',
-    name: 'PurchaseProcess_CoupomFormExecute',
-    component: PurchaseProcess_CoupomFormExecute,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/PurchaseProcess/task/search_product/:taskInstanceId/view',
-    name: 'PurchaseProcess_ProductFormDetails',
-    component: PurchaseProcess_ProductFormDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/PurchaseProcess/task/search_product/:taskInstanceId/execute',
-    name: 'PurchaseProcess_ProductFormExecute',
-    component: PurchaseProcess_ProductFormExecute,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/PurchaseProcess/task/add_warranty/:taskInstanceId/view',
-    name: 'PurchaseProcess_WarrantyFormDetails',
-    component: PurchaseProcess_WarrantyFormDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/PurchaseProcess/task/add_warranty/:taskInstanceId/execute',
-    name: 'PurchaseProcess_WarrantyFormExecute',
-    component: PurchaseProcess_WarrantyFormExecute,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/PurchaseProcess/task/choose_freight/:taskInstanceId/view',
-    name: 'PurchaseProcess_FreightFormDetails',
-    component: PurchaseProcess_FreightFormDetails,
-    meta: { authorities: [Authority.USER] },
-  },
-  {
-    path: '/process-definition/PurchaseProcess/task/choose_freight/:taskInstanceId/execute',
-    name: 'PurchaseProcess_FreightFormExecute',
-    component: PurchaseProcess_FreightFormExecute,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

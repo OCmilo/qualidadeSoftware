@@ -1,11 +1,11 @@
 <template>
   <div>
     <h2 id="page-heading" data-cy="FreightHeading">
-      <span v-text="$t('quickeshopApp.freight.home.title')" id="freight-heading">Freights</span>
+      <span v-text="$t('appApp.freight.home.title')" id="freight-heading">Freights</span>
       <div class="d-flex justify-content-end">
         <button class="btn btn-info mr-2" v-on:click="handleSyncList" :disabled="isFetching">
           <font-awesome-icon icon="sync" :spin="isFetching"></font-awesome-icon>
-          <span v-text="$t('quickeshopApp.freight.home.refreshListLabel')">Refresh List</span>
+          <span v-text="$t('appApp.freight.home.refreshListLabel')">Refresh List</span>
         </button>
         <router-link :to="{ name: 'FreightCreate' }" custom v-slot="{ navigate }">
           <button
@@ -15,22 +15,22 @@
             class="btn btn-primary jh-create-entity create-freight"
           >
             <font-awesome-icon icon="plus"></font-awesome-icon>
-            <span v-text="$t('quickeshopApp.freight.home.createLabel')"> Create a new Freight </span>
+            <span v-text="$t('appApp.freight.home.createLabel')"> Create a new Freight </span>
           </button>
         </router-link>
       </div>
     </h2>
     <br />
     <div class="alert alert-warning" v-if="!isFetching && freights && freights.length === 0">
-      <span v-text="$t('quickeshopApp.freight.home.notFound')">No freights found</span>
+      <span v-text="$t('appApp.freight.home.notFound')">No freights found</span>
     </div>
     <div class="table-responsive" v-if="freights && freights.length > 0">
       <table class="table table-striped" aria-describedby="freights">
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('quickeshopApp.freight.empresa')">Empresa</span></th>
-            <th scope="row"><span v-text="$t('quickeshopApp.freight.valor')">Valor</span></th>
+            <th scope="row"><span v-text="$t('appApp.freight.freighter')">Freighter</span></th>
+            <th scope="row"><span v-text="$t('appApp.freight.freightPrice')">Freight Price</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -39,8 +39,8 @@
             <td>
               <router-link :to="{ name: 'FreightView', params: { freightId: freight.id } }">{{ freight.id }}</router-link>
             </td>
-            <td>{{ freight.empresa }}</td>
-            <td>{{ freight.valor }}</td>
+            <td>{{ freight.freighter }}</td>
+            <td>{{ freight.freightPrice }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'FreightView', params: { freightId: freight.id } }" custom v-slot="{ navigate }">
@@ -73,12 +73,12 @@
     </div>
     <b-modal ref="removeEntity" id="removeEntity">
       <span slot="modal-title"
-        ><span id="quickeshopApp.freight.delete.question" data-cy="freightDeleteDialogHeading" v-text="$t('entity.delete.title')"
+        ><span id="appApp.freight.delete.question" data-cy="freightDeleteDialogHeading" v-text="$t('entity.delete.title')"
           >Confirm delete operation</span
         ></span
       >
       <div class="modal-body">
-        <p id="jhi-delete-freight-heading" v-text="$t('quickeshopApp.freight.delete.question', { id: removeId })">
+        <p id="jhi-delete-freight-heading" v-text="$t('appApp.freight.delete.question', { id: removeId })">
           Are you sure you want to delete this Freight?
         </p>
       </div>

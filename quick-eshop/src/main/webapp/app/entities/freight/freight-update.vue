@@ -3,9 +3,9 @@
     <div class="col-8">
       <form name="editForm" role="form" novalidate v-on:submit.prevent="save()">
         <h2
-          id="quickeshopApp.freight.home.createOrEditLabel"
+          id="appApp.freight.home.createOrEditLabel"
           data-cy="FreightCreateUpdateHeading"
-          v-text="$t('quickeshopApp.freight.home.createOrEditLabel')"
+          v-text="$t('appApp.freight.home.createOrEditLabel')"
         >
           Create or edit a Freight
         </h2>
@@ -15,27 +15,27 @@
             <input type="text" class="form-control" id="id" name="id" v-model="freight.id" readonly />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('quickeshopApp.freight.empresa')" for="freight-empresa">Empresa</label>
+            <label class="form-control-label" v-text="$t('appApp.freight.freighter')" for="freight-freighter">Freighter</label>
             <input
               type="text"
               class="form-control"
-              name="empresa"
-              id="freight-empresa"
-              data-cy="empresa"
-              :class="{ valid: !$v.freight.empresa.$invalid, invalid: $v.freight.empresa.$invalid }"
-              v-model="$v.freight.empresa.$model"
+              name="freighter"
+              id="freight-freighter"
+              data-cy="freighter"
+              :class="{ valid: !$v.freight.freighter.$invalid, invalid: $v.freight.freighter.$invalid }"
+              v-model="$v.freight.freighter.$model"
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('quickeshopApp.freight.valor')" for="freight-valor">Valor</label>
+            <label class="form-control-label" v-text="$t('appApp.freight.freightPrice')" for="freight-freightPrice">Freight Price</label>
             <input
               type="number"
               class="form-control"
-              name="valor"
-              id="freight-valor"
-              data-cy="valor"
-              :class="{ valid: !$v.freight.valor.$invalid, invalid: $v.freight.valor.$invalid }"
-              v-model.number="$v.freight.valor.$model"
+              name="freightPrice"
+              id="freight-freightPrice"
+              data-cy="freightPrice"
+              :class="{ valid: !$v.freight.freightPrice.$invalid, invalid: $v.freight.freightPrice.$invalid }"
+              v-model.number="$v.freight.freightPrice.$model"
             />
           </div>
         </div>

@@ -9,9 +9,9 @@ import org.mapstruct.*;
  */
 @Mapper(componentModel = "spring", uses = {})
 public interface FreightMapper extends EntityMapper<FreightDTO, Freight> {
-    @Named("empresa")
+    @Named("freighter")
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
-    @Mapping(target = "empresa", source = "empresa")
-    FreightDTO toDtoEmpresa(Freight freight);
+    @Mapping(target = "freighter", source = "freighter")
+    FreightDTO toDtoFreighter(Freight freight);
 }

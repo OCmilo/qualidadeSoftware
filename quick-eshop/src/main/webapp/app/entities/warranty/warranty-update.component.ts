@@ -5,8 +5,8 @@ import WarrantyService from './warranty.service';
 
 const validations: any = {
   warranty: {
-    tempo: {},
-    valor: {},
+    warrantyDesc: {},
+    warrantyMonths: {},
   },
 };
 
@@ -45,7 +45,7 @@ export default class WarrantyUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = this.$t('quickeshopApp.warranty.updated', { param: param.id });
+          const message = this.$t('appApp.warranty.updated', { param: param.id });
           return this.$root.$bvToast.toast(message.toString(), {
             toaster: 'b-toaster-top-center',
             title: 'Info',
@@ -60,7 +60,7 @@ export default class WarrantyUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = this.$t('quickeshopApp.warranty.created', { param: param.id });
+          const message = this.$t('appApp.warranty.created', { param: param.id });
           this.$root.$bvToast.toast(message.toString(), {
             toaster: 'b-toaster-top-center',
             title: 'Success',

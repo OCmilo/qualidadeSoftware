@@ -20,11 +20,11 @@ public class Freight implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "empresa")
-    private String empresa;
+    @Column(name = "freighter")
+    private String freighter;
 
-    @Column(name = "valor")
-    private Float valor;
+    @Column(name = "freight_price")
+    private Double freightPrice;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -40,30 +40,30 @@ public class Freight implements Serializable {
         return this;
     }
 
-    public String getEmpresa() {
-        return this.empresa;
+    public String getFreighter() {
+        return this.freighter;
     }
 
-    public Freight empresa(String empresa) {
-        this.empresa = empresa;
+    public Freight freighter(String freighter) {
+        this.freighter = freighter;
         return this;
     }
 
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
+    public void setFreighter(String freighter) {
+        this.freighter = freighter;
     }
 
-    public Float getValor() {
-        return this.valor;
+    public Double getFreightPrice() {
+        return this.freightPrice;
     }
 
-    public Freight valor(Float valor) {
-        this.valor = valor;
+    public Freight freightPrice(Double freightPrice) {
+        this.freightPrice = freightPrice;
         return this;
     }
 
-    public void setValor(Float valor) {
-        this.valor = valor;
+    public void setFreightPrice(Double freightPrice) {
+        this.freightPrice = freightPrice;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -90,8 +90,8 @@ public class Freight implements Serializable {
     public String toString() {
         return "Freight{" +
             "id=" + getId() +
-            ", empresa='" + getEmpresa() + "'" +
-            ", valor=" + getValor() +
+            ", freighter='" + getFreighter() + "'" +
+            ", freightPrice=" + getFreightPrice() +
             "}";
     }
 }

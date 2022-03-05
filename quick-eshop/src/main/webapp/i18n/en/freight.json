@@ -1,5 +1,5 @@
 {
-  "quickeshopApp": {
+  "appApp": {
     "freight": {
       "home": {
         "title": "Freights",
@@ -18,8 +18,8 @@
         "title": "Freight"
       },
       "id": "ID",
-      "empresa": "Empresa",
-      "valor": "Valor"
+      "freighter": "Freighter",
+      "freightPrice": "Freight Price"
     }
   }
 }

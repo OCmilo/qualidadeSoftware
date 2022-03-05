@@ -1,0 +1,25 @@
+{
+  "appApp": {
+    "chooseProduct": {
+      "home": {
+        "title": "Choose Products",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Choose Product",
+        "createOrEditLabel": "Create or edit a Choose Product",
+        "notFound": "No Choose Products found"
+      },
+      "created": "A new Choose Product is created with identifier {{ param }}",
+      "updated": "A Choose Product is updated with identifier {{ param }}",
+      "deleted": "A Choose Product is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Choose Product {{ id }}?"
+      },
+      "detail": {
+        "title": "Choose Product"
+      },
+      "id": "ID",
+      "quantity": "Quantity",
+      "product": "Product"
+    }
+  }
+}

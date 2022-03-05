@@ -1,6 +1,6 @@
 {
   "global": {
-    "title": "Quickeshop",
+    "title": "App",
     "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
     "menu": {
       "home": "Home",
@@ -12,19 +12,18 @@
         "processInstance": "Process Instances",
         "taskInstance": "All Tasks",
         "myCandidateTasks": "My Tasks",
-        "travelPlan": "Travel Plan",
-        "travelPlanProcess": "Travel Plan Process",
-        "travelPlanStartForm": "Travel Plan Start Form",
-        "product": "Product",
         "purchaseProcess": "Purchase Process",
-        "purchaseForm": "Purchase Form",
-        "warrantyForm": "Warranty Form",
-        "freightForm": "Freight Form",
+        "purchase": "Purchase",
+        "purchaseStartForm": "Purchase Start Form",
+        "chooseProduct": "Choose Product",
+        "addWarranty": "Add Warranty",
+        "proceedCheckout": "Proceed Checkout",
+        "chooseFreight": "Choose Freight",
+        "addCoupon": "Add Coupon",
+        "product": "Product",
+        "coupon": "Coupon",
         "freight": "Freight",
         "warranty": "Warranty",
-        "coupomForm": "Coupom Form",
-        "coupom": "Coupom",
-        "productForm": "Product Form",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

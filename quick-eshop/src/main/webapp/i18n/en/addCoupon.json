@@ -1,0 +1,24 @@
+{
+  "appApp": {
+    "addCoupon": {
+      "home": {
+        "title": "Add Coupons",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Add Coupon",
+        "createOrEditLabel": "Create or edit a Add Coupon",
+        "notFound": "No Add Coupons found"
+      },
+      "created": "A new Add Coupon is created with identifier {{ param }}",
+      "updated": "A Add Coupon is updated with identifier {{ param }}",
+      "deleted": "A Add Coupon is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Add Coupon {{ id }}?"
+      },
+      "detail": {
+        "title": "Add Coupon"
+      },
+      "id": "ID",
+      "coupon": "Coupon"
+    }
+  }
+}

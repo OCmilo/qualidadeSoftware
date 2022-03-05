@@ -1,0 +1,22 @@
+{
+  "fields": [
+    {
+      "fieldName": "empresa",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "valor",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [],
+  "entityType": "domain",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "Freight",
+  "changelogDate": "20211109000001",
+  "skipFakeData": true
+}

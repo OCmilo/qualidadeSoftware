@@ -1,0 +1,22 @@
+{
+  "fields": [
+    {
+      "fieldName": "couponName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "couponValue",
+      "fieldType": "Double"
+    }
+  ],
+  "relationships": [],
+  "entityType": "domain",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "Coupon",
+  "changelogDate": "20211109000001",
+  "skipFakeData": true
+}

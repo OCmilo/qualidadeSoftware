@@ -1,7 +1,7 @@
 <template>
   <div class="home row">
     <div class="col-md-9">
-      <h1 class="display-4" v-text="$t('quickeshopApp.home.title')">Welcome, Java Hipster!</h1>
+      <h1 class="display-4" v-text="$t('appApp.home.title')">Welcome, Java Hipster!</h1>
       <div>
         <div class="alert alert-warning" v-if="!authenticated">
           <span v-text="$t('global.messages.info.authenticated.prefix')">If you want to </span>
@@ -19,11 +19,11 @@
         </div>
       </div>
 
-      <p v-text="$t('quickeshopApp.home.question')">If you have any question on JHipster:</p>
+      <p v-text="$t('appApp.home.question')">If you have any question on JHipster:</p>
 
       <ul>
         <li>
-          <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer" v-text="$t('quickeshopApp.home.link.homepage')"
+          <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer" v-text="$t('appApp.home.link.homepage')"
             >JHipster homepage</a
           >
         </li>
@@ -32,7 +32,7 @@
             href="http://stackoverflow.com/tags/agilekip/info"
             target="_blank"
             rel="noopener noreferrer"
-            v-text="$t('quickeshopApp.home.link.stackoverflow')"
+            v-text="$t('appApp.home.link.stackoverflow')"
             >JHipster on Stack Overflow</a
           >
         </li>
@@ -41,24 +41,24 @@
             href="https://github.com/agilekip/generator-jhipster-agilekip/issues?state=open"
             target="_blank"
             rel="noopener noreferrer"
-            v-text="$t('quickeshopApp.home.link.bugtracker')"
+            v-text="$t('appApp.home.link.bugtracker')"
             >JHipster bug tracker</a
           >
         </li>
         <li>
-          <a href="https://twitter.com/agilekip" target="_blank" rel="noopener noreferrer" v-text="$t('quickeshopApp.home.link.follow')"
+          <a href="https://twitter.com/agilekip" target="_blank" rel="noopener noreferrer" v-text="$t('appApp.home.link.follow')"
             >follow @agilekip on Twitter</a
           >
         </li>
       </ul>
 
       <p>
-        <span v-text="$t('quickeshopApp.home.like')">If you like AgileKip Generator, don't forget to give us a star on</span>
+        <span v-text="$t('appApp.home.like')">If you like AgileKip Generator, don't forget to give us a star on</span>
         <a
           href="https://github.com/agilekip/generator-jhipster-agilekip"
           target="_blank"
           rel="noopener noreferrer"
-          v-text="$t('quickeshopApp.home.github')"
+          v-text="$t('appApp.home.github')"
           >GitHub</a
         >!
       </p>

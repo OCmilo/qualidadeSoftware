@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity PurchaseProcess.
+    -->
+    <changeSet id="20210401000002-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="coupon_id"
+                                 baseTableName="purchase_process"
+                                 constraintName="fk_purchase_process__coupon_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="coupon"/>
+
+        <addForeignKeyConstraint baseColumnNames="freight_id"
+                                 baseTableName="purchase_process"
+                                 constraintName="fk_purchase_process__freight_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="freight"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_id"
+                                 baseTableName="purchase_process"
+                                 constraintName="fk_purchase_process__product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"/>
+
+        <addForeignKeyConstraint baseColumnNames="warranty_id"
+                                 baseTableName="purchase_process"
+                                 constraintName="fk_purchase_process__warranty_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="warranty"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,29 @@
+{
+  "fields": [
+    {
+      "fieldName": "userAddress",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "freight",
+      "otherEntityName": "freight",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "freighter"
+    }
+  ],
+  "entityType": "user-task-form",
+  "processBpmnId": "PurchaseProcess",
+  "processEntityName": "PurchaseProcess",
+  "taskBpmnId": "ChooseFreight",
+  "domainEntityName": "Purchase",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "ChooseFreight",
+  "changelogDate": "20210401000004"
+}

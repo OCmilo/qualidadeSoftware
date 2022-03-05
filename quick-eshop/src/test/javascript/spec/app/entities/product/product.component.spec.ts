@@ -60,5 +60,18 @@ describe('Component Tests', () => {
       expect(productServiceStub.retrieve.called).toBeTruthy();
       expect(comp.products[0]).toEqual(jasmine.objectContaining({ id: 123 }));
     });
+    it('Should call delete service on confirmDelete', async () => {
+      // GIVEN
+      productServiceStub.delete.resolves({});
+
+      // WHEN
+      comp.prepareRemove({ id: 123 });
+      comp.removeProduct();
+      await comp.$nextTick();
+
+      // THEN
+      expect(productServiceStub.delete.called).toBeTruthy();
+      expect(productServiceStub.retrieve.callCount).toEqual(1);
+    });
   });
 });

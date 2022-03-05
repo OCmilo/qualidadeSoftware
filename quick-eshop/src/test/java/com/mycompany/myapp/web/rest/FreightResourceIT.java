@@ -31,11 +31,11 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class FreightResourceIT {
 
-    private static final String DEFAULT_EMPRESA = "AAAAAAAAAA";
-    private static final String UPDATED_EMPRESA = "BBBBBBBBBB";
+    private static final String DEFAULT_FREIGHTER = "AAAAAAAAAA";
+    private static final String UPDATED_FREIGHTER = "BBBBBBBBBB";
 
-    private static final Float DEFAULT_VALOR = 1F;
-    private static final Float UPDATED_VALOR = 2F;
+    private static final Double DEFAULT_FREIGHT_PRICE = 1D;
+    private static final Double UPDATED_FREIGHT_PRICE = 2D;
 
     private static final String ENTITY_API_URL = "/api/freights";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -64,7 +64,7 @@ class FreightResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Freight createEntity(EntityManager em) {
-        Freight freight = new Freight().empresa(DEFAULT_EMPRESA).valor(DEFAULT_VALOR);
+        Freight freight = new Freight().freighter(DEFAULT_FREIGHTER).freightPrice(DEFAULT_FREIGHT_PRICE);
         return freight;
     }
 
@@ -75,7 +75,7 @@ class FreightResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Freight createUpdatedEntity(EntityManager em) {
-        Freight freight = new Freight().empresa(UPDATED_EMPRESA).valor(UPDATED_VALOR);
+        Freight freight = new Freight().freighter(UPDATED_FREIGHTER).freightPrice(UPDATED_FREIGHT_PRICE);
         return freight;
     }
 
@@ -98,8 +98,8 @@ class FreightResourceIT {
         List<Freight> freightList = freightRepository.findAll();
         assertThat(freightList).hasSize(databaseSizeBeforeCreate + 1);
         Freight testFreight = freightList.get(freightList.size() - 1);
-        assertThat(testFreight.getEmpresa()).isEqualTo(DEFAULT_EMPRESA);
-        assertThat(testFreight.getValor()).isEqualTo(DEFAULT_VALOR);
+        assertThat(testFreight.getFreighter()).isEqualTo(DEFAULT_FREIGHTER);
+        assertThat(testFreight.getFreightPrice()).isEqualTo(DEFAULT_FREIGHT_PRICE);
     }
 
     @Test
@@ -133,8 +133,8 @@ class FreightResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(freight.getId().intValue())))
-            .andExpect(jsonPath("$.[*].empresa").value(hasItem(DEFAULT_EMPRESA)))
-            .andExpect(jsonPath("$.[*].valor").value(hasItem(DEFAULT_VALOR.doubleValue())));
+            .andExpect(jsonPath("$.[*].freighter").value(hasItem(DEFAULT_FREIGHTER)))
+            .andExpect(jsonPath("$.[*].freightPrice").value(hasItem(DEFAULT_FREIGHT_PRICE.doubleValue())));
     }
 
     @Test
@@ -149,8 +149,8 @@ class FreightResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(freight.getId().intValue()))
-            .andExpect(jsonPath("$.empresa").value(DEFAULT_EMPRESA))
-            .andExpect(jsonPath("$.valor").value(DEFAULT_VALOR.doubleValue()));
+            .andExpect(jsonPath("$.freighter").value(DEFAULT_FREIGHTER))
+            .andExpect(jsonPath("$.freightPrice").value(DEFAULT_FREIGHT_PRICE.doubleValue()));
     }
 
     @Test
@@ -172,7 +172,7 @@ class FreightResourceIT {
         Freight updatedFreight = freightRepository.findById(freight.getId()).get();
         // Disconnect from session so that the updates on updatedFreight are not directly saved in db
         em.detach(updatedFreight);
-        updatedFreight.empresa(UPDATED_EMPRESA).valor(UPDATED_VALOR);
+        updatedFreight.freighter(UPDATED_FREIGHTER).freightPrice(UPDATED_FREIGHT_PRICE);
         FreightDTO freightDTO = freightMapper.toDto(updatedFreight);
 
         restFreightMockMvc
@@ -187,8 +187,8 @@ class FreightResourceIT {
         List<Freight> freightList = freightRepository.findAll();
         assertThat(freightList).hasSize(databaseSizeBeforeUpdate);
         Freight testFreight = freightList.get(freightList.size() - 1);
-        assertThat(testFreight.getEmpresa()).isEqualTo(UPDATED_EMPRESA);
-        assertThat(testFreight.getValor()).isEqualTo(UPDATED_VALOR);
+        assertThat(testFreight.getFreighter()).isEqualTo(UPDATED_FREIGHTER);
+        assertThat(testFreight.getFreightPrice()).isEqualTo(UPDATED_FREIGHT_PRICE);
     }
 
     @Test
@@ -280,8 +280,8 @@ class FreightResourceIT {
         List<Freight> freightList = freightRepository.findAll();
         assertThat(freightList).hasSize(databaseSizeBeforeUpdate);
         Freight testFreight = freightList.get(freightList.size() - 1);
-        assertThat(testFreight.getEmpresa()).isEqualTo(DEFAULT_EMPRESA);
-        assertThat(testFreight.getValor()).isEqualTo(DEFAULT_VALOR);
+        assertThat(testFreight.getFreighter()).isEqualTo(DEFAULT_FREIGHTER);
+        assertThat(testFreight.getFreightPrice()).isEqualTo(DEFAULT_FREIGHT_PRICE);
     }
 
     @Test
@@ -296,7 +296,7 @@ class FreightResourceIT {
         Freight partialUpdatedFreight = new Freight();
         partialUpdatedFreight.setId(freight.getId());
 
-        partialUpdatedFreight.empresa(UPDATED_EMPRESA).valor(UPDATED_VALOR);
+        partialUpdatedFreight.freighter(UPDATED_FREIGHTER).freightPrice(UPDATED_FREIGHT_PRICE);
 
         restFreightMockMvc
             .perform(
@@ -310,8 +310,8 @@ class FreightResourceIT {
         List<Freight> freightList = freightRepository.findAll();
         assertThat(freightList).hasSize(databaseSizeBeforeUpdate);
         Freight testFreight = freightList.get(freightList.size() - 1);
-        assertThat(testFreight.getEmpresa()).isEqualTo(UPDATED_EMPRESA);
-        assertThat(testFreight.getValor()).isEqualTo(UPDATED_VALOR);
+        assertThat(testFreight.getFreighter()).isEqualTo(UPDATED_FREIGHTER);
+        assertThat(testFreight.getFreightPrice()).isEqualTo(UPDATED_FREIGHT_PRICE);
     }
 
     @Test

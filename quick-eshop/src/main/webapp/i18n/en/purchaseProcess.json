@@ -1,5 +1,5 @@
 {
-  "quickeshopApp": {
+  "appApp": {
     "purchaseProcess": {
       "home": {
         "title": "Purchase Processes",
@@ -18,10 +18,14 @@
         "title": "Purchase Process"
       },
       "id": "ID",
-      "name": "Name",
-      "barcode": "Barcode",
-      "price": "Price",
-      "availableQuantity": "Available Quantity"
+      "userName": "User Name",
+      "userAddress": "User Address",
+      "quantity": "Quantity",
+      "confirmacao": "Confirmacao",
+      "coupon": "Coupon",
+      "freight": "Freight",
+      "product": "Product",
+      "warranty": "Warranty"
     }
   }
 }

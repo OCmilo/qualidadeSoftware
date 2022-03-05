@@ -1,5 +1,5 @@
 {
-  "quickeshopApp": {
+  "appApp": {
     "warranty": {
       "home": {
         "title": "Warranties",
@@ -18,8 +18,8 @@
         "title": "Warranty"
       },
       "id": "ID",
-      "tempo": "Tempo",
-      "valor": "Valor"
+      "warrantyDesc": "Warranty Desc",
+      "warrantyMonths": "Warranty Months"
     }
   }
 }

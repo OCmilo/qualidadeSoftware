@@ -1,0 +1,24 @@
+{
+  "appApp": {
+    "proceedCheckout": {
+      "home": {
+        "title": "Proceed Checkouts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Proceed Checkout",
+        "createOrEditLabel": "Create or edit a Proceed Checkout",
+        "notFound": "No Proceed Checkouts found"
+      },
+      "created": "A new Proceed Checkout is created with identifier {{ param }}",
+      "updated": "A Proceed Checkout is updated with identifier {{ param }}",
+      "deleted": "A Proceed Checkout is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Proceed Checkout {{ id }}?"
+      },
+      "detail": {
+        "title": "Proceed Checkout"
+      },
+      "id": "ID",
+      "confirmacao": "Confirmacao"
+    }
+  }
+}

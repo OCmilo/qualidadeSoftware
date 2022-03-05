@@ -27,7 +27,7 @@ public class PurchaseProcess implements Serializable {
     private ProcessInstance processInstance;
 
     @ManyToOne
-    private Product product;
+    private Purchase purchase;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -56,16 +56,16 @@ public class PurchaseProcess implements Serializable {
         return this;
     }
 
-    public Product getProduct() {
-        return this.product;
+    public Purchase getPurchase() {
+        return this.purchase;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setPurchase(Purchase purchase) {
+        this.purchase = purchase;
     }
 
-    public PurchaseProcess Product(Product product) {
-        this.setProduct(product);
+    public PurchaseProcess Purchase(Purchase purchase) {
+        this.setPurchase(purchase);
         return this;
     }
 

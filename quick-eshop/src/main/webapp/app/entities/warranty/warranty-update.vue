@@ -3,9 +3,9 @@
     <div class="col-8">
       <form name="editForm" role="form" novalidate v-on:submit.prevent="save()">
         <h2
-          id="quickeshopApp.warranty.home.createOrEditLabel"
+          id="appApp.warranty.home.createOrEditLabel"
           data-cy="WarrantyCreateUpdateHeading"
-          v-text="$t('quickeshopApp.warranty.home.createOrEditLabel')"
+          v-text="$t('appApp.warranty.home.createOrEditLabel')"
         >
           Create or edit a Warranty
         </h2>
@@ -15,27 +15,29 @@
             <input type="text" class="form-control" id="id" name="id" v-model="warranty.id" readonly />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('quickeshopApp.warranty.tempo')" for="warranty-tempo">Tempo</label>
+            <label class="form-control-label" v-text="$t('appApp.warranty.warrantyDesc')" for="warranty-warrantyDesc">Warranty Desc</label>
             <input
               type="text"
               class="form-control"
-              name="tempo"
-              id="warranty-tempo"
-              data-cy="tempo"
-              :class="{ valid: !$v.warranty.tempo.$invalid, invalid: $v.warranty.tempo.$invalid }"
-              v-model="$v.warranty.tempo.$model"
+              name="warrantyDesc"
+              id="warranty-warrantyDesc"
+              data-cy="warrantyDesc"
+              :class="{ valid: !$v.warranty.warrantyDesc.$invalid, invalid: $v.warranty.warrantyDesc.$invalid }"
+              v-model="$v.warranty.warrantyDesc.$model"
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('quickeshopApp.warranty.valor')" for="warranty-valor">Valor</label>
+            <label class="form-control-label" v-text="$t('appApp.warranty.warrantyMonths')" for="warranty-warrantyMonths"
+              >Warranty Months</label
+            >
             <input
               type="number"
               class="form-control"
-              name="valor"
-              id="warranty-valor"
-              data-cy="valor"
-              :class="{ valid: !$v.warranty.valor.$invalid, invalid: $v.warranty.valor.$invalid }"
-              v-model.number="$v.warranty.valor.$model"
+              name="warrantyMonths"
+              id="warranty-warrantyMonths"
+              data-cy="warrantyMonths"
+              :class="{ valid: !$v.warranty.warrantyMonths.$invalid, invalid: $v.warranty.warrantyMonths.$invalid }"
+              v-model.number="$v.warranty.warrantyMonths.$model"
             />
           </div>
         </div>

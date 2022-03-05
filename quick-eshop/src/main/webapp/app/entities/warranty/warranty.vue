@@ -1,11 +1,11 @@
 <template>
   <div>
     <h2 id="page-heading" data-cy="WarrantyHeading">
-      <span v-text="$t('quickeshopApp.warranty.home.title')" id="warranty-heading">Warranties</span>
+      <span v-text="$t('appApp.warranty.home.title')" id="warranty-heading">Warranties</span>
       <div class="d-flex justify-content-end">
         <button class="btn btn-info mr-2" v-on:click="handleSyncList" :disabled="isFetching">
           <font-awesome-icon icon="sync" :spin="isFetching"></font-awesome-icon>
-          <span v-text="$t('quickeshopApp.warranty.home.refreshListLabel')">Refresh List</span>
+          <span v-text="$t('appApp.warranty.home.refreshListLabel')">Refresh List</span>
         </button>
         <router-link :to="{ name: 'WarrantyCreate' }" custom v-slot="{ navigate }">
           <button
@@ -15,22 +15,22 @@
             class="btn btn-primary jh-create-entity create-warranty"
           >
             <font-awesome-icon icon="plus"></font-awesome-icon>
-            <span v-text="$t('quickeshopApp.warranty.home.createLabel')"> Create a new Warranty </span>
+            <span v-text="$t('appApp.warranty.home.createLabel')"> Create a new Warranty </span>
           </button>
         </router-link>
       </div>
     </h2>
     <br />
     <div class="alert alert-warning" v-if="!isFetching && warranties && warranties.length === 0">
-      <span v-text="$t('quickeshopApp.warranty.home.notFound')">No warranties found</span>
+      <span v-text="$t('appApp.warranty.home.notFound')">No warranties found</span>
     </div>
     <div class="table-responsive" v-if="warranties && warranties.length > 0">
       <table class="table table-striped" aria-describedby="warranties">
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('quickeshopApp.warranty.tempo')">Tempo</span></th>
-            <th scope="row"><span v-text="$t('quickeshopApp.warranty.valor')">Valor</span></th>
+            <th scope="row"><span v-text="$t('appApp.warranty.warrantyDesc')">Warranty Desc</span></th>
+            <th scope="row"><span v-text="$t('appApp.warranty.warrantyMonths')">Warranty Months</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -39,8 +39,8 @@
             <td>
               <router-link :to="{ name: 'WarrantyView', params: { warrantyId: warranty.id } }">{{ warranty.id }}</router-link>
             </td>
-            <td>{{ warranty.tempo }}</td>
-            <td>{{ warranty.valor }}</td>
+            <td>{{ warranty.warrantyDesc }}</td>
+            <td>{{ warranty.warrantyMonths }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'WarrantyView', params: { warrantyId: warranty.id } }" custom v-slot="{ navigate }">
@@ -73,12 +73,12 @@
     </div>
     <b-modal ref="removeEntity" id="removeEntity">
       <span slot="modal-title"
-        ><span id="quickeshopApp.warranty.delete.question" data-cy="warrantyDeleteDialogHeading" v-text="$t('entity.delete.title')"
+        ><span id="appApp.warranty.delete.question" data-cy="warrantyDeleteDialogHeading" v-text="$t('entity.delete.title')"
           >Confirm delete operation</span
         ></span
       >
       <div class="modal-body">
-        <p id="jhi-delete-warranty-heading" v-text="$t('quickeshopApp.warranty.delete.question', { id: removeId })">
+        <p id="jhi-delete-warranty-heading" v-text="$t('appApp.warranty.delete.question', { id: removeId })">
           Are you sure you want to delete this Warranty?
         </p>
       </div>

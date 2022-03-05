@@ -56,7 +56,7 @@ export default class Freight extends Vue {
     this.freightService()
       .delete(this.removeId)
       .then(() => {
-        const message = this.$t('quickeshopApp.freight.deleted', { param: this.removeId });
+        const message = this.$t('appApp.freight.deleted', { param: this.removeId });
         this.$bvToast.toast(message.toString(), {
           toaster: 'b-toaster-top-center',
           title: 'Info',

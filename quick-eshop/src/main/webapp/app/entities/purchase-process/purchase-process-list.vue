@@ -1,22 +1,22 @@
 <template>
   <div>
     <h2 class="jh-entity-heading" data-cy="purchaseProcessDetailsHeading">
-      <span v-text="$t('quickeshopApp.purchaseProcess.home.title')">PurchaseProcess</span>
+      <span v-text="$t('appApp.purchaseProcess.home.title')">PurchaseProcess</span>
       <div class="d-flex justify-content-end">
         <button class="btn btn-info mr-2" v-on:click="handleSyncList" :disabled="isFetching">
           <font-awesome-icon icon="sync" :spin="isFetching"></font-awesome-icon>
-          <span v-text="$t('quickeshopApp.purchaseProcess.home.refreshListLabel')">Refresh List</span>
+          <span v-text="$t('appApp.purchaseProcess.home.refreshListLabel')">Refresh List</span>
         </button>
 
         <router-link :to="`/process-definition/PurchaseProcess/init`" tag="button" class="btn btn-primary mr-2">
           <font-awesome-icon icon="plus"></font-awesome-icon>
-          <span v-text="$t('quickeshopApp.purchaseProcess.home.createLabel')"> Create a new Travel Plan Process Instance </span>
+          <span v-text="$t('appApp.purchaseProcess.home.createLabel')"> Create a new Travel Plan Process Instance </span>
         </router-link>
       </div>
     </h2>
     <br />
     <div class="alert alert-warning" v-if="!isFetching && purchaseProcessList && purchaseProcessList.length === 0">
-      <span v-text="$t('quickeshopApp.purchaseProcess.home.notFound')">No purchaseProcess found</span>
+      <span v-text="$t('appApp.purchaseProcess.home.notFound')">No purchaseProcess found</span>
     </div>
     <div class="table-responsive" v-if="purchaseProcessList && purchaseProcessList.length > 0">
       <table class="table table-striped" aria-describedby="purchaseProcessList">
@@ -24,7 +24,7 @@
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span>Process Instance</span></th>
-            <th scope="row"><span>Product</span></th>
+            <th scope="row"><span>Purchase</span></th>
             <th scope="row"><span>Status</span></th>
             <th scope="row"><span>Start Date</span></th>
             <th scope="row"><span>End Date</span></th>
@@ -42,9 +42,9 @@
               </div>
             </td>
             <td>
-              <div v-if="purchaseProcess.product">
-                <router-link :to="{ name: 'ProductView', params: { productId: purchaseProcess.product.id } }">{{
-                  purchaseProcess.product.id
+              <div v-if="purchaseProcess.purchase">
+                <router-link :to="{ name: 'PurchaseView', params: { purchaseId: purchaseProcess.purchase.id } }">{{
+                  purchaseProcess.purchase.id
                 }}</router-link>
               </div>
             </td>

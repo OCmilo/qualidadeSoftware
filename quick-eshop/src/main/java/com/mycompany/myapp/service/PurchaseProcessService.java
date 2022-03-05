@@ -1,8 +1,8 @@
 package com.mycompany.myapp.service;
 
 import com.mycompany.myapp.domain.PurchaseProcess;
-import com.mycompany.myapp.repository.ProductRepository;
 import com.mycompany.myapp.repository.PurchaseProcessRepository;
+import com.mycompany.myapp.repository.PurchaseRepository;
 import com.mycompany.myapp.service.dto.PurchaseProcessDTO;
 import com.mycompany.myapp.service.mapper.PurchaseProcessMapper;
 import java.util.LinkedList;
@@ -29,7 +29,7 @@ public class PurchaseProcessService {
 
     private final ProcessInstanceService processInstanceService;
 
-    private final ProductRepository productRepository;
+    private final PurchaseRepository purchaseRepository;
 
     private final PurchaseProcessRepository purchaseProcessRepository;
 
@@ -37,12 +37,12 @@ public class PurchaseProcessService {
 
     public PurchaseProcessService(
         ProcessInstanceService processInstanceService,
-        ProductRepository productRepository,
+        PurchaseRepository purchaseRepository,
         PurchaseProcessRepository purchaseProcessRepository,
         PurchaseProcessMapper purchaseProcessMapper
     ) {
         this.processInstanceService = processInstanceService;
-        this.productRepository = productRepository;
+        this.purchaseRepository = purchaseRepository;
         this.purchaseProcessRepository = purchaseProcessRepository;
         this.purchaseProcessMapper = purchaseProcessMapper;
     }
@@ -59,12 +59,12 @@ public class PurchaseProcessService {
         PurchaseProcess purchaseProcess = purchaseProcessMapper.toEntity(purchaseProcessDTO);
 
         //Saving the domainEntity
-        productRepository.save(purchaseProcess.getProduct());
+        purchaseRepository.save(purchaseProcess.getPurchase());
 
         //Creating the process instance in the Camunda and setting it in the process entity
         ProcessInstance processInstance = processInstanceService.create(
             BPMN_PROCESS_DEFINITION_ID,
-            "Product#" + purchaseProcess.getProduct().getId(),
+            "Purchase#" + purchaseProcess.getPurchase().getId(),
             purchaseProcess
         );
         purchaseProcess.setProcessInstance(processInstance);

@@ -1,8 +1,8 @@
 {
-  "name": "quickeshop",
+  "name": "app",
   "version": "0.0.0",
   "private": true,
-  "description": "Description for quickeshop",
+  "description": "Description for app",
   "license": "UNLICENSED",
   "scripts": {
     "prettier:check": "prettier --check \"{,src/**/,webpack/}*.{md,json,yml,html,js,ts,tsx,css,scss,vue,java}\"",

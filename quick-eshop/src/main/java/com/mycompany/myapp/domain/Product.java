@@ -20,17 +20,11 @@ public class Product implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "name")
-    private String name;
-
     @Column(name = "barcode")
     private String barcode;
 
-    @Column(name = "price")
-    private Double price;
-
-    @Column(name = "available_quantity")
-    private Double availableQuantity;
+    @Column(name = "product_name")
+    private String productName;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -46,19 +40,6 @@ public class Product implements Serializable {
         return this;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public Product name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getBarcode() {
         return this.barcode;
     }
@@ -72,30 +53,17 @@ public class Product implements Serializable {
         this.barcode = barcode;
     }
 
-    public Double getPrice() {
-        return this.price;
+    public String getProductName() {
+        return this.productName;
     }
 
-    public Product price(Double price) {
-        this.price = price;
+    public Product productName(String productName) {
+        this.productName = productName;
         return this;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Double getAvailableQuantity() {
-        return this.availableQuantity;
-    }
-
-    public Product availableQuantity(Double availableQuantity) {
-        this.availableQuantity = availableQuantity;
-        return this;
-    }
-
-    public void setAvailableQuantity(Double availableQuantity) {
-        this.availableQuantity = availableQuantity;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -122,10 +90,8 @@ public class Product implements Serializable {
     public String toString() {
         return "Product{" +
             "id=" + getId() +
-            ", name='" + getName() + "'" +
             ", barcode='" + getBarcode() + "'" +
-            ", price=" + getPrice() +
-            ", availableQuantity=" + getAvailableQuantity() +
+            ", productName='" + getProductName() + "'" +
             "}";
     }
 }

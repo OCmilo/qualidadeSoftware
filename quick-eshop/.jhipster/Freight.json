@@ -1,12 +1,12 @@
 {
   "fields": [
     {
-      "fieldName": "empresa",
+      "fieldName": "freighter",
       "fieldType": "String"
     },
     {
-      "fieldName": "valor",
-      "fieldType": "Float"
+      "fieldName": "freightPrice",
+      "fieldType": "Double"
     }
   ],
   "relationships": [],

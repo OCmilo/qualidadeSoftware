@@ -45,6 +45,31 @@ export default class Product extends Vue {
     this.clear();
   }
 
+  public prepareRemove(instance: IProduct): void {
+    this.removeId = instance.id;
+    if (<any>this.$refs.removeEntity) {
+      (<any>this.$refs.removeEntity).show();
+    }
+  }
+
+  public removeProduct(): void {
+    this.productService()
+      .delete(this.removeId)
+      .then(() => {
+        const message = this.$t('appApp.product.deleted', { param: this.removeId });
+        this.$bvToast.toast(message.toString(), {
+          toaster: 'b-toaster-top-center',
+          title: 'Info',
+          variant: 'danger',
+          solid: true,
+          autoHideDelay: 5000,
+        });
+        this.removeId = null;
+        this.retrieveAllProducts();
+        this.closeDialog();
+      });
+  }
+
   public closeDialog(): void {
     (<any>this.$refs.removeEntity).hide();
   }

@@ -8,9 +8,9 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity {@link PurchaseProcess} and its DTO {@link PurchaseProcessDTO}.
  */
-@Mapper(componentModel = "spring", uses = { ProcessInstanceMapper.class, ProductMapper.class })
+@Mapper(componentModel = "spring", uses = { ProcessInstanceMapper.class, PurchaseMapper.class })
 public interface PurchaseProcessMapper extends EntityMapper<PurchaseProcessDTO, PurchaseProcess> {
     @Mapping(target = "processInstance", source = "processInstance")
-    @Mapping(target = "product", source = "product")
+    @Mapping(target = "purchase", source = "purchase")
     PurchaseProcessDTO toDto(PurchaseProcess s);
 }

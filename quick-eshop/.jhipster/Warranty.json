@@ -1,12 +1,12 @@
 {
   "fields": [
     {
-      "fieldName": "tempo",
+      "fieldName": "warrantyDesc",
       "fieldType": "String"
     },
     {
-      "fieldName": "valor",
-      "fieldType": "Float"
+      "fieldName": "warrantyMonths",
+      "fieldType": "Double"
     }
   ],
   "relationships": [],

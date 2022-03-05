@@ -67,7 +67,7 @@ management:
 
 spring:
   application:
-    name: quickeshop
+    name: app
   profiles:
     # The commented value for `active` can be replaced with valid Spring profiles to load.
     # Otherwise, it will be filled in by maven when building the JAR file
@@ -111,13 +111,13 @@ spring:
     allow-bean-definition-overriding: true
   task:
     execution:
-      thread-name-prefix: quickeshop-task-
+      thread-name-prefix: app-task-
       pool:
         core-size: 2
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: quickeshop-scheduling-
+      thread-name-prefix: app-scheduling-
       pool:
         size: 2
   thymeleaf:
@@ -145,7 +145,7 @@ info:
 
 jhipster:
   clientApp:
-    name: 'quickeshopApp'
+    name: 'appApp'
   # By default CORS is disabled. Uncomment to enable.
   # cors:
   #   allowed-origins: "http://localhost:8100,http://localhost:9000"
@@ -155,12 +155,12 @@ jhipster:
   #   allow-credentials: true
   #   max-age: 1800
   mail:
-    from: quickeshop@localhost
+    from: app@localhost
   api-docs:
     default-include-pattern: ${server.servlet.context-path:}/api/.*
     management-include-pattern: ${server.servlet.context-path:}/management/.*
-    title: quickeshop API
-    description: quickeshop API documentation
+    title: app API
+    description: app API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:

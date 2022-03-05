@@ -9,9 +9,9 @@ import org.mapstruct.*;
  */
 @Mapper(componentModel = "spring", uses = {})
 public interface ProductMapper extends EntityMapper<ProductDTO, Product> {
-    @Named("name")
+    @Named("productName")
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
-    @Mapping(target = "name", source = "name")
-    ProductDTO toDtoName(Product product);
+    @Mapping(target = "productName", source = "productName")
+    ProductDTO toDtoProductName(Product product);
 }

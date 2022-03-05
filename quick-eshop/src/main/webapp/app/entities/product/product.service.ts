@@ -30,4 +30,56 @@ export default class ProductService {
         });
     });
   }
+
+  public delete(id: number): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      axios
+        .delete(`${baseApiUrl}/${id}`)
+        .then(res => {
+          resolve(res);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+
+  public create(entity: IProduct): Promise<IProduct> {
+    return new Promise<IProduct>((resolve, reject) => {
+      axios
+        .post(`${baseApiUrl}`, entity)
+        .then(res => {
+          resolve(res.data);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+
+  public update(entity: IProduct): Promise<IProduct> {
+    return new Promise<IProduct>((resolve, reject) => {
+      axios
+        .put(`${baseApiUrl}/${entity.id}`, entity)
+        .then(res => {
+          resolve(res.data);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+
+  public partialUpdate(entity: IProduct): Promise<IProduct> {
+    return new Promise<IProduct>((resolve, reject) => {
+      axios
+        .patch(`${baseApiUrl}/${entity.id}`, entity)
+        .then(res => {
+          resolve(res.data);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
 }

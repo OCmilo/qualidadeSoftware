@@ -10,9 +10,9 @@ public class FreightDTO implements Serializable {
 
     private Long id;
 
-    private String empresa;
+    private String freighter;
 
-    private Float valor;
+    private Double freightPrice;
 
     public Long getId() {
         return id;
@@ -22,20 +22,20 @@ public class FreightDTO implements Serializable {
         this.id = id;
     }
 
-    public String getEmpresa() {
-        return empresa;
+    public String getFreighter() {
+        return freighter;
     }
 
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
+    public void setFreighter(String freighter) {
+        this.freighter = freighter;
     }
 
-    public Float getValor() {
-        return valor;
+    public Double getFreightPrice() {
+        return freightPrice;
     }
 
-    public void setValor(Float valor) {
-        this.valor = valor;
+    public void setFreightPrice(Double freightPrice) {
+        this.freightPrice = freightPrice;
     }
 
     @Override
@@ -64,8 +64,8 @@ public class FreightDTO implements Serializable {
     public String toString() {
         return "FreightDTO{" +
             "id=" + getId() +
-            ", empresa='" + getEmpresa() + "'" +
-            ", valor=" + getValor() +
+            ", freighter='" + getFreighter() + "'" +
+            ", freightPrice=" + getFreightPrice() +
             "}";
     }
 }

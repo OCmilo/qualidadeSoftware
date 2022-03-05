@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new ProductService();
-      elemDefault = new Product(0, 'AAAAAAA', 'AAAAAAA', 0, 0);
+      elemDefault = new Product(0, 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -52,13 +52,88 @@ describe('Service Tests', () => {
           });
       });
 
+      it('should create a Product', async () => {
+        const returnedFromService = Object.assign(
+          {
+            id: 0,
+          },
+          elemDefault
+        );
+        const expected = Object.assign({}, returnedFromService);
+
+        axiosStub.post.resolves({ data: returnedFromService });
+        return service.create({}).then(res => {
+          expect(res).toMatchObject(expected);
+        });
+      });
+
+      it('should not create a Product', async () => {
+        axiosStub.post.rejects(error);
+
+        return service
+          .create({})
+          .then()
+          .catch(err => {
+            expect(err).toMatchObject(error);
+          });
+      });
+
+      it('should update a Product', async () => {
+        const returnedFromService = Object.assign(
+          {
+            barcode: 'BBBBBB',
+            productName: 'BBBBBB',
+          },
+          elemDefault
+        );
+
+        const expected = Object.assign({}, returnedFromService);
+        axiosStub.put.resolves({ data: returnedFromService });
+
+        return service.update(expected).then(res => {
+          expect(res).toMatchObject(expected);
+        });
+      });
+
+      it('should not update a Product', async () => {
+        axiosStub.put.rejects(error);
+
+        return service
+          .update({})
+          .then()
+          .catch(err => {
+            expect(err).toMatchObject(error);
+          });
+      });
+
+      it('should partial update a Product', async () => {
+        const patchObject = Object.assign({}, new Product());
+        const returnedFromService = Object.assign(patchObject, elemDefault);
+
+        const expected = Object.assign({}, returnedFromService);
+        axiosStub.patch.resolves({ data: returnedFromService });
+
+        return service.partialUpdate(patchObject).then(res => {
+          expect(res).toMatchObject(expected);
+        });
+      });
+
+      it('should not partial update a Product', async () => {
+        axiosStub.patch.rejects(error);
+
+        return service
+          .partialUpdate({})
+          .then()
+          .catch(err => {
+            expect(err).toMatchObject(error);
+          });
+      });
+
       it('should return a list of Product', async () => {
         const returnedFromService = Object.assign(
           {
-            name: 'BBBBBB',
             barcode: 'BBBBBB',
-            price: 1,
-            availableQuantity: 1,
+            productName: 'BBBBBB',
           },
           elemDefault
         );
@@ -74,6 +149,24 @@ describe('Service Tests', () => {
 
         return service
           .retrieve()
+          .then()
+          .catch(err => {
+            expect(err).toMatchObject(error);
+          });
+      });
+
+      it('should delete a Product', async () => {
+        axiosStub.delete.resolves({ ok: true });
+        return service.delete(123).then(res => {
+          expect(res.ok).toBeTruthy();
+        });
+      });
+
+      it('should not delete a Product', async () => {
+        axiosStub.delete.rejects(error);
+
+        return service
+          .delete(123)
           .then()
           .catch(err => {
             expect(err).toMatchObject(error);

@@ -20,11 +20,11 @@ public class Warranty implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "tempo")
-    private String tempo;
+    @Column(name = "warranty_desc")
+    private String warrantyDesc;
 
-    @Column(name = "valor")
-    private Float valor;
+    @Column(name = "warranty_months")
+    private Double warrantyMonths;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -40,30 +40,30 @@ public class Warranty implements Serializable {
         return this;
     }
 
-    public String getTempo() {
-        return this.tempo;
+    public String getWarrantyDesc() {
+        return this.warrantyDesc;
     }
 
-    public Warranty tempo(String tempo) {
-        this.tempo = tempo;
+    public Warranty warrantyDesc(String warrantyDesc) {
+        this.warrantyDesc = warrantyDesc;
         return this;
     }
 
-    public void setTempo(String tempo) {
-        this.tempo = tempo;
+    public void setWarrantyDesc(String warrantyDesc) {
+        this.warrantyDesc = warrantyDesc;
     }
 
-    public Float getValor() {
-        return this.valor;
+    public Double getWarrantyMonths() {
+        return this.warrantyMonths;
     }
 
-    public Warranty valor(Float valor) {
-        this.valor = valor;
+    public Warranty warrantyMonths(Double warrantyMonths) {
+        this.warrantyMonths = warrantyMonths;
         return this;
     }
 
-    public void setValor(Float valor) {
-        this.valor = valor;
+    public void setWarrantyMonths(Double warrantyMonths) {
+        this.warrantyMonths = warrantyMonths;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -90,8 +90,8 @@ public class Warranty implements Serializable {
     public String toString() {
         return "Warranty{" +
             "id=" + getId() +
-            ", tempo='" + getTempo() + "'" +
-            ", valor=" + getValor() +
+            ", warrantyDesc='" + getWarrantyDesc() + "'" +
+            ", warrantyMonths=" + getWarrantyMonths() +
             "}";
     }
 }

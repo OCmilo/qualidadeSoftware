@@ -56,7 +56,7 @@ export default class Warranty extends Vue {
     this.warrantyService()
       .delete(this.removeId)
       .then(() => {
-        const message = this.$t('quickeshopApp.warranty.deleted', { param: this.removeId });
+        const message = this.$t('appApp.warranty.deleted', { param: this.removeId });
         this.$bvToast.toast(message.toString(), {
           toaster: 'b-toaster-top-center',
           title: 'Info',

@@ -81,8 +81,8 @@ describe('Service Tests', () => {
       it('should update a Freight', async () => {
         const returnedFromService = Object.assign(
           {
-            empresa: 'BBBBBB',
-            valor: 1,
+            freighter: 'BBBBBB',
+            freightPrice: 1,
           },
           elemDefault
         );
@@ -132,8 +132,8 @@ describe('Service Tests', () => {
       it('should return a list of Freight', async () => {
         const returnedFromService = Object.assign(
           {
-            empresa: 'BBBBBB',
-            valor: 1,
+            freighter: 'BBBBBB',
+            freightPrice: 1,
           },
           elemDefault
         );

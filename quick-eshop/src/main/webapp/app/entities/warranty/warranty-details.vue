@@ -3,20 +3,20 @@
     <div class="col-8">
       <div v-if="warranty">
         <h2 class="jh-entity-heading" data-cy="warrantyDetailsHeading">
-          <span v-text="$t('quickeshopApp.warranty.detail.title')">Warranty</span> {{ warranty.id }}
+          <span v-text="$t('appApp.warranty.detail.title')">Warranty</span> {{ warranty.id }}
         </h2>
         <dl class="row jh-entity-details">
           <dt>
-            <span v-text="$t('quickeshopApp.warranty.tempo')">Tempo</span>
+            <span v-text="$t('appApp.warranty.warrantyDesc')">Warranty Desc</span>
           </dt>
           <dd>
-            <span>{{ warranty.tempo }}</span>
+            <span>{{ warranty.warrantyDesc }}</span>
           </dd>
           <dt>
-            <span v-text="$t('quickeshopApp.warranty.valor')">Valor</span>
+            <span v-text="$t('appApp.warranty.warrantyMonths')">Warranty Months</span>
           </dt>
           <dd>
-            <span>{{ warranty.valor }}</span>
+            <span>{{ warranty.warrantyMonths }}</span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

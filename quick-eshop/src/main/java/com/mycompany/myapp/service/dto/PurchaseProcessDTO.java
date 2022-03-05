@@ -13,7 +13,7 @@ public class PurchaseProcessDTO implements Serializable {
 
     private ProcessInstanceDTO processInstance;
 
-    private ProductDTO product;
+    private PurchaseDTO purchase;
 
     public Long getId() {
         return id;
@@ -31,12 +31,12 @@ public class PurchaseProcessDTO implements Serializable {
         this.processInstance = processInstance;
     }
 
-    public ProductDTO getProduct() {
-        return product;
+    public PurchaseDTO getPurchase() {
+        return purchase;
     }
 
-    public void setProduct(ProductDTO product) {
-        this.product = product;
+    public void setPurchase(PurchaseDTO purchase) {
+        this.purchase = purchase;
     }
 
     @Override
@@ -66,7 +66,7 @@ public class PurchaseProcessDTO implements Serializable {
         return "PurchaseProcessDTO{" +
             "id=" + getId() +
             ", processInstance=" + getProcessInstance() +
-            ", product=" + getProduct() +
+            ", purchase=" + getPurchase() +
             "}";
     }
 }

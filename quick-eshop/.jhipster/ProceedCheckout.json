@@ -1,0 +1,22 @@
+{
+  "fields": [
+    {
+      "fieldName": "confirmacao",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [],
+  "entityType": "user-task-form",
+  "processBpmnId": "PurchaseProcess",
+  "processEntityName": "PurchaseProcess",
+  "taskBpmnId": "ProceedCheckout",
+  "domainEntityName": "Purchase",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "ProceedCheckout",
+  "changelogDate": "20210401000004"
+}

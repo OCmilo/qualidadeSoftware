@@ -1,0 +1,24 @@
+{
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipName": "coupon",
+      "otherEntityName": "coupon",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "couponName"
+    }
+  ],
+  "entityType": "user-task-form",
+  "processBpmnId": "PurchaseProcess",
+  "processEntityName": "PurchaseProcess",
+  "taskBpmnId": "AddCoupon",
+  "domainEntityName": "Purchase",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "AddCoupon",
+  "changelogDate": "20210401000004"
+}

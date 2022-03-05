@@ -1,20 +1,12 @@
 {
   "fields": [
     {
-      "fieldName": "name",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "barcode",
       "fieldType": "String"
     },
     {
-      "fieldName": "price",
-      "fieldType": "Double"
-    },
-    {
-      "fieldName": "availableQuantity",
-      "fieldType": "Double"
+      "fieldName": "productName",
+      "fieldType": "String"
     }
   ],
   "relationships": [],
@@ -22,9 +14,9 @@
   "service": "serviceClass",
   "dto": "mapstruct",
   "jpaMetamodelFiltering": false,
-  "readOnly": true,
+  "readOnly": false,
   "pagination": "no",
   "name": "Product",
-  "changelogDate": "20210401000001",
+  "changelogDate": "20211109000001",
   "skipFakeData": true
 }

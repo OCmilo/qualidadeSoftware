@@ -1,27 +1,36 @@
 <template>
   <div>
     <h2 id="page-heading" data-cy="ProductHeading">
-      <span v-text="$t('quickeshopApp.product.home.title')" id="product-heading">Products</span>
+      <span v-text="$t('appApp.product.home.title')" id="product-heading">Products</span>
       <div class="d-flex justify-content-end">
         <button class="btn btn-info mr-2" v-on:click="handleSyncList" :disabled="isFetching">
           <font-awesome-icon icon="sync" :spin="isFetching"></font-awesome-icon>
-          <span v-text="$t('quickeshopApp.product.home.refreshListLabel')">Refresh List</span>
+          <span v-text="$t('appApp.product.home.refreshListLabel')">Refresh List</span>
         </button>
+        <router-link :to="{ name: 'ProductCreate' }" custom v-slot="{ navigate }">
+          <button
+            @click="navigate"
+            id="jh-create-entity"
+            data-cy="entityCreateButton"
+            class="btn btn-primary jh-create-entity create-product"
+          >
+            <font-awesome-icon icon="plus"></font-awesome-icon>
+            <span v-text="$t('appApp.product.home.createLabel')"> Create a new Product </span>
+          </button>
+        </router-link>
       </div>
     </h2>
     <br />
     <div class="alert alert-warning" v-if="!isFetching && products && products.length === 0">
-      <span v-text="$t('quickeshopApp.product.home.notFound')">No products found</span>
+      <span v-text="$t('appApp.product.home.notFound')">No products found</span>
     </div>
     <div class="table-responsive" v-if="products && products.length > 0">
       <table class="table table-striped" aria-describedby="products">
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('quickeshopApp.product.name')">Name</span></th>
-            <th scope="row"><span v-text="$t('quickeshopApp.product.barcode')">Barcode</span></th>
-            <th scope="row"><span v-text="$t('quickeshopApp.product.price')">Price</span></th>
-            <th scope="row"><span v-text="$t('quickeshopApp.product.availableQuantity')">Available Quantity</span></th>
+            <th scope="row"><span v-text="$t('appApp.product.barcode')">Barcode</span></th>
+            <th scope="row"><span v-text="$t('appApp.product.productName')">Product Name</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -30,10 +39,8 @@
             <td>
               <router-link :to="{ name: 'ProductView', params: { productId: product.id } }">{{ product.id }}</router-link>
             </td>
-            <td>{{ product.name }}</td>
             <td>{{ product.barcode }}</td>
-            <td>{{ product.price }}</td>
-            <td>{{ product.availableQuantity }}</td>
+            <td>{{ product.productName }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'ProductView', params: { productId: product.id } }" custom v-slot="{ navigate }">
@@ -42,6 +49,22 @@
                     <span class="d-none d-md-inline" v-text="$t('entity.action.view')">View</span>
                   </button>
                 </router-link>
+                <router-link :to="{ name: 'ProductEdit', params: { productId: product.id } }" custom v-slot="{ navigate }">
+                  <button @click="navigate" class="btn btn-primary btn-sm edit" data-cy="entityEditButton">
+                    <font-awesome-icon icon="pencil-alt"></font-awesome-icon>
+                    <span class="d-none d-md-inline" v-text="$t('entity.action.edit')">Edit</span>
+                  </button>
+                </router-link>
+                <b-button
+                  v-on:click="prepareRemove(product)"
+                  variant="danger"
+                  class="btn btn-sm"
+                  data-cy="entityDeleteButton"
+                  v-b-modal.removeEntity
+                >
+                  <font-awesome-icon icon="times"></font-awesome-icon>
+                  <span class="d-none d-md-inline" v-text="$t('entity.action.delete')">Delete</span>
+                </b-button>
               </div>
             </td>
           </tr>
@@ -50,12 +73,12 @@
     </div>
     <b-modal ref="removeEntity" id="removeEntity">
       <span slot="modal-title"
-        ><span id="quickeshopApp.product.delete.question" data-cy="productDeleteDialogHeading" v-text="$t('entity.delete.title')"
+        ><span id="appApp.product.delete.question" data-cy="productDeleteDialogHeading" v-text="$t('entity.delete.title')"
           >Confirm delete operation</span
         ></span
       >
       <div class="modal-body">
-        <p id="jhi-delete-product-heading" v-text="$t('quickeshopApp.product.delete.question', { id: removeId })">
+        <p id="jhi-delete-product-heading" v-text="$t('appApp.product.delete.question', { id: removeId })">
           Are you sure you want to delete this Product?
         </p>
       </div>

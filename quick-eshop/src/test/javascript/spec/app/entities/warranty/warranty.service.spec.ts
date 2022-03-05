@@ -81,8 +81,8 @@ describe('Service Tests', () => {
       it('should update a Warranty', async () => {
         const returnedFromService = Object.assign(
           {
-            tempo: 'BBBBBB',
-            valor: 1,
+            warrantyDesc: 'BBBBBB',
+            warrantyMonths: 1,
           },
           elemDefault
         );
@@ -109,7 +109,7 @@ describe('Service Tests', () => {
       it('should partial update a Warranty', async () => {
         const patchObject = Object.assign(
           {
-            tempo: 'BBBBBB',
+            warrantyDesc: 'BBBBBB',
           },
           new Warranty()
         );
@@ -137,8 +137,8 @@ describe('Service Tests', () => {
       it('should return a list of Warranty', async () => {
         const returnedFromService = Object.assign(
           {
-            tempo: 'BBBBBB',
-            valor: 1,
+            warrantyDesc: 'BBBBBB',
+            warrantyMonths: 1,
           },
           elemDefault
         );

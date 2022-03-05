@@ -1,0 +1,23 @@
+{
+  "appApp": {
+    "purchase": {
+      "home": {
+        "title": "Purchases",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Purchases found"
+      },
+      "detail": {
+        "title": "Purchase"
+      },
+      "id": "ID",
+      "userName": "User Name",
+      "userAddress": "User Address",
+      "quantity": "Quantity",
+      "confirmacao": "Confirmacao",
+      "coupon": "Coupon",
+      "freight": "Freight",
+      "product": "Product",
+      "warranty": "Warranty"
+    }
+  }
+}

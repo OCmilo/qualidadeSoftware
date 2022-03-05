@@ -3,20 +3,20 @@
     <div class="col-8">
       <div v-if="freight">
         <h2 class="jh-entity-heading" data-cy="freightDetailsHeading">
-          <span v-text="$t('quickeshopApp.freight.detail.title')">Freight</span> {{ freight.id }}
+          <span v-text="$t('appApp.freight.detail.title')">Freight</span> {{ freight.id }}
         </h2>
         <dl class="row jh-entity-details">
           <dt>
-            <span v-text="$t('quickeshopApp.freight.empresa')">Empresa</span>
+            <span v-text="$t('appApp.freight.freighter')">Freighter</span>
           </dt>
           <dd>
-            <span>{{ freight.empresa }}</span>
+            <span>{{ freight.freighter }}</span>
           </dd>
           <dt>
-            <span v-text="$t('quickeshopApp.freight.valor')">Valor</span>
+            <span v-text="$t('appApp.freight.freightPrice')">Freight Price</span>
           </dt>
           <dd>
-            <span>{{ freight.valor }}</span>
+            <span>{{ freight.freightPrice }}</span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

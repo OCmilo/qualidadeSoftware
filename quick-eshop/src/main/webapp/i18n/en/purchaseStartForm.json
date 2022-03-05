@@ -1,0 +1,24 @@
+{
+  "appApp": {
+    "purchaseStartForm": {
+      "home": {
+        "title": "Purchase Start Forms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Purchase Start Form",
+        "createOrEditLabel": "Create or edit a Purchase Start Form",
+        "notFound": "No Purchase Start Forms found"
+      },
+      "created": "A new Purchase Start Form is created with identifier {{ param }}",
+      "updated": "A Purchase Start Form is updated with identifier {{ param }}",
+      "deleted": "A Purchase Start Form is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Purchase Start Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Purchase Start Form"
+      },
+      "id": "ID",
+      "userName": "User Name"
+    }
+  }
+}

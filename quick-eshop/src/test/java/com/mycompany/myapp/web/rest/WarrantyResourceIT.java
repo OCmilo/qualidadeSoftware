@@ -31,11 +31,11 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class WarrantyResourceIT {
 
-    private static final String DEFAULT_TEMPO = "AAAAAAAAAA";
-    private static final String UPDATED_TEMPO = "BBBBBBBBBB";
+    private static final String DEFAULT_WARRANTY_DESC = "AAAAAAAAAA";
+    private static final String UPDATED_WARRANTY_DESC = "BBBBBBBBBB";
 
-    private static final Float DEFAULT_VALOR = 1F;
-    private static final Float UPDATED_VALOR = 2F;
+    private static final Double DEFAULT_WARRANTY_MONTHS = 1D;
+    private static final Double UPDATED_WARRANTY_MONTHS = 2D;
 
     private static final String ENTITY_API_URL = "/api/warranties";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -64,7 +64,7 @@ class WarrantyResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Warranty createEntity(EntityManager em) {
-        Warranty warranty = new Warranty().tempo(DEFAULT_TEMPO).valor(DEFAULT_VALOR);
+        Warranty warranty = new Warranty().warrantyDesc(DEFAULT_WARRANTY_DESC).warrantyMonths(DEFAULT_WARRANTY_MONTHS);
         return warranty;
     }
 
@@ -75,7 +75,7 @@ class WarrantyResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Warranty createUpdatedEntity(EntityManager em) {
-        Warranty warranty = new Warranty().tempo(UPDATED_TEMPO).valor(UPDATED_VALOR);
+        Warranty warranty = new Warranty().warrantyDesc(UPDATED_WARRANTY_DESC).warrantyMonths(UPDATED_WARRANTY_MONTHS);
         return warranty;
     }
 
@@ -98,8 +98,8 @@ class WarrantyResourceIT {
         List<Warranty> warrantyList = warrantyRepository.findAll();
         assertThat(warrantyList).hasSize(databaseSizeBeforeCreate + 1);
         Warranty testWarranty = warrantyList.get(warrantyList.size() - 1);
-        assertThat(testWarranty.getTempo()).isEqualTo(DEFAULT_TEMPO);
-        assertThat(testWarranty.getValor()).isEqualTo(DEFAULT_VALOR);
+        assertThat(testWarranty.getWarrantyDesc()).isEqualTo(DEFAULT_WARRANTY_DESC);
+        assertThat(testWarranty.getWarrantyMonths()).isEqualTo(DEFAULT_WARRANTY_MONTHS);
     }
 
     @Test
@@ -133,8 +133,8 @@ class WarrantyResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(warranty.getId().intValue())))
-            .andExpect(jsonPath("$.[*].tempo").value(hasItem(DEFAULT_TEMPO)))
-            .andExpect(jsonPath("$.[*].valor").value(hasItem(DEFAULT_VALOR.doubleValue())));
+            .andExpect(jsonPath("$.[*].warrantyDesc").value(hasItem(DEFAULT_WARRANTY_DESC)))
+            .andExpect(jsonPath("$.[*].warrantyMonths").value(hasItem(DEFAULT_WARRANTY_MONTHS.doubleValue())));
     }
 
     @Test
@@ -149,8 +149,8 @@ class WarrantyResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(warranty.getId().intValue()))
-            .andExpect(jsonPath("$.tempo").value(DEFAULT_TEMPO))
-            .andExpect(jsonPath("$.valor").value(DEFAULT_VALOR.doubleValue()));
+            .andExpect(jsonPath("$.warrantyDesc").value(DEFAULT_WARRANTY_DESC))
+            .andExpect(jsonPath("$.warrantyMonths").value(DEFAULT_WARRANTY_MONTHS.doubleValue()));
     }
 
     @Test
@@ -172,7 +172,7 @@ class WarrantyResourceIT {
         Warranty updatedWarranty = warrantyRepository.findById(warranty.getId()).get();
         // Disconnect from session so that the updates on updatedWarranty are not directly saved in db
         em.detach(updatedWarranty);
-        updatedWarranty.tempo(UPDATED_TEMPO).valor(UPDATED_VALOR);
+        updatedWarranty.warrantyDesc(UPDATED_WARRANTY_DESC).warrantyMonths(UPDATED_WARRANTY_MONTHS);
         WarrantyDTO warrantyDTO = warrantyMapper.toDto(updatedWarranty);
 
         restWarrantyMockMvc
@@ -187,8 +187,8 @@ class WarrantyResourceIT {
         List<Warranty> warrantyList = warrantyRepository.findAll();
         assertThat(warrantyList).hasSize(databaseSizeBeforeUpdate);
         Warranty testWarranty = warrantyList.get(warrantyList.size() - 1);
-        assertThat(testWarranty.getTempo()).isEqualTo(UPDATED_TEMPO);
-        assertThat(testWarranty.getValor()).isEqualTo(UPDATED_VALOR);
+        assertThat(testWarranty.getWarrantyDesc()).isEqualTo(UPDATED_WARRANTY_DESC);
+        assertThat(testWarranty.getWarrantyMonths()).isEqualTo(UPDATED_WARRANTY_MONTHS);
     }
 
     @Test
@@ -268,7 +268,7 @@ class WarrantyResourceIT {
         Warranty partialUpdatedWarranty = new Warranty();
         partialUpdatedWarranty.setId(warranty.getId());
 
-        partialUpdatedWarranty.tempo(UPDATED_TEMPO);
+        partialUpdatedWarranty.warrantyDesc(UPDATED_WARRANTY_DESC);
 
         restWarrantyMockMvc
             .perform(
@@ -282,8 +282,8 @@ class WarrantyResourceIT {
         List<Warranty> warrantyList = warrantyRepository.findAll();
         assertThat(warrantyList).hasSize(databaseSizeBeforeUpdate);
         Warranty testWarranty = warrantyList.get(warrantyList.size() - 1);
-        assertThat(testWarranty.getTempo()).isEqualTo(UPDATED_TEMPO);
-        assertThat(testWarranty.getValor()).isEqualTo(DEFAULT_VALOR);
+        assertThat(testWarranty.getWarrantyDesc()).isEqualTo(UPDATED_WARRANTY_DESC);
+        assertThat(testWarranty.getWarrantyMonths()).isEqualTo(DEFAULT_WARRANTY_MONTHS);
     }
 
     @Test
@@ -298,7 +298,7 @@ class WarrantyResourceIT {
         Warranty partialUpdatedWarranty = new Warranty();
         partialUpdatedWarranty.setId(warranty.getId());
 
-        partialUpdatedWarranty.tempo(UPDATED_TEMPO).valor(UPDATED_VALOR);
+        partialUpdatedWarranty.warrantyDesc(UPDATED_WARRANTY_DESC).warrantyMonths(UPDATED_WARRANTY_MONTHS);
 
         restWarrantyMockMvc
             .perform(
@@ -312,8 +312,8 @@ class WarrantyResourceIT {
         List<Warranty> warrantyList = warrantyRepository.findAll();
         assertThat(warrantyList).hasSize(databaseSizeBeforeUpdate);
         Warranty testWarranty = warrantyList.get(warrantyList.size() - 1);
-        assertThat(testWarranty.getTempo()).isEqualTo(UPDATED_TEMPO);
-        assertThat(testWarranty.getValor()).isEqualTo(UPDATED_VALOR);
+        assertThat(testWarranty.getWarrantyDesc()).isEqualTo(UPDATED_WARRANTY_DESC);
+        assertThat(testWarranty.getWarrantyMonths()).isEqualTo(UPDATED_WARRANTY_MONTHS);
     }
 
     @Test
