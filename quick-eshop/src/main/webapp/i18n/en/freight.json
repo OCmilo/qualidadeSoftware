@@ -1,0 +1,25 @@
+{
+  "quickeshopApp": {
+    "freight": {
+      "home": {
+        "title": "Freights",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Freight",
+        "createOrEditLabel": "Create or edit a Freight",
+        "notFound": "No Freights found"
+      },
+      "created": "A new Freight is created with identifier {{ param }}",
+      "updated": "A Freight is updated with identifier {{ param }}",
+      "deleted": "A Freight is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Freight {{ id }}?"
+      },
+      "detail": {
+        "title": "Freight"
+      },
+      "id": "ID",
+      "empresa": "Empresa",
+      "valor": "Valor"
+    }
+  }
+}

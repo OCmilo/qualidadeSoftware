@@ -18,6 +18,13 @@
         "product": "Product",
         "purchaseProcess": "Purchase Process",
         "purchaseForm": "Purchase Form",
+        "warrantyForm": "Warranty Form",
+        "freightForm": "Freight Form",
+        "freight": "Freight",
+        "warranty": "Warranty",
+        "coupomForm": "Coupom Form",
+        "coupom": "Coupom",
+        "productForm": "Product Form",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

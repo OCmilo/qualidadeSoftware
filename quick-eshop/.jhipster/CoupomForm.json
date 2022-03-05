@@ -1,0 +1,24 @@
+{
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipName": "cupom",
+      "otherEntityName": "Coupom",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "nome"
+    }
+  ],
+  "entityType": "user-task-form",
+  "processBpmnId": "PurchaseProcess",
+  "processEntityName": "PurchaseProcess",
+  "taskBpmnId": "add_coupom",
+  "domainEntityName": "Coupom",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "CoupomForm",
+  "changelogDate": "20220401000002",
+  "skipFakeData": true
+}

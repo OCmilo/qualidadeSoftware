@@ -1,0 +1,24 @@
+{
+  "quickeshopApp": {
+    "freightForm": {
+      "home": {
+        "title": "Freight Forms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Freight Form",
+        "createOrEditLabel": "Create or edit a Freight Form",
+        "notFound": "No Freight Forms found"
+      },
+      "created": "A new Freight Form is created with identifier {{ param }}",
+      "updated": "A Freight Form is updated with identifier {{ param }}",
+      "deleted": "A Freight Form is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Freight Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Freight Form"
+      },
+      "id": "ID",
+      "frete": "Frete"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "fields": [
+    {
+      "fieldName": "quantidade",
+      "fieldType": "Double"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "produto",
+      "otherEntityName": "Product",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityType": "user-task-form",
+  "processBpmnId": "PurchaseProcess",
+  "processEntityName": "PurchaseProcess",
+  "taskBpmnId": "search_product",
+  "domainEntityName": "Product",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "ProductForm",
+  "changelogDate": "20210401000002",
+  "skipFakeData": true
+}

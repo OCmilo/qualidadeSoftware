@@ -35,6 +35,12 @@ import TravelPlanService from '@/entities/travel-plan/travel-plan.service';
 import TravelPlanProcessService from '@/entities/travel-plan-process/travel-plan-process.service';
 import ProductService from '@/entities/product/product.service';
 import PurchaseProcessService from '@/entities/purchase-process/purchase-process.service';
+import FreightService from '@/entities/freight/freight.service';
+import WarrantyService from '@/entities/warranty/warranty.service';
+import CoupomFormService from '@/entities/coupom-form/coupom-form.service';
+import CoupomService from '@/entities/coupom/coupom.service';
+import WarrantyFormService from '@/entities/warranty-form/warranty-form.service';
+import FreightFormService from '@/entities/freight-form/freight-form.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -102,6 +108,12 @@ new Vue({
     travelPlanProcessService: () => new TravelPlanProcessService(),
     productService: () => new ProductService(),
     purchaseProcessService: () => new PurchaseProcessService(),
+    freightService: () => new FreightService(),
+    warrantyService: () => new WarrantyService(),
+    coupomFormService: () => new CoupomFormService(),
+    coupomService: () => new CoupomService(),
+    warrantyFormService: () => new WarrantyFormService(),
+    freightFormService: () => new FreightFormService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

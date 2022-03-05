@@ -1,0 +1,24 @@
+{
+  "quickeshopApp": {
+    "warrantyForm": {
+      "home": {
+        "title": "Warranty Forms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Warranty Form",
+        "createOrEditLabel": "Create or edit a Warranty Form",
+        "notFound": "No Warranty Forms found"
+      },
+      "created": "A new Warranty Form is created with identifier {{ param }}",
+      "updated": "A Warranty Form is updated with identifier {{ param }}",
+      "deleted": "A Warranty Form is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Warranty Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Warranty Form"
+      },
+      "id": "ID",
+      "garantia": "Garantia"
+    }
+  }
+}

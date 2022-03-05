@@ -53,6 +53,6 @@
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
     "languages": ["en"],
-    "entities": ["TravelPlan", "Product"]
+    "entities": ["Product", "Freight", "Warranty", "Coupom"]
   }
 }
