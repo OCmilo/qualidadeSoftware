@@ -19,6 +19,7 @@
       },
       "id": "ID",
       "quantity": "Quantity",
+      "withWarranty": "With Warranty",
       "product": "Product"
     }
   }

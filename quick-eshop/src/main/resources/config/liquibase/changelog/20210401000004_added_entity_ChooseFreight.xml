@@ -17,6 +17,9 @@
             <column name="user_address" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="with_coupon" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="freight_id" type="bigint">
                 <constraints nullable="true" />
             </column>

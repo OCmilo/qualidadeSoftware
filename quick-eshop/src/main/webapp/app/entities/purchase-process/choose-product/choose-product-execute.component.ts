@@ -11,6 +11,7 @@ const validations: any = {
     purchaseProcess: {
       purchase: {
         quantity: {},
+        withWarranty: {},
       },
     },
   },

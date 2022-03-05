@@ -19,6 +19,7 @@ public interface ChooseProductMapper {
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
     @Mapping(target = "quantity", source = "quantity")
+    @Mapping(target = "withWarranty", source = "withWarranty")
     @Mapping(target = "product", source = "product")
     PurchaseDTO toPurchaseDTO(Purchase purchase);
 

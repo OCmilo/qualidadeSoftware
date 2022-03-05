@@ -19,6 +19,7 @@
       },
       "id": "ID",
       "userAddress": "User Address",
+      "withCoupon": "With Coupon",
       "freight": "Freight"
     }
   }

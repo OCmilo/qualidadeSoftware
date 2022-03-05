@@ -22,6 +22,8 @@
       "userAddress": "User Address",
       "quantity": "Quantity",
       "confirmacao": "Confirmacao",
+      "withWarranty": "With Warranty",
+      "withCoupon": "With Coupon",
       "coupon": "Coupon",
       "freight": "Freight",
       "product": "Product",

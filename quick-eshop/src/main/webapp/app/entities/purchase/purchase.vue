@@ -22,6 +22,8 @@
             <th scope="row"><span v-text="$t('appApp.purchase.userAddress')">User Address</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.quantity')">Quantity</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.confirmacao')">Confirmacao</span></th>
+            <th scope="row"><span v-text="$t('appApp.purchase.withCoupon')">With Coupon</span></th>
+            <th scope="row"><span v-text="$t('appApp.purchase.withWarranty')">With Warranty</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.coupon')">Coupon</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.freight')">Freight</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.product')">Product</span></th>
@@ -38,6 +40,8 @@
             <td>{{ purchase.userAddress }}</td>
             <td>{{ purchase.quantity }}</td>
             <td>{{ purchase.confirmacao }}</td>
+            <td>{{ purchase.withCoupon }}</td>
+            <td>{{ purchase.withWarranty }}</td>
             <td>
               <div v-if="purchase.coupon">
                 <router-link :to="{ name: 'CouponView', params: { couponId: purchase.coupon.id } }">{{

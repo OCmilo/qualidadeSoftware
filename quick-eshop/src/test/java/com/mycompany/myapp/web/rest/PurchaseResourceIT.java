@@ -43,6 +43,12 @@ class PurchaseResourceIT {
     private static final Boolean DEFAULT_CONFIRMACAO = false;
     private static final Boolean UPDATED_CONFIRMACAO = true;
 
+    private static final Boolean DEFAULT_WITH_COUPON = false;
+    private static final Boolean UPDATED_WITH_COUPON = true;
+
+    private static final Boolean DEFAULT_WITH_WARRANTY = false;
+    private static final Boolean UPDATED_WITH_WARRANTY = true;
+
     private static final String ENTITY_API_URL = "/api/purchases";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -74,7 +80,9 @@ class PurchaseResourceIT {
             .userName(DEFAULT_USER_NAME)
             .userAddress(DEFAULT_USER_ADDRESS)
             .quantity(DEFAULT_QUANTITY)
-            .confirmacao(DEFAULT_CONFIRMACAO);
+            .confirmacao(DEFAULT_CONFIRMACAO)
+            .withCoupon(DEFAULT_WITH_COUPON)
+            .withWarranty(DEFAULT_WITH_WARRANTY);
         return purchase;
     }
 
@@ -89,7 +97,9 @@ class PurchaseResourceIT {
             .userName(UPDATED_USER_NAME)
             .userAddress(UPDATED_USER_ADDRESS)
             .quantity(UPDATED_QUANTITY)
-            .confirmacao(UPDATED_CONFIRMACAO);
+            .confirmacao(UPDATED_CONFIRMACAO)
+            .withCoupon(UPDATED_WITH_COUPON)
+            .withWarranty(UPDATED_WITH_WARRANTY);
         return purchase;
     }
 
@@ -113,7 +123,9 @@ class PurchaseResourceIT {
             .andExpect(jsonPath("$.[*].userName").value(hasItem(DEFAULT_USER_NAME)))
             .andExpect(jsonPath("$.[*].userAddress").value(hasItem(DEFAULT_USER_ADDRESS)))
             .andExpect(jsonPath("$.[*].quantity").value(hasItem(DEFAULT_QUANTITY.doubleValue())))
-            .andExpect(jsonPath("$.[*].confirmacao").value(hasItem(DEFAULT_CONFIRMACAO.booleanValue())));
+            .andExpect(jsonPath("$.[*].confirmacao").value(hasItem(DEFAULT_CONFIRMACAO.booleanValue())))
+            .andExpect(jsonPath("$.[*].withCoupon").value(hasItem(DEFAULT_WITH_COUPON.booleanValue())))
+            .andExpect(jsonPath("$.[*].withWarranty").value(hasItem(DEFAULT_WITH_WARRANTY.booleanValue())));
     }
 
     @Test
@@ -131,7 +143,9 @@ class PurchaseResourceIT {
             .andExpect(jsonPath("$.userName").value(DEFAULT_USER_NAME))
             .andExpect(jsonPath("$.userAddress").value(DEFAULT_USER_ADDRESS))
             .andExpect(jsonPath("$.quantity").value(DEFAULT_QUANTITY.doubleValue()))
-            .andExpect(jsonPath("$.confirmacao").value(DEFAULT_CONFIRMACAO.booleanValue()));
+            .andExpect(jsonPath("$.confirmacao").value(DEFAULT_CONFIRMACAO.booleanValue()))
+            .andExpect(jsonPath("$.withCoupon").value(DEFAULT_WITH_COUPON.booleanValue()))
+            .andExpect(jsonPath("$.withWarranty").value(DEFAULT_WITH_WARRANTY.booleanValue()));
     }
 
     @Test

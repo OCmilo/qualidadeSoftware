@@ -21,6 +21,18 @@
               />
             </div>
             <div class="form-group">
+              <label class="form-control-label" v-text="$t('appApp.chooseProduct.withWarranty')">withWarranty</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="withWarranty"
+                id="purchase-withWarranty"
+                data-cy="withWarranty"
+                v-model="taskContext.purchaseProcess.purchase.withWarranty"
+              />
+            </div>
+            <div class="form-group">
               <label class="form-control-label" v-text="$t('appApp.chooseProduct.product')" for="choose-product-product">Product</label>
               <input
                 v-if="taskContext.purchaseProcess.purchase.product"

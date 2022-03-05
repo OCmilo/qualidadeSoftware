@@ -72,6 +72,34 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
+                  <label class="form-control-label" v-text="$t('appApp.purchaseProcess.withWarranty')">withWarranty</label>
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="withWarranty"
+                    id="purchase-withWarranty"
+                    data-cy="withWarranty"
+                    v-model="purchaseProcess.purchase.withWarranty"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('appApp.purchaseProcess.withCoupon')">withCoupon</label>
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="withCoupon"
+                    id="purchase-withCoupon"
+                    data-cy="withCoupon"
+                    v-model="purchaseProcess.purchase.withCoupon"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
                   <label class="form-control-label" v-text="$t('appApp.purchaseProcess.coupon')" for="purchase-process-coupon"
                     >Coupon</label
                   >

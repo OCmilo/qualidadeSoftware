@@ -3,6 +3,10 @@
     {
       "fieldName": "quantity",
       "fieldType": "Double"
+    },
+    {
+      "fieldName": "withWarranty",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [

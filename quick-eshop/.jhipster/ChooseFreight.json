@@ -3,6 +3,10 @@
     {
       "fieldName": "userAddress",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "withCoupon",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [

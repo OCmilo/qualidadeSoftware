@@ -72,6 +72,7 @@ public class ChooseFreightService {
     public void save(ChooseFreightContextDTO chooseFreightContext) {
         PurchaseDTO purchaseDTO = purchaseService.findOne(chooseFreightContext.getPurchaseProcess().getPurchase().getId()).orElseThrow();
         purchaseDTO.setUserAddress(chooseFreightContext.getPurchaseProcess().getPurchase().getUserAddress());
+        purchaseDTO.setWithCoupon(chooseFreightContext.getPurchaseProcess().getPurchase().getWithCoupon());
         purchaseDTO.setFreight(chooseFreightContext.getPurchaseProcess().getPurchase().getFreight());
         purchaseService.save(purchaseDTO);
     }

@@ -19,6 +19,7 @@ public interface ChooseFreightMapper {
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
     @Mapping(target = "userAddress", source = "userAddress")
+    @Mapping(target = "withCoupon", source = "withCoupon")
     @Mapping(target = "freight", source = "freight")
     PurchaseDTO toPurchaseDTO(Purchase purchase);
 

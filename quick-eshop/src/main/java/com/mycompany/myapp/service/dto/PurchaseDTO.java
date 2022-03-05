@@ -18,6 +18,10 @@ public class PurchaseDTO implements Serializable {
 
     private Boolean confirmacao;
 
+    private Boolean withCoupon;
+
+    private Boolean withWarranty;
+
     private CouponDTO coupon;
 
     private FreightDTO freight;
@@ -64,6 +68,22 @@ public class PurchaseDTO implements Serializable {
 
     public void setConfirmacao(Boolean confirmacao) {
         this.confirmacao = confirmacao;
+    }
+
+    public Boolean getWithCoupon() {
+        return withCoupon;
+    }
+
+    public void setWithCoupon(Boolean withCoupon) {
+        this.withCoupon = withCoupon;
+    }
+
+    public Boolean getWithWarranty() {
+        return withWarranty;
+    }
+
+    public void setWithWarranty(Boolean withWarranty) {
+        this.withWarranty = withWarranty;
     }
 
     public CouponDTO getCoupon() {
@@ -128,6 +148,8 @@ public class PurchaseDTO implements Serializable {
             ", userAddress='" + getUserAddress() + "'" +
             ", quantity=" + getQuantity() +
             ", confirmacao='" + getConfirmacao() + "'" +
+            ", withCoupon='" + getWithCoupon() + "'" +
+            ", withWarranty='" + getWithWarranty() + "'" +
             ", coupon=" + getCoupon() +
             ", freight=" + getFreight() +
             ", product=" + getProduct() +

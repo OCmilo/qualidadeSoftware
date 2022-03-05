@@ -9,6 +9,8 @@ export interface IPurchase {
   userAddress?: string | null;
   quantity?: number | null;
   confirmacao?: boolean | null;
+  withCoupon?: boolean | null;
+  withWarranty?: boolean | null;
   coupon?: ICoupon | null;
   freight?: IFreight | null;
   product?: IProduct | null;
@@ -22,11 +24,15 @@ export class Purchase implements IPurchase {
     public userAddress?: string | null,
     public quantity?: number | null,
     public confirmacao?: boolean | null,
+    public withCoupon?: boolean | null,
+    public withWarranty?: boolean | null,
     public coupon?: ICoupon | null,
     public freight?: IFreight | null,
     public product?: IProduct | null,
     public warranty?: IWarranty | null
   ) {
     this.confirmacao = this.confirmacao ?? false;
+    this.withCoupon = this.withCoupon ?? false;
+    this.withWarranty = this.withWarranty ?? false;
   }
 }

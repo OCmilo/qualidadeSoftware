@@ -32,6 +32,12 @@ public class Purchase implements Serializable {
     @Column(name = "confirmacao")
     private Boolean confirmacao;
 
+    @Column(name = "with_coupon")
+    private Boolean withCoupon;
+
+    @Column(name = "with_warranty")
+    private Boolean withWarranty;
+
     @ManyToOne
     private Coupon coupon;
 
@@ -108,6 +114,32 @@ public class Purchase implements Serializable {
 
     public void setConfirmacao(Boolean confirmacao) {
         this.confirmacao = confirmacao;
+    }
+
+    public Boolean getWithCoupon() {
+        return this.withCoupon;
+    }
+
+    public Purchase withCoupon(Boolean withCoupon) {
+        this.withCoupon = withCoupon;
+        return this;
+    }
+
+    public void setWithCoupon(Boolean withCoupon) {
+        this.withCoupon = withCoupon;
+    }
+
+    public Boolean getWithWarranty() {
+        return this.withWarranty;
+    }
+
+    public Purchase withWarranty(Boolean withWarranty) {
+        this.withWarranty = withWarranty;
+        return this;
+    }
+
+    public void setWithWarranty(Boolean withWarranty) {
+        this.withWarranty = withWarranty;
     }
 
     public Coupon getCoupon() {
@@ -190,6 +222,8 @@ public class Purchase implements Serializable {
             ", userAddress='" + getUserAddress() + "'" +
             ", quantity=" + getQuantity() +
             ", confirmacao='" + getConfirmacao() + "'" +
+            ", withCoupon='" + getWithCoupon() + "'" +
+            ", withWarranty='" + getWithWarranty() + "'" +
             "}";
     }
 }

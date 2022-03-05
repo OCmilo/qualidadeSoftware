@@ -26,6 +26,12 @@
             <column name="confirmacao" type="boolean">
                 <constraints nullable="true" />
             </column>
+            <column name="with_coupon" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="with_warranty" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="coupon_id" type="bigint">
                 <constraints nullable="true" />
             </column>

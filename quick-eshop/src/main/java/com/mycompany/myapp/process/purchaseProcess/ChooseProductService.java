@@ -72,6 +72,7 @@ public class ChooseProductService {
     public void save(ChooseProductContextDTO chooseProductContext) {
         PurchaseDTO purchaseDTO = purchaseService.findOne(chooseProductContext.getPurchaseProcess().getPurchase().getId()).orElseThrow();
         purchaseDTO.setQuantity(chooseProductContext.getPurchaseProcess().getPurchase().getQuantity());
+        purchaseDTO.setWithWarranty(chooseProductContext.getPurchaseProcess().getPurchase().getWithWarranty());
         purchaseDTO.setProduct(chooseProductContext.getPurchaseProcess().getPurchase().getProduct());
         purchaseService.save(purchaseDTO);
     }

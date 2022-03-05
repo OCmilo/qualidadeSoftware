@@ -24,6 +24,23 @@
               />
             </div>
             <div class="form-group">
+              <label class="form-control-label" v-text="$t('appApp.chooseProduct.withWarranty')" for="choose-product-withWarranty"
+                >With Warranty</label
+              >
+              <input
+                type="checkbox"
+                class="form-check"
+                name="withWarranty"
+                id="choose-product-withWarranty"
+                data-cy="withWarranty"
+                :class="{
+                  valid: !$v.taskContext.purchaseProcess.purchase.withWarranty.$invalid,
+                  invalid: $v.taskContext.purchaseProcess.purchase.withWarranty.$invalid,
+                }"
+                v-model="$v.taskContext.purchaseProcess.purchase.withWarranty.$model"
+              />
+            </div>
+            <div class="form-group">
               <label class="form-control-label" v-text="$t('appApp.chooseProduct.product')" for="choose-product-product">Product</label>
               <select
                 class="form-control"

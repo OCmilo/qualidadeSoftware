@@ -15,6 +15,14 @@
     {
       "fieldName": "confirmacao",
       "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "withCoupon",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "withWarranty",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [

@@ -31,6 +31,18 @@
             <span>{{ purchase.confirmacao }}</span>
           </dd>
           <dt>
+            <span v-text="$t('appApp.purchase.withCoupon')">With Coupon</span>
+          </dt>
+          <dd>
+            <span>{{ purchase.withCoupon }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('appApp.purchase.withWarranty')">With Warranty</span>
+          </dt>
+          <dd>
+            <span>{{ purchase.withWarranty }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('appApp.purchase.coupon')">Coupon</span>
           </dt>
           <dd>

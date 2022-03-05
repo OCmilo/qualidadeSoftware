@@ -26,6 +26,23 @@
               />
             </div>
             <div class="form-group">
+              <label class="form-control-label" v-text="$t('appApp.chooseFreight.withCoupon')" for="choose-freight-withCoupon"
+                >With Coupon</label
+              >
+              <input
+                type="checkbox"
+                class="form-check"
+                name="withCoupon"
+                id="choose-freight-withCoupon"
+                data-cy="withCoupon"
+                :class="{
+                  valid: !$v.taskContext.purchaseProcess.purchase.withCoupon.$invalid,
+                  invalid: $v.taskContext.purchaseProcess.purchase.withCoupon.$invalid,
+                }"
+                v-model="$v.taskContext.purchaseProcess.purchase.withCoupon.$model"
+              />
+            </div>
+            <div class="form-group">
               <label class="form-control-label" v-text="$t('appApp.chooseFreight.freight')" for="choose-freight-freight">Freight</label>
               <select
                 class="form-control"

@@ -21,6 +21,18 @@
               />
             </div>
             <div class="form-group">
+              <label class="form-control-label" v-text="$t('appApp.chooseFreight.withCoupon')">withCoupon</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="withCoupon"
+                id="purchase-withCoupon"
+                data-cy="withCoupon"
+                v-model="taskContext.purchaseProcess.purchase.withCoupon"
+              />
+            </div>
+            <div class="form-group">
               <label class="form-control-label" v-text="$t('appApp.chooseFreight.freight')" for="choose-freight-freight">Freight</label>
               <input
                 v-if="taskContext.purchaseProcess.purchase.freight"
