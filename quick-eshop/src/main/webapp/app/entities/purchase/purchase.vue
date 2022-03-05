@@ -19,11 +19,12 @@
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.userName')">User Name</span></th>
-            <th scope="row"><span v-text="$t('appApp.purchase.userAddress')">User Address</span></th>
+            <th scope="row"><span v-text="$t('appApp.purchase.userEmail')">User Email</span></th>
+            <th scope="row"><span v-text="$t('appApp.purchase.address')">Address</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.quantity')">Quantity</span></th>
-            <th scope="row"><span v-text="$t('appApp.purchase.confirmacao')">Confirmacao</span></th>
-            <th scope="row"><span v-text="$t('appApp.purchase.withCoupon')">With Coupon</span></th>
+            <th scope="row"><span v-text="$t('appApp.purchase.confirmation')">Confirmation</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.withWarranty')">With Warranty</span></th>
+            <th scope="row"><span v-text="$t('appApp.purchase.withCoupon')">With Coupon</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.coupon')">Coupon</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.freight')">Freight</span></th>
             <th scope="row"><span v-text="$t('appApp.purchase.product')">Product</span></th>
@@ -37,11 +38,12 @@
               <router-link :to="{ name: 'PurchaseView', params: { purchaseId: purchase.id } }">{{ purchase.id }}</router-link>
             </td>
             <td>{{ purchase.userName }}</td>
-            <td>{{ purchase.userAddress }}</td>
+            <td>{{ purchase.userEmail }}</td>
+            <td>{{ purchase.address }}</td>
             <td>{{ purchase.quantity }}</td>
-            <td>{{ purchase.confirmacao }}</td>
-            <td>{{ purchase.withCoupon }}</td>
+            <td>{{ purchase.confirmation }}</td>
             <td>{{ purchase.withWarranty }}</td>
+            <td>{{ purchase.withCoupon }}</td>
             <td>
               <div v-if="purchase.coupon">
                 <router-link :to="{ name: 'CouponView', params: { couponId: purchase.coupon.id } }">{{
@@ -66,7 +68,7 @@
             <td>
               <div v-if="purchase.warranty">
                 <router-link :to="{ name: 'WarrantyView', params: { warrantyId: purchase.warranty.id } }">{{
-                  purchase.warranty.warrantyDesc
+                  purchase.warranty.warrantyDescription
                 }}</router-link>
               </div>
             </td>

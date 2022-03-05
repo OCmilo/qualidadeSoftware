@@ -20,8 +20,8 @@ public class Warranty implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "warranty_desc")
-    private String warrantyDesc;
+    @Column(name = "warranty_description")
+    private String warrantyDescription;
 
     @Column(name = "warranty_months")
     private Double warrantyMonths;
@@ -40,17 +40,17 @@ public class Warranty implements Serializable {
         return this;
     }
 
-    public String getWarrantyDesc() {
-        return this.warrantyDesc;
+    public String getWarrantyDescription() {
+        return this.warrantyDescription;
     }
 
-    public Warranty warrantyDesc(String warrantyDesc) {
-        this.warrantyDesc = warrantyDesc;
+    public Warranty warrantyDescription(String warrantyDescription) {
+        this.warrantyDescription = warrantyDescription;
         return this;
     }
 
-    public void setWarrantyDesc(String warrantyDesc) {
-        this.warrantyDesc = warrantyDesc;
+    public void setWarrantyDescription(String warrantyDescription) {
+        this.warrantyDescription = warrantyDescription;
     }
 
     public Double getWarrantyMonths() {
@@ -90,7 +90,7 @@ public class Warranty implements Serializable {
     public String toString() {
         return "Warranty{" +
             "id=" + getId() +
-            ", warrantyDesc='" + getWarrantyDesc() + "'" +
+            ", warrantyDescription='" + getWarrantyDescription() + "'" +
             ", warrantyMonths=" + getWarrantyMonths() +
             "}";
     }

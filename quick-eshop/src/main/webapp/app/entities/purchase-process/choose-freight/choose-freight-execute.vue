@@ -9,20 +9,18 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('appApp.chooseFreight.userAddress')" for="choose-freight-userAddress"
-                >User Address</label
-              >
+              <label class="form-control-label" v-text="$t('appApp.chooseFreight.address')" for="choose-freight-address">Address</label>
               <input
                 type="text"
                 class="form-control"
-                name="userAddress"
-                id="choose-freight-userAddress"
-                data-cy="userAddress"
+                name="address"
+                id="choose-freight-address"
+                data-cy="address"
                 :class="{
-                  valid: !$v.taskContext.purchaseProcess.purchase.userAddress.$invalid,
-                  invalid: $v.taskContext.purchaseProcess.purchase.userAddress.$invalid,
+                  valid: !$v.taskContext.purchaseProcess.purchase.address.$invalid,
+                  invalid: $v.taskContext.purchaseProcess.purchase.address.$invalid,
                 }"
-                v-model="$v.taskContext.purchaseProcess.purchase.userAddress.$model"
+                v-model="$v.taskContext.purchaseProcess.purchase.address.$model"
               />
             </div>
             <div class="form-group">

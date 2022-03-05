@@ -1,9 +1,9 @@
 export interface ICoupon {
   id?: number;
   couponName?: string | null;
-  couponValue?: number | null;
+  couponDiscount?: number | null;
 }
 
 export class Coupon implements ICoupon {
-  constructor(public id?: number, public couponName?: string | null, public couponValue?: number | null) {}
+  constructor(public id?: number, public couponName?: string | null, public couponDiscount?: number | null) {}
 }

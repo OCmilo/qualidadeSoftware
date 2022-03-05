@@ -9,15 +9,15 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('appApp.chooseFreight.userAddress')">userAddress</label>
+              <label class="form-control-label" v-text="$t('appApp.chooseFreight.address')">address</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="userAddress"
-                id="purchase-userAddress"
-                data-cy="userAddress"
-                v-model="taskContext.purchaseProcess.purchase.userAddress"
+                name="address"
+                id="purchase-address"
+                data-cy="address"
+                v-model="taskContext.purchaseProcess.purchase.address"
               />
             </div>
             <div class="form-group">

@@ -29,8 +29,9 @@
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('appApp.product.barcode')">Barcode</span></th>
             <th scope="row"><span v-text="$t('appApp.product.productName')">Product Name</span></th>
+            <th scope="row"><span v-text="$t('appApp.product.availableQuantity')">Available Quantity</span></th>
+            <th scope="row"><span v-text="$t('appApp.product.price')">Price</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -39,8 +40,9 @@
             <td>
               <router-link :to="{ name: 'ProductView', params: { productId: product.id } }">{{ product.id }}</router-link>
             </td>
-            <td>{{ product.barcode }}</td>
             <td>{{ product.productName }}</td>
+            <td>{{ product.availableQuantity }}</td>
+            <td>{{ product.price }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'ProductView', params: { productId: product.id } }" custom v-slot="{ navigate }">

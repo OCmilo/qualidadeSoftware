@@ -5,7 +5,11 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "userAddress",
+      "fieldName": "userEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
       "fieldType": "String"
     },
     {
@@ -13,7 +17,7 @@
       "fieldType": "Double"
     },
     {
-      "fieldName": "confirmacao",
+      "fieldName": "confirmation",
       "fieldType": "Boolean"
     },
     {
@@ -48,7 +52,7 @@
       "relationshipName": "warranty",
       "otherEntityName": "warranty",
       "relationshipType": "many-to-one",
-      "otherEntityField": "warrantyDesc"
+      "otherEntityField": "warrantyDescription"
     }
   ],
   "entityType": "process-binding",

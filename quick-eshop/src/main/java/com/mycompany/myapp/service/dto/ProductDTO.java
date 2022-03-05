@@ -10,9 +10,11 @@ public class ProductDTO implements Serializable {
 
     private Long id;
 
-    private String barcode;
-
     private String productName;
+
+    private Double availableQuantity;
+
+    private Double price;
 
     public Long getId() {
         return id;
@@ -22,20 +24,28 @@ public class ProductDTO implements Serializable {
         this.id = id;
     }
 
-    public String getBarcode() {
-        return barcode;
-    }
-
-    public void setBarcode(String barcode) {
-        this.barcode = barcode;
-    }
-
     public String getProductName() {
         return productName;
     }
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public Double getAvailableQuantity() {
+        return availableQuantity;
+    }
+
+    public void setAvailableQuantity(Double availableQuantity) {
+        this.availableQuantity = availableQuantity;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     @Override
@@ -64,8 +74,9 @@ public class ProductDTO implements Serializable {
     public String toString() {
         return "ProductDTO{" +
             "id=" + getId() +
-            ", barcode='" + getBarcode() + "'" +
             ", productName='" + getProductName() + "'" +
+            ", availableQuantity=" + getAvailableQuantity() +
+            ", price=" + getPrice() +
             "}";
     }
 }

@@ -18,7 +18,7 @@
                 name="warranty"
                 id="purchase-warranty"
                 data-cy="warranty"
-                :value="taskContext.purchaseProcess.purchase.warranty.warrantyDesc"
+                :value="taskContext.purchaseProcess.purchase.warranty.warrantyDescription"
               />
               <input v-else readonly type="text" class="form-control" name="warranty" id="purchase-warranty" data-cy="warranty" value="" />
             </div>

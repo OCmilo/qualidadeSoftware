@@ -1,4 +1,12 @@
 {
+  "relationships": [
+    {
+      "relationshipName": "product",
+      "otherEntityName": "product",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "productName"
+    }
+  ],
   "fields": [
     {
       "fieldName": "quantity",
@@ -7,14 +15,6 @@
     {
       "fieldName": "withWarranty",
       "fieldType": "Boolean"
-    }
-  ],
-  "relationships": [
-    {
-      "relationshipName": "product",
-      "otherEntityName": "product",
-      "relationshipType": "many-to-one",
-      "otherEntityField": "productName"
     }
   ],
   "entityType": "user-task-form",

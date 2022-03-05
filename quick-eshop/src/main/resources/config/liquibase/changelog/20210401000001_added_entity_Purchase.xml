@@ -17,19 +17,22 @@
             <column name="user_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="user_address" type="varchar(255)">
+            <column name="user_email" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="address" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="quantity" type="double">
                 <constraints nullable="true" />
             </column>
-            <column name="confirmacao" type="boolean">
-                <constraints nullable="true" />
-            </column>
-            <column name="with_coupon" type="boolean">
+            <column name="confirmation" type="boolean">
                 <constraints nullable="true" />
             </column>
             <column name="with_warranty" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="with_coupon" type="boolean">
                 <constraints nullable="true" />
             </column>
             <column name="coupon_id" type="bigint">

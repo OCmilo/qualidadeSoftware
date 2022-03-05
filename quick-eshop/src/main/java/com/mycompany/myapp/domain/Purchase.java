@@ -23,20 +23,23 @@ public class Purchase implements Serializable {
     @Column(name = "user_name")
     private String userName;
 
-    @Column(name = "user_address")
-    private String userAddress;
+    @Column(name = "user_email")
+    private String userEmail;
+
+    @Column(name = "address")
+    private String address;
 
     @Column(name = "quantity")
     private Double quantity;
 
-    @Column(name = "confirmacao")
-    private Boolean confirmacao;
-
-    @Column(name = "with_coupon")
-    private Boolean withCoupon;
+    @Column(name = "confirmation")
+    private Boolean confirmation;
 
     @Column(name = "with_warranty")
     private Boolean withWarranty;
+
+    @Column(name = "with_coupon")
+    private Boolean withCoupon;
 
     @ManyToOne
     private Coupon coupon;
@@ -77,17 +80,30 @@ public class Purchase implements Serializable {
         this.userName = userName;
     }
 
-    public String getUserAddress() {
-        return this.userAddress;
+    public String getUserEmail() {
+        return this.userEmail;
     }
 
-    public Purchase userAddress(String userAddress) {
-        this.userAddress = userAddress;
+    public Purchase userEmail(String userEmail) {
+        this.userEmail = userEmail;
         return this;
     }
 
-    public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public Purchase address(String address) {
+        this.address = address;
+        return this;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Double getQuantity() {
@@ -103,30 +119,17 @@ public class Purchase implements Serializable {
         this.quantity = quantity;
     }
 
-    public Boolean getConfirmacao() {
-        return this.confirmacao;
+    public Boolean getConfirmation() {
+        return this.confirmation;
     }
 
-    public Purchase confirmacao(Boolean confirmacao) {
-        this.confirmacao = confirmacao;
+    public Purchase confirmation(Boolean confirmation) {
+        this.confirmation = confirmation;
         return this;
     }
 
-    public void setConfirmacao(Boolean confirmacao) {
-        this.confirmacao = confirmacao;
-    }
-
-    public Boolean getWithCoupon() {
-        return this.withCoupon;
-    }
-
-    public Purchase withCoupon(Boolean withCoupon) {
-        this.withCoupon = withCoupon;
-        return this;
-    }
-
-    public void setWithCoupon(Boolean withCoupon) {
-        this.withCoupon = withCoupon;
+    public void setConfirmation(Boolean confirmation) {
+        this.confirmation = confirmation;
     }
 
     public Boolean getWithWarranty() {
@@ -140,6 +143,19 @@ public class Purchase implements Serializable {
 
     public void setWithWarranty(Boolean withWarranty) {
         this.withWarranty = withWarranty;
+    }
+
+    public Boolean getWithCoupon() {
+        return this.withCoupon;
+    }
+
+    public Purchase withCoupon(Boolean withCoupon) {
+        this.withCoupon = withCoupon;
+        return this;
+    }
+
+    public void setWithCoupon(Boolean withCoupon) {
+        this.withCoupon = withCoupon;
     }
 
     public Coupon getCoupon() {
@@ -219,11 +235,12 @@ public class Purchase implements Serializable {
         return "Purchase{" +
             "id=" + getId() +
             ", userName='" + getUserName() + "'" +
-            ", userAddress='" + getUserAddress() + "'" +
+            ", userEmail='" + getUserEmail() + "'" +
+            ", address='" + getAddress() + "'" +
             ", quantity=" + getQuantity() +
-            ", confirmacao='" + getConfirmacao() + "'" +
-            ", withCoupon='" + getWithCoupon() + "'" +
+            ", confirmation='" + getConfirmation() + "'" +
             ", withWarranty='" + getWithWarranty() + "'" +
+            ", withCoupon='" + getWithCoupon() + "'" +
             "}";
     }
 }

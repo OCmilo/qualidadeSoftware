@@ -9,9 +9,9 @@ import org.mapstruct.*;
  */
 @Mapper(componentModel = "spring", uses = {})
 public interface WarrantyMapper extends EntityMapper<WarrantyDTO, Warranty> {
-    @Named("warrantyDesc")
+    @Named("warrantyDescription")
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
-    @Mapping(target = "warrantyDesc", source = "warrantyDesc")
-    WarrantyDTO toDtoWarrantyDesc(Warranty warranty);
+    @Mapping(target = "warrantyDescription", source = "warrantyDescription")
+    WarrantyDTO toDtoWarrantyDescription(Warranty warranty);
 }

@@ -10,7 +10,7 @@ public class WarrantyDTO implements Serializable {
 
     private Long id;
 
-    private String warrantyDesc;
+    private String warrantyDescription;
 
     private Double warrantyMonths;
 
@@ -22,12 +22,12 @@ public class WarrantyDTO implements Serializable {
         this.id = id;
     }
 
-    public String getWarrantyDesc() {
-        return warrantyDesc;
+    public String getWarrantyDescription() {
+        return warrantyDescription;
     }
 
-    public void setWarrantyDesc(String warrantyDesc) {
-        this.warrantyDesc = warrantyDesc;
+    public void setWarrantyDescription(String warrantyDescription) {
+        this.warrantyDescription = warrantyDescription;
     }
 
     public Double getWarrantyMonths() {
@@ -64,7 +64,7 @@ public class WarrantyDTO implements Serializable {
     public String toString() {
         return "WarrantyDTO{" +
             "id=" + getId() +
-            ", warrantyDesc='" + getWarrantyDesc() + "'" +
+            ", warrantyDescription='" + getWarrantyDescription() + "'" +
             ", warrantyMonths=" + getWarrantyMonths() +
             "}";
     }

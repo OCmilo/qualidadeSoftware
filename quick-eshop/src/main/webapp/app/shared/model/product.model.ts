@@ -1,9 +1,15 @@
 export interface IProduct {
   id?: number;
-  barcode?: string | null;
   productName?: string | null;
+  availableQuantity?: number | null;
+  price?: number | null;
 }
 
 export class Product implements IProduct {
-  constructor(public id?: number, public barcode?: string | null, public productName?: string | null) {}
+  constructor(
+    public id?: number,
+    public productName?: string | null,
+    public availableQuantity?: number | null,
+    public price?: number | null
+  ) {}
 }

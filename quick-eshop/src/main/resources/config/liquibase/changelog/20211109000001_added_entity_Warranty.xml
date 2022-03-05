@@ -14,7 +14,7 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="warranty_desc" type="varchar(255)">
+            <column name="warranty_description" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="warranty_months" type="double">

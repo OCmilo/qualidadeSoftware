@@ -13,10 +13,10 @@
             <span>{{ coupon.couponName }}</span>
           </dd>
           <dt>
-            <span v-text="$t('appApp.coupon.couponValue')">Coupon Value</span>
+            <span v-text="$t('appApp.coupon.couponDiscount')">Coupon Discount</span>
           </dt>
           <dd>
-            <span>{{ coupon.couponValue }}</span>
+            <span>{{ coupon.couponDiscount }}</span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

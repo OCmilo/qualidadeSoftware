@@ -5,7 +5,7 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "couponValue",
+      "fieldName": "couponDiscount",
       "fieldType": "Double"
     }
   ],

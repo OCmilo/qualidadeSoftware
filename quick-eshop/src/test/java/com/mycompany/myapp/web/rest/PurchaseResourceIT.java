@@ -34,20 +34,23 @@ class PurchaseResourceIT {
     private static final String DEFAULT_USER_NAME = "AAAAAAAAAA";
     private static final String UPDATED_USER_NAME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_USER_ADDRESS = "AAAAAAAAAA";
-    private static final String UPDATED_USER_ADDRESS = "BBBBBBBBBB";
+    private static final String DEFAULT_USER_EMAIL = "AAAAAAAAAA";
+    private static final String UPDATED_USER_EMAIL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_ADDRESS = "AAAAAAAAAA";
+    private static final String UPDATED_ADDRESS = "BBBBBBBBBB";
 
     private static final Double DEFAULT_QUANTITY = 1D;
     private static final Double UPDATED_QUANTITY = 2D;
 
-    private static final Boolean DEFAULT_CONFIRMACAO = false;
-    private static final Boolean UPDATED_CONFIRMACAO = true;
-
-    private static final Boolean DEFAULT_WITH_COUPON = false;
-    private static final Boolean UPDATED_WITH_COUPON = true;
+    private static final Boolean DEFAULT_CONFIRMATION = false;
+    private static final Boolean UPDATED_CONFIRMATION = true;
 
     private static final Boolean DEFAULT_WITH_WARRANTY = false;
     private static final Boolean UPDATED_WITH_WARRANTY = true;
+
+    private static final Boolean DEFAULT_WITH_COUPON = false;
+    private static final Boolean UPDATED_WITH_COUPON = true;
 
     private static final String ENTITY_API_URL = "/api/purchases";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -78,11 +81,12 @@ class PurchaseResourceIT {
     public static Purchase createEntity(EntityManager em) {
         Purchase purchase = new Purchase()
             .userName(DEFAULT_USER_NAME)
-            .userAddress(DEFAULT_USER_ADDRESS)
+            .userEmail(DEFAULT_USER_EMAIL)
+            .address(DEFAULT_ADDRESS)
             .quantity(DEFAULT_QUANTITY)
-            .confirmacao(DEFAULT_CONFIRMACAO)
-            .withCoupon(DEFAULT_WITH_COUPON)
-            .withWarranty(DEFAULT_WITH_WARRANTY);
+            .confirmation(DEFAULT_CONFIRMATION)
+            .withWarranty(DEFAULT_WITH_WARRANTY)
+            .withCoupon(DEFAULT_WITH_COUPON);
         return purchase;
     }
 
@@ -95,11 +99,12 @@ class PurchaseResourceIT {
     public static Purchase createUpdatedEntity(EntityManager em) {
         Purchase purchase = new Purchase()
             .userName(UPDATED_USER_NAME)
-            .userAddress(UPDATED_USER_ADDRESS)
+            .userEmail(UPDATED_USER_EMAIL)
+            .address(UPDATED_ADDRESS)
             .quantity(UPDATED_QUANTITY)
-            .confirmacao(UPDATED_CONFIRMACAO)
-            .withCoupon(UPDATED_WITH_COUPON)
-            .withWarranty(UPDATED_WITH_WARRANTY);
+            .confirmation(UPDATED_CONFIRMATION)
+            .withWarranty(UPDATED_WITH_WARRANTY)
+            .withCoupon(UPDATED_WITH_COUPON);
         return purchase;
     }
 
@@ -121,11 +126,12 @@ class PurchaseResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(purchase.getId().intValue())))
             .andExpect(jsonPath("$.[*].userName").value(hasItem(DEFAULT_USER_NAME)))
-            .andExpect(jsonPath("$.[*].userAddress").value(hasItem(DEFAULT_USER_ADDRESS)))
+            .andExpect(jsonPath("$.[*].userEmail").value(hasItem(DEFAULT_USER_EMAIL)))
+            .andExpect(jsonPath("$.[*].address").value(hasItem(DEFAULT_ADDRESS)))
             .andExpect(jsonPath("$.[*].quantity").value(hasItem(DEFAULT_QUANTITY.doubleValue())))
-            .andExpect(jsonPath("$.[*].confirmacao").value(hasItem(DEFAULT_CONFIRMACAO.booleanValue())))
-            .andExpect(jsonPath("$.[*].withCoupon").value(hasItem(DEFAULT_WITH_COUPON.booleanValue())))
-            .andExpect(jsonPath("$.[*].withWarranty").value(hasItem(DEFAULT_WITH_WARRANTY.booleanValue())));
+            .andExpect(jsonPath("$.[*].confirmation").value(hasItem(DEFAULT_CONFIRMATION.booleanValue())))
+            .andExpect(jsonPath("$.[*].withWarranty").value(hasItem(DEFAULT_WITH_WARRANTY.booleanValue())))
+            .andExpect(jsonPath("$.[*].withCoupon").value(hasItem(DEFAULT_WITH_COUPON.booleanValue())));
     }
 
     @Test
@@ -141,11 +147,12 @@ class PurchaseResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(purchase.getId().intValue()))
             .andExpect(jsonPath("$.userName").value(DEFAULT_USER_NAME))
-            .andExpect(jsonPath("$.userAddress").value(DEFAULT_USER_ADDRESS))
+            .andExpect(jsonPath("$.userEmail").value(DEFAULT_USER_EMAIL))
+            .andExpect(jsonPath("$.address").value(DEFAULT_ADDRESS))
             .andExpect(jsonPath("$.quantity").value(DEFAULT_QUANTITY.doubleValue()))
-            .andExpect(jsonPath("$.confirmacao").value(DEFAULT_CONFIRMACAO.booleanValue()))
-            .andExpect(jsonPath("$.withCoupon").value(DEFAULT_WITH_COUPON.booleanValue()))
-            .andExpect(jsonPath("$.withWarranty").value(DEFAULT_WITH_WARRANTY.booleanValue()));
+            .andExpect(jsonPath("$.confirmation").value(DEFAULT_CONFIRMATION.booleanValue()))
+            .andExpect(jsonPath("$.withWarranty").value(DEFAULT_WITH_WARRANTY.booleanValue()))
+            .andExpect(jsonPath("$.withCoupon").value(DEFAULT_WITH_COUPON.booleanValue()));
     }
 
     @Test

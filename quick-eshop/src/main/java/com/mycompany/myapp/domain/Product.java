@@ -20,11 +20,14 @@ public class Product implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "barcode")
-    private String barcode;
-
     @Column(name = "product_name")
     private String productName;
+
+    @Column(name = "available_quantity")
+    private Double availableQuantity;
+
+    @Column(name = "price")
+    private Double price;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -40,19 +43,6 @@ public class Product implements Serializable {
         return this;
     }
 
-    public String getBarcode() {
-        return this.barcode;
-    }
-
-    public Product barcode(String barcode) {
-        this.barcode = barcode;
-        return this;
-    }
-
-    public void setBarcode(String barcode) {
-        this.barcode = barcode;
-    }
-
     public String getProductName() {
         return this.productName;
     }
@@ -64,6 +54,32 @@ public class Product implements Serializable {
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public Double getAvailableQuantity() {
+        return this.availableQuantity;
+    }
+
+    public Product availableQuantity(Double availableQuantity) {
+        this.availableQuantity = availableQuantity;
+        return this;
+    }
+
+    public void setAvailableQuantity(Double availableQuantity) {
+        this.availableQuantity = availableQuantity;
+    }
+
+    public Double getPrice() {
+        return this.price;
+    }
+
+    public Product price(Double price) {
+        this.price = price;
+        return this;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -90,8 +106,9 @@ public class Product implements Serializable {
     public String toString() {
         return "Product{" +
             "id=" + getId() +
-            ", barcode='" + getBarcode() + "'" +
             ", productName='" + getProductName() + "'" +
+            ", availableQuantity=" + getAvailableQuantity() +
+            ", price=" + getPrice() +
             "}";
     }
 }

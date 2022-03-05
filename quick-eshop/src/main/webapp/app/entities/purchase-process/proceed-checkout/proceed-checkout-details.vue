@@ -9,15 +9,15 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('appApp.proceedCheckout.confirmacao')">confirmacao</label>
+              <label class="form-control-label" v-text="$t('appApp.proceedCheckout.confirmation')">confirmation</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="confirmacao"
-                id="purchase-confirmacao"
-                data-cy="confirmacao"
-                v-model="taskContext.purchaseProcess.purchase.confirmacao"
+                name="confirmation"
+                id="purchase-confirmation"
+                data-cy="confirmation"
+                v-model="taskContext.purchaseProcess.purchase.confirmation"
               />
             </div>
           </template>

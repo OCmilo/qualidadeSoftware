@@ -5,7 +5,7 @@ import WarrantyService from './warranty.service';
 
 const validations: any = {
   warranty: {
-    warrantyDesc: {},
+    warrantyDescription: {},
     warrantyMonths: {},
   },
 };

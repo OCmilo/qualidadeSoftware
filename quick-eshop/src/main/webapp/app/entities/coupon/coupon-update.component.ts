@@ -6,7 +6,7 @@ import CouponService from './coupon.service';
 const validations: any = {
   coupon: {
     couponName: {},
-    couponValue: {},
+    couponDiscount: {},
   },
 };
 

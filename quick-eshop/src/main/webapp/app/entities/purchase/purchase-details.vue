@@ -13,10 +13,16 @@
             <span>{{ purchase.userName }}</span>
           </dd>
           <dt>
-            <span v-text="$t('appApp.purchase.userAddress')">User Address</span>
+            <span v-text="$t('appApp.purchase.userEmail')">User Email</span>
           </dt>
           <dd>
-            <span>{{ purchase.userAddress }}</span>
+            <span>{{ purchase.userEmail }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('appApp.purchase.address')">Address</span>
+          </dt>
+          <dd>
+            <span>{{ purchase.address }}</span>
           </dd>
           <dt>
             <span v-text="$t('appApp.purchase.quantity')">Quantity</span>
@@ -25,22 +31,22 @@
             <span>{{ purchase.quantity }}</span>
           </dd>
           <dt>
-            <span v-text="$t('appApp.purchase.confirmacao')">Confirmacao</span>
+            <span v-text="$t('appApp.purchase.confirmation')">Confirmation</span>
           </dt>
           <dd>
-            <span>{{ purchase.confirmacao }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('appApp.purchase.withCoupon')">With Coupon</span>
-          </dt>
-          <dd>
-            <span>{{ purchase.withCoupon }}</span>
+            <span>{{ purchase.confirmation }}</span>
           </dd>
           <dt>
             <span v-text="$t('appApp.purchase.withWarranty')">With Warranty</span>
           </dt>
           <dd>
             <span>{{ purchase.withWarranty }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('appApp.purchase.withCoupon')">With Coupon</span>
+          </dt>
+          <dd>
+            <span>{{ purchase.withCoupon }}</span>
           </dd>
           <dt>
             <span v-text="$t('appApp.purchase.coupon')">Coupon</span>
@@ -78,7 +84,7 @@
           <dd>
             <div v-if="purchase.warranty">
               <router-link :to="{ name: 'WarrantyView', params: { warrantyId: purchase.warranty.id } }">{{
-                purchase.warranty.warrantyDesc
+                purchase.warranty.warrantyDescription
               }}</router-link>
             </div>
           </dd>

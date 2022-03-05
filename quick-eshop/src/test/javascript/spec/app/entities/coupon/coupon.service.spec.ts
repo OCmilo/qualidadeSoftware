@@ -82,7 +82,7 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             couponName: 'BBBBBB',
-            couponValue: 1,
+            couponDiscount: 1,
           },
           elemDefault
         );
@@ -138,7 +138,7 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             couponName: 'BBBBBB',
-            couponValue: 1,
+            couponDiscount: 1,
           },
           elemDefault
         );

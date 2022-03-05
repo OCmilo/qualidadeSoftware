@@ -7,7 +7,7 @@ const validations: any = {
   taskContext: {
     purchaseProcess: {
       purchase: {
-        confirmacao: {},
+        confirmation: {},
       },
     },
   },

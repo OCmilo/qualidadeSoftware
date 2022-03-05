@@ -31,11 +31,14 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class ProductResourceIT {
 
-    private static final String DEFAULT_BARCODE = "AAAAAAAAAA";
-    private static final String UPDATED_BARCODE = "BBBBBBBBBB";
-
     private static final String DEFAULT_PRODUCT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_PRODUCT_NAME = "BBBBBBBBBB";
+
+    private static final Double DEFAULT_AVAILABLE_QUANTITY = 1D;
+    private static final Double UPDATED_AVAILABLE_QUANTITY = 2D;
+
+    private static final Double DEFAULT_PRICE = 1D;
+    private static final Double UPDATED_PRICE = 2D;
 
     private static final String ENTITY_API_URL = "/api/products";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -64,7 +67,10 @@ class ProductResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Product createEntity(EntityManager em) {
-        Product product = new Product().barcode(DEFAULT_BARCODE).productName(DEFAULT_PRODUCT_NAME);
+        Product product = new Product()
+            .productName(DEFAULT_PRODUCT_NAME)
+            .availableQuantity(DEFAULT_AVAILABLE_QUANTITY)
+            .price(DEFAULT_PRICE);
         return product;
     }
 
@@ -75,7 +81,10 @@ class ProductResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Product createUpdatedEntity(EntityManager em) {
-        Product product = new Product().barcode(UPDATED_BARCODE).productName(UPDATED_PRODUCT_NAME);
+        Product product = new Product()
+            .productName(UPDATED_PRODUCT_NAME)
+            .availableQuantity(UPDATED_AVAILABLE_QUANTITY)
+            .price(UPDATED_PRICE);
         return product;
     }
 
@@ -98,8 +107,9 @@ class ProductResourceIT {
         List<Product> productList = productRepository.findAll();
         assertThat(productList).hasSize(databaseSizeBeforeCreate + 1);
         Product testProduct = productList.get(productList.size() - 1);
-        assertThat(testProduct.getBarcode()).isEqualTo(DEFAULT_BARCODE);
         assertThat(testProduct.getProductName()).isEqualTo(DEFAULT_PRODUCT_NAME);
+        assertThat(testProduct.getAvailableQuantity()).isEqualTo(DEFAULT_AVAILABLE_QUANTITY);
+        assertThat(testProduct.getPrice()).isEqualTo(DEFAULT_PRICE);
     }
 
     @Test
@@ -133,8 +143,9 @@ class ProductResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(product.getId().intValue())))
-            .andExpect(jsonPath("$.[*].barcode").value(hasItem(DEFAULT_BARCODE)))
-            .andExpect(jsonPath("$.[*].productName").value(hasItem(DEFAULT_PRODUCT_NAME)));
+            .andExpect(jsonPath("$.[*].productName").value(hasItem(DEFAULT_PRODUCT_NAME)))
+            .andExpect(jsonPath("$.[*].availableQuantity").value(hasItem(DEFAULT_AVAILABLE_QUANTITY.doubleValue())))
+            .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE.doubleValue())));
     }
 
     @Test
@@ -149,8 +160,9 @@ class ProductResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(product.getId().intValue()))
-            .andExpect(jsonPath("$.barcode").value(DEFAULT_BARCODE))
-            .andExpect(jsonPath("$.productName").value(DEFAULT_PRODUCT_NAME));
+            .andExpect(jsonPath("$.productName").value(DEFAULT_PRODUCT_NAME))
+            .andExpect(jsonPath("$.availableQuantity").value(DEFAULT_AVAILABLE_QUANTITY.doubleValue()))
+            .andExpect(jsonPath("$.price").value(DEFAULT_PRICE.doubleValue()));
     }
 
     @Test
@@ -172,7 +184,7 @@ class ProductResourceIT {
         Product updatedProduct = productRepository.findById(product.getId()).get();
         // Disconnect from session so that the updates on updatedProduct are not directly saved in db
         em.detach(updatedProduct);
-        updatedProduct.barcode(UPDATED_BARCODE).productName(UPDATED_PRODUCT_NAME);
+        updatedProduct.productName(UPDATED_PRODUCT_NAME).availableQuantity(UPDATED_AVAILABLE_QUANTITY).price(UPDATED_PRICE);
         ProductDTO productDTO = productMapper.toDto(updatedProduct);
 
         restProductMockMvc
@@ -187,8 +199,9 @@ class ProductResourceIT {
         List<Product> productList = productRepository.findAll();
         assertThat(productList).hasSize(databaseSizeBeforeUpdate);
         Product testProduct = productList.get(productList.size() - 1);
-        assertThat(testProduct.getBarcode()).isEqualTo(UPDATED_BARCODE);
         assertThat(testProduct.getProductName()).isEqualTo(UPDATED_PRODUCT_NAME);
+        assertThat(testProduct.getAvailableQuantity()).isEqualTo(UPDATED_AVAILABLE_QUANTITY);
+        assertThat(testProduct.getPrice()).isEqualTo(UPDATED_PRICE);
     }
 
     @Test
@@ -268,6 +281,8 @@ class ProductResourceIT {
         Product partialUpdatedProduct = new Product();
         partialUpdatedProduct.setId(product.getId());
 
+        partialUpdatedProduct.price(UPDATED_PRICE);
+
         restProductMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedProduct.getId())
@@ -280,8 +295,9 @@ class ProductResourceIT {
         List<Product> productList = productRepository.findAll();
         assertThat(productList).hasSize(databaseSizeBeforeUpdate);
         Product testProduct = productList.get(productList.size() - 1);
-        assertThat(testProduct.getBarcode()).isEqualTo(DEFAULT_BARCODE);
         assertThat(testProduct.getProductName()).isEqualTo(DEFAULT_PRODUCT_NAME);
+        assertThat(testProduct.getAvailableQuantity()).isEqualTo(DEFAULT_AVAILABLE_QUANTITY);
+        assertThat(testProduct.getPrice()).isEqualTo(UPDATED_PRICE);
     }
 
     @Test
@@ -296,7 +312,7 @@ class ProductResourceIT {
         Product partialUpdatedProduct = new Product();
         partialUpdatedProduct.setId(product.getId());
 
-        partialUpdatedProduct.barcode(UPDATED_BARCODE).productName(UPDATED_PRODUCT_NAME);
+        partialUpdatedProduct.productName(UPDATED_PRODUCT_NAME).availableQuantity(UPDATED_AVAILABLE_QUANTITY).price(UPDATED_PRICE);
 
         restProductMockMvc
             .perform(
@@ -310,8 +326,9 @@ class ProductResourceIT {
         List<Product> productList = productRepository.findAll();
         assertThat(productList).hasSize(databaseSizeBeforeUpdate);
         Product testProduct = productList.get(productList.size() - 1);
-        assertThat(testProduct.getBarcode()).isEqualTo(UPDATED_BARCODE);
         assertThat(testProduct.getProductName()).isEqualTo(UPDATED_PRODUCT_NAME);
+        assertThat(testProduct.getAvailableQuantity()).isEqualTo(UPDATED_AVAILABLE_QUANTITY);
+        assertThat(testProduct.getPrice()).isEqualTo(UPDATED_PRICE);
     }
 
     @Test

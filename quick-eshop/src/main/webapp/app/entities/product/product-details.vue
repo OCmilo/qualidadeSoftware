@@ -7,16 +7,22 @@
         </h2>
         <dl class="row jh-entity-details">
           <dt>
-            <span v-text="$t('appApp.product.barcode')">Barcode</span>
-          </dt>
-          <dd>
-            <span>{{ product.barcode }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('appApp.product.productName')">Product Name</span>
           </dt>
           <dd>
             <span>{{ product.productName }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('appApp.product.availableQuantity')">Available Quantity</span>
+          </dt>
+          <dd>
+            <span>{{ product.availableQuantity }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('appApp.product.price')">Price</span>
+          </dt>
+          <dd>
+            <span>{{ product.price }}</span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

@@ -29,7 +29,7 @@
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('appApp.warranty.warrantyDesc')">Warranty Desc</span></th>
+            <th scope="row"><span v-text="$t('appApp.warranty.warrantyDescription')">Warranty Description</span></th>
             <th scope="row"><span v-text="$t('appApp.warranty.warrantyMonths')">Warranty Months</span></th>
             <th scope="row"></th>
           </tr>
@@ -39,7 +39,7 @@
             <td>
               <router-link :to="{ name: 'WarrantyView', params: { warrantyId: warranty.id } }">{{ warranty.id }}</router-link>
             </td>
-            <td>{{ warranty.warrantyDesc }}</td>
+            <td>{{ warranty.warrantyDescription }}</td>
             <td>{{ warranty.warrantyMonths }}</td>
             <td class="text-right">
               <div class="btn-group">

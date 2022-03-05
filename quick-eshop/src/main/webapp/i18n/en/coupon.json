@@ -19,7 +19,7 @@
       },
       "id": "ID",
       "couponName": "Coupon Name",
-      "couponValue": "Coupon Value"
+      "couponDiscount": "Coupon Discount"
     }
   }
 }

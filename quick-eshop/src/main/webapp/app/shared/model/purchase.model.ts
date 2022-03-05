@@ -6,11 +6,12 @@ import { IWarranty } from '@/shared/model/warranty.model';
 export interface IPurchase {
   id?: number;
   userName?: string | null;
-  userAddress?: string | null;
+  userEmail?: string | null;
+  address?: string | null;
   quantity?: number | null;
-  confirmacao?: boolean | null;
-  withCoupon?: boolean | null;
+  confirmation?: boolean | null;
   withWarranty?: boolean | null;
+  withCoupon?: boolean | null;
   coupon?: ICoupon | null;
   freight?: IFreight | null;
   product?: IProduct | null;
@@ -21,18 +22,19 @@ export class Purchase implements IPurchase {
   constructor(
     public id?: number,
     public userName?: string | null,
-    public userAddress?: string | null,
+    public userEmail?: string | null,
+    public address?: string | null,
     public quantity?: number | null,
-    public confirmacao?: boolean | null,
-    public withCoupon?: boolean | null,
+    public confirmation?: boolean | null,
     public withWarranty?: boolean | null,
+    public withCoupon?: boolean | null,
     public coupon?: ICoupon | null,
     public freight?: IFreight | null,
     public product?: IProduct | null,
     public warranty?: IWarranty | null
   ) {
-    this.confirmacao = this.confirmacao ?? false;
-    this.withCoupon = this.withCoupon ?? false;
+    this.confirmation = this.confirmation ?? false;
     this.withWarranty = this.withWarranty ?? false;
+    this.withCoupon = this.withCoupon ?? false;
   }
 }

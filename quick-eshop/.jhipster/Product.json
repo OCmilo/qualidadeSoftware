@@ -1,12 +1,16 @@
 {
   "fields": [
     {
-      "fieldName": "barcode",
+      "fieldName": "productName",
       "fieldType": "String"
     },
     {
-      "fieldName": "productName",
-      "fieldType": "String"
+      "fieldName": "availableQuantity",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Double"
     }
   ],
   "relationships": [],

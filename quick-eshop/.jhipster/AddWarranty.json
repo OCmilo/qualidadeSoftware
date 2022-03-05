@@ -5,7 +5,7 @@
       "relationshipName": "warranty",
       "otherEntityName": "warranty",
       "relationshipType": "many-to-one",
-      "otherEntityField": "warrantyDesc"
+      "otherEntityField": "warrantyDescription"
     }
   ],
   "entityType": "user-task-form",

@@ -14,7 +14,7 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="user_address" type="varchar(255)">
+            <column name="address" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="with_coupon" type="boolean">

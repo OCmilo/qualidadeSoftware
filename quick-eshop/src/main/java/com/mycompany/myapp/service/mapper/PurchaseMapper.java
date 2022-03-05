@@ -12,6 +12,6 @@ public interface PurchaseMapper extends EntityMapper<PurchaseDTO, Purchase> {
     @Mapping(target = "coupon", source = "coupon", qualifiedByName = "couponName")
     @Mapping(target = "freight", source = "freight", qualifiedByName = "freighter")
     @Mapping(target = "product", source = "product", qualifiedByName = "productName")
-    @Mapping(target = "warranty", source = "warranty", qualifiedByName = "warrantyDesc")
+    @Mapping(target = "warranty", source = "warranty", qualifiedByName = "warrantyDescription")
     PurchaseDTO toDto(Purchase s);
 }

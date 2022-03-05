@@ -71,7 +71,7 @@ public class ProceedCheckoutService {
 
     public void save(ProceedCheckoutContextDTO proceedCheckoutContext) {
         PurchaseDTO purchaseDTO = purchaseService.findOne(proceedCheckoutContext.getPurchaseProcess().getPurchase().getId()).orElseThrow();
-        purchaseDTO.setConfirmacao(proceedCheckoutContext.getPurchaseProcess().getPurchase().getConfirmacao());
+        purchaseDTO.setConfirmation(proceedCheckoutContext.getPurchaseProcess().getPurchase().getConfirmation());
         purchaseService.save(purchaseDTO);
     }
 

@@ -18,7 +18,7 @@
         "title": "Choose Freight"
       },
       "id": "ID",
-      "userAddress": "User Address",
+      "address": "Address",
       "withCoupon": "With Coupon",
       "freight": "Freight"
     }

@@ -27,15 +27,17 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('appApp.coupon.couponValue')" for="coupon-couponValue">Coupon Value</label>
+            <label class="form-control-label" v-text="$t('appApp.coupon.couponDiscount')" for="coupon-couponDiscount"
+              >Coupon Discount</label
+            >
             <input
               type="number"
               class="form-control"
-              name="couponValue"
-              id="coupon-couponValue"
-              data-cy="couponValue"
-              :class="{ valid: !$v.coupon.couponValue.$invalid, invalid: $v.coupon.couponValue.$invalid }"
-              v-model.number="$v.coupon.couponValue.$model"
+              name="couponDiscount"
+              id="coupon-couponDiscount"
+              data-cy="couponDiscount"
+              :class="{ valid: !$v.coupon.couponDiscount.$invalid, invalid: $v.coupon.couponDiscount.$invalid }"
+              v-model.number="$v.coupon.couponDiscount.$model"
             />
           </div>
         </div>

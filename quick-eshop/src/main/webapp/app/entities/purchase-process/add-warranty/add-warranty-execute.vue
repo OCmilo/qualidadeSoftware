@@ -27,7 +27,7 @@
                   v-for="warrantyOption in warranties"
                   :key="warrantyOption.id"
                 >
-                  {{ warrantyOption.warrantyDesc }}
+                  {{ warrantyOption.warrantyDescription }}
                 </option>
               </select>
             </div>

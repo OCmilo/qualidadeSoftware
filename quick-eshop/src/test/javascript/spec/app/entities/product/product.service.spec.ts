@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new ProductService();
-      elemDefault = new Product(0, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new Product(0, 'AAAAAAA', 0, 0);
     });
 
     describe('Service methods', () => {
@@ -81,8 +81,9 @@ describe('Service Tests', () => {
       it('should update a Product', async () => {
         const returnedFromService = Object.assign(
           {
-            barcode: 'BBBBBB',
             productName: 'BBBBBB',
+            availableQuantity: 1,
+            price: 1,
           },
           elemDefault
         );
@@ -107,7 +108,12 @@ describe('Service Tests', () => {
       });
 
       it('should partial update a Product', async () => {
-        const patchObject = Object.assign({}, new Product());
+        const patchObject = Object.assign(
+          {
+            price: 1,
+          },
+          new Product()
+        );
         const returnedFromService = Object.assign(patchObject, elemDefault);
 
         const expected = Object.assign({}, returnedFromService);
@@ -132,8 +138,9 @@ describe('Service Tests', () => {
       it('should return a list of Product', async () => {
         const returnedFromService = Object.assign(
           {
-            barcode: 'BBBBBB',
             productName: 'BBBBBB',
+            availableQuantity: 1,
+            price: 1,
           },
           elemDefault
         );

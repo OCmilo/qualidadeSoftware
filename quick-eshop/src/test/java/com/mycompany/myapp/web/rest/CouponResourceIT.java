@@ -34,8 +34,8 @@ class CouponResourceIT {
     private static final String DEFAULT_COUPON_NAME = "AAAAAAAAAA";
     private static final String UPDATED_COUPON_NAME = "BBBBBBBBBB";
 
-    private static final Double DEFAULT_COUPON_VALUE = 1D;
-    private static final Double UPDATED_COUPON_VALUE = 2D;
+    private static final Double DEFAULT_COUPON_DISCOUNT = 1D;
+    private static final Double UPDATED_COUPON_DISCOUNT = 2D;
 
     private static final String ENTITY_API_URL = "/api/coupons";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -64,7 +64,7 @@ class CouponResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Coupon createEntity(EntityManager em) {
-        Coupon coupon = new Coupon().couponName(DEFAULT_COUPON_NAME).couponValue(DEFAULT_COUPON_VALUE);
+        Coupon coupon = new Coupon().couponName(DEFAULT_COUPON_NAME).couponDiscount(DEFAULT_COUPON_DISCOUNT);
         return coupon;
     }
 
@@ -75,7 +75,7 @@ class CouponResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Coupon createUpdatedEntity(EntityManager em) {
-        Coupon coupon = new Coupon().couponName(UPDATED_COUPON_NAME).couponValue(UPDATED_COUPON_VALUE);
+        Coupon coupon = new Coupon().couponName(UPDATED_COUPON_NAME).couponDiscount(UPDATED_COUPON_DISCOUNT);
         return coupon;
     }
 
@@ -99,7 +99,7 @@ class CouponResourceIT {
         assertThat(couponList).hasSize(databaseSizeBeforeCreate + 1);
         Coupon testCoupon = couponList.get(couponList.size() - 1);
         assertThat(testCoupon.getCouponName()).isEqualTo(DEFAULT_COUPON_NAME);
-        assertThat(testCoupon.getCouponValue()).isEqualTo(DEFAULT_COUPON_VALUE);
+        assertThat(testCoupon.getCouponDiscount()).isEqualTo(DEFAULT_COUPON_DISCOUNT);
     }
 
     @Test
@@ -134,7 +134,7 @@ class CouponResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(coupon.getId().intValue())))
             .andExpect(jsonPath("$.[*].couponName").value(hasItem(DEFAULT_COUPON_NAME)))
-            .andExpect(jsonPath("$.[*].couponValue").value(hasItem(DEFAULT_COUPON_VALUE.doubleValue())));
+            .andExpect(jsonPath("$.[*].couponDiscount").value(hasItem(DEFAULT_COUPON_DISCOUNT.doubleValue())));
     }
 
     @Test
@@ -150,7 +150,7 @@ class CouponResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(coupon.getId().intValue()))
             .andExpect(jsonPath("$.couponName").value(DEFAULT_COUPON_NAME))
-            .andExpect(jsonPath("$.couponValue").value(DEFAULT_COUPON_VALUE.doubleValue()));
+            .andExpect(jsonPath("$.couponDiscount").value(DEFAULT_COUPON_DISCOUNT.doubleValue()));
     }
 
     @Test
@@ -172,7 +172,7 @@ class CouponResourceIT {
         Coupon updatedCoupon = couponRepository.findById(coupon.getId()).get();
         // Disconnect from session so that the updates on updatedCoupon are not directly saved in db
         em.detach(updatedCoupon);
-        updatedCoupon.couponName(UPDATED_COUPON_NAME).couponValue(UPDATED_COUPON_VALUE);
+        updatedCoupon.couponName(UPDATED_COUPON_NAME).couponDiscount(UPDATED_COUPON_DISCOUNT);
         CouponDTO couponDTO = couponMapper.toDto(updatedCoupon);
 
         restCouponMockMvc
@@ -188,7 +188,7 @@ class CouponResourceIT {
         assertThat(couponList).hasSize(databaseSizeBeforeUpdate);
         Coupon testCoupon = couponList.get(couponList.size() - 1);
         assertThat(testCoupon.getCouponName()).isEqualTo(UPDATED_COUPON_NAME);
-        assertThat(testCoupon.getCouponValue()).isEqualTo(UPDATED_COUPON_VALUE);
+        assertThat(testCoupon.getCouponDiscount()).isEqualTo(UPDATED_COUPON_DISCOUNT);
     }
 
     @Test
@@ -283,7 +283,7 @@ class CouponResourceIT {
         assertThat(couponList).hasSize(databaseSizeBeforeUpdate);
         Coupon testCoupon = couponList.get(couponList.size() - 1);
         assertThat(testCoupon.getCouponName()).isEqualTo(UPDATED_COUPON_NAME);
-        assertThat(testCoupon.getCouponValue()).isEqualTo(DEFAULT_COUPON_VALUE);
+        assertThat(testCoupon.getCouponDiscount()).isEqualTo(DEFAULT_COUPON_DISCOUNT);
     }
 
     @Test
@@ -298,7 +298,7 @@ class CouponResourceIT {
         Coupon partialUpdatedCoupon = new Coupon();
         partialUpdatedCoupon.setId(coupon.getId());
 
-        partialUpdatedCoupon.couponName(UPDATED_COUPON_NAME).couponValue(UPDATED_COUPON_VALUE);
+        partialUpdatedCoupon.couponName(UPDATED_COUPON_NAME).couponDiscount(UPDATED_COUPON_DISCOUNT);
 
         restCouponMockMvc
             .perform(
@@ -313,7 +313,7 @@ class CouponResourceIT {
         assertThat(couponList).hasSize(databaseSizeBeforeUpdate);
         Coupon testCoupon = couponList.get(couponList.size() - 1);
         assertThat(testCoupon.getCouponName()).isEqualTo(UPDATED_COUPON_NAME);
-        assertThat(testCoupon.getCouponValue()).isEqualTo(UPDATED_COUPON_VALUE);
+        assertThat(testCoupon.getCouponDiscount()).isEqualTo(UPDATED_COUPON_DISCOUNT);
     }
 
     @Test

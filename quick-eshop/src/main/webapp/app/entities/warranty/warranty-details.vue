@@ -7,10 +7,10 @@
         </h2>
         <dl class="row jh-entity-details">
           <dt>
-            <span v-text="$t('appApp.warranty.warrantyDesc')">Warranty Desc</span>
+            <span v-text="$t('appApp.warranty.warrantyDescription')">Warranty Description</span>
           </dt>
           <dd>
-            <span>{{ warranty.warrantyDesc }}</span>
+            <span>{{ warranty.warrantyDescription }}</span>
           </dd>
           <dt>
             <span v-text="$t('appApp.warranty.warrantyMonths')">Warranty Months</span>

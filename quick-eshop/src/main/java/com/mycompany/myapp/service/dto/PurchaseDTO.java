@@ -12,15 +12,17 @@ public class PurchaseDTO implements Serializable {
 
     private String userName;
 
-    private String userAddress;
+    private String userEmail;
+
+    private String address;
 
     private Double quantity;
 
-    private Boolean confirmacao;
-
-    private Boolean withCoupon;
+    private Boolean confirmation;
 
     private Boolean withWarranty;
+
+    private Boolean withCoupon;
 
     private CouponDTO coupon;
 
@@ -46,12 +48,20 @@ public class PurchaseDTO implements Serializable {
         this.userName = userName;
     }
 
-    public String getUserAddress() {
-        return userAddress;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Double getQuantity() {
@@ -62,20 +72,12 @@ public class PurchaseDTO implements Serializable {
         this.quantity = quantity;
     }
 
-    public Boolean getConfirmacao() {
-        return confirmacao;
+    public Boolean getConfirmation() {
+        return confirmation;
     }
 
-    public void setConfirmacao(Boolean confirmacao) {
-        this.confirmacao = confirmacao;
-    }
-
-    public Boolean getWithCoupon() {
-        return withCoupon;
-    }
-
-    public void setWithCoupon(Boolean withCoupon) {
-        this.withCoupon = withCoupon;
+    public void setConfirmation(Boolean confirmation) {
+        this.confirmation = confirmation;
     }
 
     public Boolean getWithWarranty() {
@@ -84,6 +86,14 @@ public class PurchaseDTO implements Serializable {
 
     public void setWithWarranty(Boolean withWarranty) {
         this.withWarranty = withWarranty;
+    }
+
+    public Boolean getWithCoupon() {
+        return withCoupon;
+    }
+
+    public void setWithCoupon(Boolean withCoupon) {
+        this.withCoupon = withCoupon;
     }
 
     public CouponDTO getCoupon() {
@@ -145,11 +155,12 @@ public class PurchaseDTO implements Serializable {
         return "PurchaseDTO{" +
             "id=" + getId() +
             ", userName='" + getUserName() + "'" +
-            ", userAddress='" + getUserAddress() + "'" +
+            ", userEmail='" + getUserEmail() + "'" +
+            ", address='" + getAddress() + "'" +
             ", quantity=" + getQuantity() +
-            ", confirmacao='" + getConfirmacao() + "'" +
-            ", withCoupon='" + getWithCoupon() + "'" +
+            ", confirmation='" + getConfirmation() + "'" +
             ", withWarranty='" + getWithWarranty() + "'" +
+            ", withCoupon='" + getWithCoupon() + "'" +
             ", coupon=" + getCoupon() +
             ", freight=" + getFreight() +
             ", product=" + getProduct() +

@@ -31,6 +31,23 @@
                     v-model="$v.purchaseProcess.purchase.userName.$model"
                   />
                 </div>
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('appApp.purchaseStartForm.userEmail')" for="purchase-start-form-userEmail"
+                    >User Email</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="userEmail"
+                    id="purchase-start-form-userEmail"
+                    data-cy="userEmail"
+                    :class="{
+                      valid: !$v.purchaseProcess.purchase.userEmail.$invalid,
+                      invalid: $v.purchaseProcess.purchase.userEmail.$invalid,
+                    }"
+                    v-model="$v.purchaseProcess.purchase.userEmail.$model"
+                  />
+                </div>
               </div>
             </template>
           </akip-show-process-definition>

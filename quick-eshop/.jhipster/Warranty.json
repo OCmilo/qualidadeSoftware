@@ -1,7 +1,7 @@
 {
   "fields": [
     {
-      "fieldName": "warrantyDesc",
+      "fieldName": "warrantyDescription",
       "fieldType": "String"
     },
     {

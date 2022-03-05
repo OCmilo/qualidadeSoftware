@@ -10,7 +10,7 @@ const validations: any = {
   taskContext: {
     purchaseProcess: {
       purchase: {
-        userAddress: {},
+        address: {},
         withCoupon: {},
       },
     },

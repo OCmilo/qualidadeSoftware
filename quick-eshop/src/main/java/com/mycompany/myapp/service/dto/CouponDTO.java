@@ -12,7 +12,7 @@ public class CouponDTO implements Serializable {
 
     private String couponName;
 
-    private Double couponValue;
+    private Double couponDiscount;
 
     public Long getId() {
         return id;
@@ -30,12 +30,12 @@ public class CouponDTO implements Serializable {
         this.couponName = couponName;
     }
 
-    public Double getCouponValue() {
-        return couponValue;
+    public Double getCouponDiscount() {
+        return couponDiscount;
     }
 
-    public void setCouponValue(Double couponValue) {
-        this.couponValue = couponValue;
+    public void setCouponDiscount(Double couponDiscount) {
+        this.couponDiscount = couponDiscount;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class CouponDTO implements Serializable {
         return "CouponDTO{" +
             "id=" + getId() +
             ", couponName='" + getCouponName() + "'" +
-            ", couponValue=" + getCouponValue() +
+            ", couponDiscount=" + getCouponDiscount() +
             "}";
     }
 }

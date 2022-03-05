@@ -15,15 +15,17 @@
             <input type="text" class="form-control" id="id" name="id" v-model="warranty.id" readonly />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('appApp.warranty.warrantyDesc')" for="warranty-warrantyDesc">Warranty Desc</label>
+            <label class="form-control-label" v-text="$t('appApp.warranty.warrantyDescription')" for="warranty-warrantyDescription"
+              >Warranty Description</label
+            >
             <input
               type="text"
               class="form-control"
-              name="warrantyDesc"
-              id="warranty-warrantyDesc"
-              data-cy="warrantyDesc"
-              :class="{ valid: !$v.warranty.warrantyDesc.$invalid, invalid: $v.warranty.warrantyDesc.$invalid }"
-              v-model="$v.warranty.warrantyDesc.$model"
+              name="warrantyDescription"
+              id="warranty-warrantyDescription"
+              data-cy="warrantyDescription"
+              :class="{ valid: !$v.warranty.warrantyDescription.$invalid, invalid: $v.warranty.warrantyDescription.$invalid }"
+              v-model="$v.warranty.warrantyDescription.$model"
             />
           </div>
           <div class="form-group">

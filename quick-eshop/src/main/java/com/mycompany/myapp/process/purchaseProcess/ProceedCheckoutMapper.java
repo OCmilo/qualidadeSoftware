@@ -16,6 +16,6 @@ public interface ProceedCheckoutMapper {
 
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
-    @Mapping(target = "confirmacao", source = "confirmacao")
+    @Mapping(target = "confirmation", source = "confirmation")
     PurchaseDTO toPurchaseDTO(Purchase purchase);
 }

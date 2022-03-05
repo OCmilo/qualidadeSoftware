@@ -30,7 +30,7 @@
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span v-text="$t('appApp.coupon.couponName')">Coupon Name</span></th>
-            <th scope="row"><span v-text="$t('appApp.coupon.couponValue')">Coupon Value</span></th>
+            <th scope="row"><span v-text="$t('appApp.coupon.couponDiscount')">Coupon Discount</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -40,7 +40,7 @@
               <router-link :to="{ name: 'CouponView', params: { couponId: coupon.id } }">{{ coupon.id }}</router-link>
             </td>
             <td>{{ coupon.couponName }}</td>
-            <td>{{ coupon.couponValue }}</td>
+            <td>{{ coupon.couponDiscount }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'CouponView', params: { couponId: coupon.id } }" custom v-slot="{ navigate }">

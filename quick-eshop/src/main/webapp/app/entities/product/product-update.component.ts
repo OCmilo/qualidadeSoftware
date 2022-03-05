@@ -5,8 +5,9 @@ import ProductService from './product.service';
 
 const validations: any = {
   product: {
-    barcode: {},
     productName: {},
+    availableQuantity: {},
+    price: {},
   },
 };
 

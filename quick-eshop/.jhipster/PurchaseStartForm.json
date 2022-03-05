@@ -3,6 +3,10 @@
     {
       "fieldName": "userName",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "userEmail",
+      "fieldType": "String"
     }
   ],
   "relationships": [],

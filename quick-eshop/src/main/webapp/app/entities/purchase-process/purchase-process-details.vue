@@ -30,15 +30,29 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('appApp.purchaseProcess.userAddress')">userAddress</label>
+                  <label class="form-control-label" v-text="$t('appApp.purchaseProcess.userEmail')">userEmail</label>
                   <input
                     readonly
                     type="text"
                     class="form-control"
-                    name="userAddress"
-                    id="purchase-userAddress"
-                    data-cy="userAddress"
-                    v-model="purchaseProcess.purchase.userAddress"
+                    name="userEmail"
+                    id="purchase-userEmail"
+                    data-cy="userEmail"
+                    v-model="purchaseProcess.purchase.userEmail"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('appApp.purchaseProcess.address')">address</label>
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="address"
+                    id="purchase-address"
+                    data-cy="address"
+                    v-model="purchaseProcess.purchase.address"
                   />
                 </div>
               </div>
@@ -58,15 +72,15 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('appApp.purchaseProcess.confirmacao')">confirmacao</label>
+                  <label class="form-control-label" v-text="$t('appApp.purchaseProcess.confirmation')">confirmation</label>
                   <input
                     readonly
                     type="text"
                     class="form-control"
-                    name="confirmacao"
-                    id="purchase-confirmacao"
-                    data-cy="confirmacao"
-                    v-model="purchaseProcess.purchase.confirmacao"
+                    name="confirmation"
+                    id="purchase-confirmation"
+                    data-cy="confirmation"
+                    v-model="purchaseProcess.purchase.confirmation"
                   />
                 </div>
               </div>
@@ -165,7 +179,7 @@
                     name="warranty"
                     id="purchase-warranty"
                     data-cy="warranty"
-                    :value="purchaseProcess.purchase.warranty.warrantyDesc"
+                    :value="purchaseProcess.purchase.warranty.warrantyDescription"
                   />
                   <input
                     v-else

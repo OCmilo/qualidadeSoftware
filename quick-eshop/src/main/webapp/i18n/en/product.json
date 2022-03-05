@@ -18,8 +18,9 @@
         "title": "Product"
       },
       "id": "ID",
-      "barcode": "Barcode",
-      "productName": "Product Name"
+      "productName": "Product Name",
+      "availableQuantity": "Available Quantity",
+      "price": "Price"
     }
   }
 }

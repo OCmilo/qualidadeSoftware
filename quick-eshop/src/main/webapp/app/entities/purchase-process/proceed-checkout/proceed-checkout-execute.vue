@@ -9,20 +9,20 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('appApp.proceedCheckout.confirmacao')" for="proceed-checkout-confirmacao"
-                >Confirmacao</label
+              <label class="form-control-label" v-text="$t('appApp.proceedCheckout.confirmation')" for="proceed-checkout-confirmation"
+                >Confirmation</label
               >
               <input
                 type="checkbox"
                 class="form-check"
-                name="confirmacao"
-                id="proceed-checkout-confirmacao"
-                data-cy="confirmacao"
+                name="confirmation"
+                id="proceed-checkout-confirmation"
+                data-cy="confirmation"
                 :class="{
-                  valid: !$v.taskContext.purchaseProcess.purchase.confirmacao.$invalid,
-                  invalid: $v.taskContext.purchaseProcess.purchase.confirmacao.$invalid,
+                  valid: !$v.taskContext.purchaseProcess.purchase.confirmation.$invalid,
+                  invalid: $v.taskContext.purchaseProcess.purchase.confirmation.$invalid,
                 }"
-                v-model="$v.taskContext.purchaseProcess.purchase.confirmacao.$model"
+                v-model="$v.taskContext.purchaseProcess.purchase.confirmation.$model"
               />
             </div>
           </template>

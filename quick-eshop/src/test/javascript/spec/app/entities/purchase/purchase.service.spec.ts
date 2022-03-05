@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new PurchaseService();
-      elemDefault = new Purchase(0, 'AAAAAAA', 'AAAAAAA', 0, false, false, false);
+      elemDefault = new Purchase(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 0, false, false, false);
     });
 
     describe('Service methods', () => {
@@ -56,11 +56,12 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             userName: 'BBBBBB',
-            userAddress: 'BBBBBB',
+            userEmail: 'BBBBBB',
+            address: 'BBBBBB',
             quantity: 1,
-            confirmacao: true,
-            withCoupon: true,
+            confirmation: true,
             withWarranty: true,
+            withCoupon: true,
           },
           elemDefault
         );

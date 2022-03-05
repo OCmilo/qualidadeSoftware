@@ -23,6 +23,6 @@ public interface AddWarrantyMapper {
 
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
-    @Mapping(target = "warrantyDesc", source = "warrantyDesc")
-    WarrantyDTO toWarrantyDTO(Warranty warrantyDesc);
+    @Mapping(target = "warrantyDescription", source = "warrantyDescription")
+    WarrantyDTO toWarrantyDTO(Warranty warrantyDescription);
 }

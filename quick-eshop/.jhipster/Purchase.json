@@ -5,7 +5,11 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "userAddress",
+      "fieldName": "userEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
       "fieldType": "String"
     },
     {
@@ -13,15 +17,15 @@
       "fieldType": "Double"
     },
     {
-      "fieldName": "confirmacao",
-      "fieldType": "Boolean"
-    },
-    {
-      "fieldName": "withCoupon",
+      "fieldName": "confirmation",
       "fieldType": "Boolean"
     },
     {
       "fieldName": "withWarranty",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "withCoupon",
       "fieldType": "Boolean"
     }
   ],
@@ -48,7 +52,7 @@
       "relationshipName": "warranty",
       "otherEntityName": "warranty",
       "relationshipType": "many-to-one",
-      "otherEntityField": "warrantyDesc"
+      "otherEntityField": "warrantyDescription"
     }
   ],
   "entityType": "domain",

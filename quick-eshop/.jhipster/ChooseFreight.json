@@ -1,20 +1,20 @@
 {
-  "fields": [
-    {
-      "fieldName": "userAddress",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "withCoupon",
-      "fieldType": "Boolean"
-    }
-  ],
   "relationships": [
     {
       "relationshipName": "freight",
       "otherEntityName": "freight",
       "relationshipType": "many-to-one",
       "otherEntityField": "freighter"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "withCoupon",
+      "fieldType": "Boolean"
     }
   ],
   "entityType": "user-task-form",

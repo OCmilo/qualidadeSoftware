@@ -11,6 +11,7 @@ const validations: any = {
   purchaseProcess: {
     purchase: {
       userName: {},
+      userEmail: {},
     },
   },
 };

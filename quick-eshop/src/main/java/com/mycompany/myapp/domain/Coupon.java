@@ -23,8 +23,8 @@ public class Coupon implements Serializable {
     @Column(name = "coupon_name")
     private String couponName;
 
-    @Column(name = "coupon_value")
-    private Double couponValue;
+    @Column(name = "coupon_discount")
+    private Double couponDiscount;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -53,17 +53,17 @@ public class Coupon implements Serializable {
         this.couponName = couponName;
     }
 
-    public Double getCouponValue() {
-        return this.couponValue;
+    public Double getCouponDiscount() {
+        return this.couponDiscount;
     }
 
-    public Coupon couponValue(Double couponValue) {
-        this.couponValue = couponValue;
+    public Coupon couponDiscount(Double couponDiscount) {
+        this.couponDiscount = couponDiscount;
         return this;
     }
 
-    public void setCouponValue(Double couponValue) {
-        this.couponValue = couponValue;
+    public void setCouponDiscount(Double couponDiscount) {
+        this.couponDiscount = couponDiscount;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -91,7 +91,7 @@ public class Coupon implements Serializable {
         return "Coupon{" +
             "id=" + getId() +
             ", couponName='" + getCouponName() + "'" +
-            ", couponValue=" + getCouponValue() +
+            ", couponDiscount=" + getCouponDiscount() +
             "}";
     }
 }

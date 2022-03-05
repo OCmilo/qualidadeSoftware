@@ -18,7 +18,8 @@
         "title": "Purchase Start Form"
       },
       "id": "ID",
-      "userName": "User Name"
+      "userName": "User Name",
+      "userEmail": "User Email"
     }
   }
 }

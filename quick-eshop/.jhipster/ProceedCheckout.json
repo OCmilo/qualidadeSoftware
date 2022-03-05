@@ -1,7 +1,7 @@
 {
   "fields": [
     {
-      "fieldName": "confirmacao",
+      "fieldName": "confirmation",
       "fieldType": "Boolean"
     }
   ],
