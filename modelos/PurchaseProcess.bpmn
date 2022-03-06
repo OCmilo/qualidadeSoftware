@@ -74,7 +74,6 @@ Caso deseje adicionar mais produtos, prossiga sem confirmar. </bpmn:documentatio
     </bpmn:serviceTask>
     <bpmn:exclusiveGateway id="Gateway_0jmneet">
       <bpmn:incoming>Flow_0fhx5lj</bpmn:incoming>
-      <bpmn:incoming>Flow_1c499cm</bpmn:incoming>
       <bpmn:incoming>confirm_add_products</bpmn:incoming>
       <bpmn:outgoing>Flow_1dmtzp0</bpmn:outgoing>
     </bpmn:exclusiveGateway>
@@ -86,10 +85,8 @@ Caso deseje adicionar mais produtos, prossiga sem confirmar. </bpmn:documentatio
       <bpmn:outgoing>dont_add_products</bpmn:outgoing>
       <bpmn:outgoing>confirm_add_products</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="Flow_1c499cm" sourceRef="add_to_chart" targetRef="Gateway_0jmneet" />
     <bpmn:serviceTask id="add_to_chart" name="Adicionar ao carrinho" camunda:delegateExpression="${addToChart}">
       <bpmn:incoming>Flow_0issqpp</bpmn:incoming>
-      <bpmn:outgoing>Flow_1c499cm</bpmn:outgoing>
       <bpmn:outgoing>Flow_1uzbxa5</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="dont_add_products" sourceRef="Gateway_1hnhns6" targetRef="ChooseFreight">
@@ -178,10 +175,6 @@ Caso deseje adicionar mais produtos, prossiga sem confirmar. </bpmn:documentatio
       <bpmndi:BPMNEdge id="Flow_0s0g8rf_di" bpmnElement="Flow_0s0g8rf">
         <di:waypoint x="450" y="237" />
         <di:waypoint x="515" y="237" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1c499cm_di" bpmnElement="Flow_1c499cm">
-        <di:waypoint x="990" y="237" />
-        <di:waypoint x="295" y="237" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_151q1hy_di" bpmnElement="dont_add_products">
         <di:waypoint x="1315" y="237" />
