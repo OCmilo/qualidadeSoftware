@@ -27,6 +27,10 @@
     {
       "fieldName": "withCoupon",
       "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "addProducts",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [

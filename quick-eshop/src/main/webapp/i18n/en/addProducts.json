@@ -1,0 +1,24 @@
+{
+  "appApp": {
+    "addProducts": {
+      "home": {
+        "title": "Add Products",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Add Products",
+        "createOrEditLabel": "Create or edit a Add Products",
+        "notFound": "No Add Products found"
+      },
+      "created": "A new Add Products is created with identifier {{ param }}",
+      "updated": "A Add Products is updated with identifier {{ param }}",
+      "deleted": "A Add Products is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Add Products {{ id }}?"
+      },
+      "detail": {
+        "title": "Add Products"
+      },
+      "id": "ID",
+      "addProducts": "Add Products"
+    }
+  }
+}

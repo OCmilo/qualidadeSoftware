@@ -7,17 +7,24 @@
     <bpmn:endEvent id="Event_1gs8nic">
       <bpmn:incoming>Flow_16ndcw6</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_0fhx5lj" sourceRef="StartEvent_1" targetRef="ChooseProduct" />
+    <bpmn:sequenceFlow id="Flow_0fhx5lj" sourceRef="StartEvent_1" targetRef="Gateway_0jmneet" />
     <bpmn:userTask id="ChooseProduct" name="Selecionar Produto">
-      <bpmn:incoming>Flow_0fhx5lj</bpmn:incoming>
-      <bpmn:outgoing>Flow_080dz12</bpmn:outgoing>
+      <bpmn:incoming>Flow_1dmtzp0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0s0g8rf</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:userTask id="ProceedCheckout" name="Efetuar Compra">
+      <bpmn:documentation>******************* Quick E-shop *******************
+
+
+Deseja finalizar a sua compra? Confirme abaixo.
+
+
+Caso deseje adicionar mais produtos, prossiga sem confirmar. </bpmn:documentation>
       <bpmn:incoming>Flow_10900zi</bpmn:incoming>
-      <bpmn:outgoing>Flow_1adi0bo</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1r19f92</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:userTask id="ChooseFreight" name="Escolher Frete">
-      <bpmn:incoming>Flow_0issqpp</bpmn:incoming>
+      <bpmn:incoming>dont_add_products</bpmn:incoming>
       <bpmn:outgoing>Flow_00npfsd</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:userTask id="AddCoupon" name="Adicionar Cupom">
@@ -28,26 +35,19 @@
       <bpmn:incoming>with_warranty</bpmn:incoming>
       <bpmn:outgoing>Flow_090nc2j</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="Flow_080dz12" sourceRef="ChooseProduct" targetRef="Gateway_0q8d1rr" />
-    <bpmn:sequenceFlow id="Flow_1adi0bo" sourceRef="ProceedCheckout" targetRef="showResume" />
     <bpmn:exclusiveGateway id="Gateway_0q8d1rr">
-      <bpmn:incoming>Flow_080dz12</bpmn:incoming>
-      <bpmn:outgoing>with_warranty</bpmn:outgoing>
+      <bpmn:incoming>Flow_0s0g8rf</bpmn:incoming>
       <bpmn:outgoing>without_warranty</bpmn:outgoing>
+      <bpmn:outgoing>with_warranty</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="with_warranty" name="With Warranty" sourceRef="Gateway_0q8d1rr" targetRef="AddWarranty">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${processInstance.purchase.withWarranty}</bpmn:conditionExpression>
-    </bpmn:sequenceFlow>
     <bpmn:exclusiveGateway id="Gateway_15lkwqy">
-      <bpmn:incoming>Flow_090nc2j</bpmn:incoming>
       <bpmn:incoming>without_warranty</bpmn:incoming>
+      <bpmn:incoming>Flow_090nc2j</bpmn:incoming>
       <bpmn:outgoing>Flow_0issqpp</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="Flow_090nc2j" sourceRef="AddWarranty" targetRef="Gateway_15lkwqy" />
     <bpmn:sequenceFlow id="without_warranty" name="Without Warranty&#10;&#10;" sourceRef="Gateway_0q8d1rr" targetRef="Gateway_15lkwqy">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!processInstance.purchase.withWarranty}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="Flow_0issqpp" sourceRef="Gateway_15lkwqy" targetRef="ChooseFreight" />
     <bpmn:exclusiveGateway id="Gateway_0d3vj3k">
       <bpmn:incoming>Flow_00npfsd</bpmn:incoming>
       <bpmn:outgoing>without_coupon</bpmn:outgoing>
@@ -69,115 +69,192 @@
     <bpmn:sequenceFlow id="Flow_10900zi" sourceRef="Gateway_1oa50gy" targetRef="ProceedCheckout" />
     <bpmn:sequenceFlow id="Flow_16ndcw6" sourceRef="showResume" targetRef="Event_1gs8nic" />
     <bpmn:serviceTask id="showResume" name="Informar resumo" camunda:delegateExpression="${integrateThirdPartyDelegate}">
-      <bpmn:incoming>Flow_1adi0bo</bpmn:incoming>
+      <bpmn:incoming>Flow_1r19f92</bpmn:incoming>
       <bpmn:outgoing>Flow_16ndcw6</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_0jmneet">
+      <bpmn:incoming>Flow_0fhx5lj</bpmn:incoming>
+      <bpmn:incoming>Flow_1c499cm</bpmn:incoming>
+      <bpmn:incoming>confirm_add_products</bpmn:incoming>
+      <bpmn:outgoing>Flow_1dmtzp0</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1dmtzp0" sourceRef="Gateway_0jmneet" targetRef="ChooseProduct" />
+    <bpmn:sequenceFlow id="Flow_1r19f92" sourceRef="ProceedCheckout" targetRef="showResume" />
+    <bpmn:sequenceFlow id="Flow_0s0g8rf" sourceRef="ChooseProduct" targetRef="Gateway_0q8d1rr" />
+    <bpmn:exclusiveGateway id="Gateway_1hnhns6">
+      <bpmn:incoming>Flow_1qfi1y8</bpmn:incoming>
+      <bpmn:outgoing>dont_add_products</bpmn:outgoing>
+      <bpmn:outgoing>confirm_add_products</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1c499cm" sourceRef="add_to_chart" targetRef="Gateway_0jmneet" />
+    <bpmn:serviceTask id="add_to_chart" name="Adicionar ao carrinho" camunda:delegateExpression="${addToChart}">
+      <bpmn:incoming>Flow_0issqpp</bpmn:incoming>
+      <bpmn:outgoing>Flow_1c499cm</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1uzbxa5</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="dont_add_products" sourceRef="Gateway_1hnhns6" targetRef="ChooseFreight">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!processInstance.purchase.addProducts}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="with_warranty" name="With Warranty" sourceRef="Gateway_0q8d1rr" targetRef="AddWarranty">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${processInstance.purchase.withWarranty}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0issqpp" sourceRef="Gateway_15lkwqy" targetRef="add_to_chart" />
+    <bpmn:sequenceFlow id="Flow_090nc2j" sourceRef="AddWarranty" targetRef="Gateway_15lkwqy" />
+    <bpmn:sequenceFlow id="Flow_1qfi1y8" sourceRef="add_products" targetRef="Gateway_1hnhns6" />
+    <bpmn:userTask id="add_products" name="Adicionar mais produtos">
+      <bpmn:documentation>Deseja adicionar mais produtos? Confirme abaixo.</bpmn:documentation>
+      <bpmn:incoming>Flow_1uzbxa5</bpmn:incoming>
+      <bpmn:outgoing>Flow_1qfi1y8</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1uzbxa5" sourceRef="add_to_chart" targetRef="add_products" />
+    <bpmn:sequenceFlow id="confirm_add_products" sourceRef="Gateway_1hnhns6" targetRef="Gateway_0jmneet">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${processInstance.purchase.addProducts}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PurchaseProcess">
       <bpmndi:BPMNEdge id="Flow_16ndcw6_di" bpmnElement="Flow_16ndcw6">
-        <di:waypoint x="1390" y="370" />
-        <di:waypoint x="1308" y="370" />
+        <di:waypoint x="1220" y="510" />
+        <di:waypoint x="1068" y="510" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_10900zi_di" bpmnElement="Flow_10900zi">
-        <di:waypoint x="1325" y="237" />
-        <di:waypoint x="1390" y="237" />
+        <di:waypoint x="1885" y="237" />
+        <di:waypoint x="1960" y="237" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1qef97j_di" bpmnElement="Flow_1qef97j">
-        <di:waypoint x="1200" y="237" />
-        <di:waypoint x="1275" y="237" />
+        <di:waypoint x="1770" y="237" />
+        <di:waypoint x="1835" y="237" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0rz5bjo_di" bpmnElement="with_coupon">
-        <di:waypoint x="1025" y="237" />
-        <di:waypoint x="1100" y="237" />
+        <di:waypoint x="1545" y="237" />
+        <di:waypoint x="1670" y="237" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1031" y="219" width="63" height="14" />
+          <dc:Bounds x="1576" y="219" width="64" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1g661fy_di" bpmnElement="without_coupon">
-        <di:waypoint x="1000" y="212" />
-        <di:waypoint x="1000" y="100" />
-        <di:waypoint x="1300" y="100" />
-        <di:waypoint x="1300" y="212" />
+        <di:waypoint x="1520" y="212" />
+        <di:waypoint x="1520" y="100" />
+        <di:waypoint x="1860" y="100" />
+        <di:waypoint x="1860" y="212" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1111" y="82" width="78" height="14" />
+          <dc:Bounds x="1651" y="82" width="79" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_00npfsd_di" bpmnElement="Flow_00npfsd">
-        <di:waypoint x="920" y="237" />
-        <di:waypoint x="975" y="237" />
+        <di:waypoint x="1450" y="237" />
+        <di:waypoint x="1495" y="237" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0issqpp_di" bpmnElement="Flow_0issqpp">
-        <di:waypoint x="745" y="237" />
-        <di:waypoint x="820" y="237" />
+        <di:waypoint x="955" y="237" />
+        <di:waypoint x="990" y="237" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0cioal8_di" bpmnElement="without_warranty">
-        <di:waypoint x="440" y="212" />
-        <di:waypoint x="440" y="100" />
-        <di:waypoint x="720" y="100" />
-        <di:waypoint x="720" y="212" />
+        <di:waypoint x="540" y="212" />
+        <di:waypoint x="540" y="100" />
+        <di:waypoint x="930" y="100" />
+        <di:waypoint x="930" y="212" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="538" y="82" width="85" height="40" />
+          <dc:Bounds x="694" y="82" width="86" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_090nc2j_di" bpmnElement="Flow_090nc2j">
-        <di:waypoint x="650" y="237" />
-        <di:waypoint x="695" y="237" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1ergqye_di" bpmnElement="with_warranty">
-        <di:waypoint x="465" y="237" />
-        <di:waypoint x="550" y="237" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="474" y="219" width="69" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1adi0bo_di" bpmnElement="Flow_1adi0bo">
-        <di:waypoint x="1440" y="277" />
-        <di:waypoint x="1440" y="330" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_080dz12_di" bpmnElement="Flow_080dz12">
-        <di:waypoint x="360" y="237" />
-        <di:waypoint x="415" y="237" />
+        <di:waypoint x="810" y="237" />
+        <di:waypoint x="905" y="237" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0fhx5lj_di" bpmnElement="Flow_0fhx5lj">
         <di:waypoint x="188" y="237" />
-        <di:waypoint x="260" y="237" />
+        <di:waypoint x="245" y="237" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1dmtzp0_di" bpmnElement="Flow_1dmtzp0">
+        <di:waypoint x="295" y="237" />
+        <di:waypoint x="350" y="237" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1r19f92_di" bpmnElement="Flow_1r19f92">
+        <di:waypoint x="2010" y="277" />
+        <di:waypoint x="2010" y="510" />
+        <di:waypoint x="1320" y="510" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0s0g8rf_di" bpmnElement="Flow_0s0g8rf">
+        <di:waypoint x="450" y="237" />
+        <di:waypoint x="515" y="237" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1c499cm_di" bpmnElement="Flow_1c499cm">
+        <di:waypoint x="990" y="237" />
+        <di:waypoint x="295" y="237" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_151q1hy_di" bpmnElement="dont_add_products">
+        <di:waypoint x="1315" y="237" />
+        <di:waypoint x="1350" y="237" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1qqrwc6_di" bpmnElement="with_warranty">
+        <di:waypoint x="565" y="237" />
+        <di:waypoint x="710" y="237" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="603" y="219" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1qfi1y8_di" bpmnElement="Flow_1qfi1y8">
+        <di:waypoint x="1240" y="237" />
+        <di:waypoint x="1265" y="237" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1uzbxa5_di" bpmnElement="Flow_1uzbxa5">
+        <di:waypoint x="1090" y="237" />
+        <di:waypoint x="1140" y="237" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_04dc83r_di" bpmnElement="confirm_add_products">
+        <di:waypoint x="1290" y="262" />
+        <di:waypoint x="1290" y="340" />
+        <di:waypoint x="270" y="340" />
+        <di:waypoint x="270" y="262" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_1gs8nic_di" bpmnElement="Event_1gs8nic">
+        <dc:Bounds x="1032" y="492" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1jh6e1p_di" bpmnElement="showResume">
+        <dc:Bounds x="1220" y="470" width="100" height="80" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="152" y="219" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1gs8nic_di" bpmnElement="Event_1gs8nic">
-        <dc:Bounds x="1272" y="352" width="36" height="36" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0mmj7f8_di" bpmnElement="ChooseProduct">
-        <dc:Bounds x="260" y="197" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0yxdtce_di" bpmnElement="ProceedCheckout">
-        <dc:Bounds x="1390" y="197" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1i9psln_di" bpmnElement="ChooseFreight">
-        <dc:Bounds x="820" y="197" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0e46nco_di" bpmnElement="AddCoupon">
-        <dc:Bounds x="1100" y="197" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0gdu1m2_di" bpmnElement="AddWarranty">
-        <dc:Bounds x="550" y="197" width="100" height="80" />
+        <dc:Bounds x="350" y="197" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0q8d1rr_di" bpmnElement="Gateway_0q8d1rr" isMarkerVisible="true">
-        <dc:Bounds x="415" y="212" width="50" height="50" />
+        <dc:Bounds x="515" y="212" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0gdu1m2_di" bpmnElement="AddWarranty">
+        <dc:Bounds x="710" y="197" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_15lkwqy_di" bpmnElement="Gateway_15lkwqy" isMarkerVisible="true">
-        <dc:Bounds x="695" y="212" width="50" height="50" />
+        <dc:Bounds x="905" y="212" width="50" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_0d3vj3k_di" bpmnElement="Gateway_0d3vj3k" isMarkerVisible="true">
-        <dc:Bounds x="975" y="212" width="50" height="50" />
+      <bpmndi:BPMNShape id="Gateway_0jmneet_di" bpmnElement="Gateway_0jmneet" isMarkerVisible="true">
+        <dc:Bounds x="245" y="212" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0yxdtce_di" bpmnElement="ProceedCheckout">
+        <dc:Bounds x="1960" y="197" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_1oa50gy_di" bpmnElement="Gateway_1oa50gy" isMarkerVisible="true">
-        <dc:Bounds x="1275" y="212" width="50" height="50" />
+        <dc:Bounds x="1835" y="212" width="50" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1jh6e1p_di" bpmnElement="showResume">
-        <dc:Bounds x="1390" y="330" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_0e46nco_di" bpmnElement="AddCoupon">
+        <dc:Bounds x="1670" y="197" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0d3vj3k_di" bpmnElement="Gateway_0d3vj3k" isMarkerVisible="true">
+        <dc:Bounds x="1495" y="212" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1i9psln_di" bpmnElement="ChooseFreight">
+        <dc:Bounds x="1350" y="197" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1hnhns6_di" bpmnElement="Gateway_1hnhns6" isMarkerVisible="true">
+        <dc:Bounds x="1265" y="212" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_15xffi7_di" bpmnElement="add_products">
+        <dc:Bounds x="1140" y="197" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_07n9vzx_di" bpmnElement="add_to_chart">
+        <dc:Bounds x="990" y="197" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

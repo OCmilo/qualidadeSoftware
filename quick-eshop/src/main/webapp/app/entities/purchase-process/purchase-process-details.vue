@@ -114,6 +114,20 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
+                  <label class="form-control-label" v-text="$t('appApp.purchaseProcess.addProducts')">addProducts</label>
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="addProducts"
+                    id="purchase-addProducts"
+                    data-cy="addProducts"
+                    v-model="purchaseProcess.purchase.addProducts"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
                   <label class="form-control-label" v-text="$t('appApp.purchaseProcess.coupon')" for="purchase-process-coupon"
                     >Coupon</label
                   >

@@ -24,6 +24,8 @@ public class PurchaseDTO implements Serializable {
 
     private Boolean withCoupon;
 
+    private Boolean addProducts;
+
     private CouponDTO coupon;
 
     private FreightDTO freight;
@@ -96,6 +98,14 @@ public class PurchaseDTO implements Serializable {
         this.withCoupon = withCoupon;
     }
 
+    public Boolean getAddProducts() {
+        return addProducts;
+    }
+
+    public void setAddProducts(Boolean addProducts) {
+        this.addProducts = addProducts;
+    }
+
     public CouponDTO getCoupon() {
         return coupon;
     }
@@ -161,6 +171,7 @@ public class PurchaseDTO implements Serializable {
             ", confirmation='" + getConfirmation() + "'" +
             ", withWarranty='" + getWithWarranty() + "'" +
             ", withCoupon='" + getWithCoupon() + "'" +
+            ", addProducts='" + getAddProducts() + "'" +
             ", coupon=" + getCoupon() +
             ", freight=" + getFreight() +
             ", product=" + getProduct() +

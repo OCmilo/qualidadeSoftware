@@ -35,6 +35,9 @@
             <column name="with_coupon" type="boolean">
                 <constraints nullable="true" />
             </column>
+            <column name="add_products" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="coupon_id" type="bigint">
                 <constraints nullable="true" />
             </column>
