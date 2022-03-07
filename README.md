@@ -6,6 +6,7 @@ Quick eShop é um projeto de um processo simples de ecommerce
 
 - Camilo Carneiro
 - Marcos Gabriel Mannarino
+- Lidiana Souza
 
 ## Referências
 
