@@ -2,7 +2,7 @@
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1qgnk62" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.12.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
   <bpmn:process id="PurchaseProcess" name="Purchase Process" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
-      <bpmn:documentation>******************* Quick E-shop *******************
+      <bpmn:documentation>******************* Quick eShop p *******************
 
 
 Bem-vindo!</bpmn:documentation>
@@ -13,7 +13,7 @@ Bem-vindo!</bpmn:documentation>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0fhx5lj" sourceRef="StartEvent_1" targetRef="Gateway_0jmneet" />
     <bpmn:userTask id="ChooseProduct" name="Selecionar Produto">
-      <bpmn:documentation>******************* Quick E-shop *******************
+      <bpmn:documentation>******************* Quick eShop *******************
 
 
 Insira a quantidade que deseja e selecione o produto. Se deseja adicionar uma garantia, confirme no campo "withWarranty".</bpmn:documentation>
@@ -21,7 +21,7 @@ Insira a quantidade que deseja e selecione o produto. Se deseja adicionar uma ga
       <bpmn:outgoing>Flow_0s0g8rf</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:userTask id="ProceedCheckout" name="Efetuar Compra">
-      <bpmn:documentation>******************* Quick E-shop *******************
+      <bpmn:documentation>******************* Quick eShop  *******************
 
 
 Deseja finalizar a sua compra? Confirme abaixo.
@@ -32,7 +32,7 @@ Caso deseje adicionar mais produtos, prossiga sem confirmar. </bpmn:documentatio
       <bpmn:outgoing>Flow_1r19f92</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:userTask id="ChooseFreight" name="Escolher Frete">
-      <bpmn:documentation>******************* Quick E-shop *******************
+      <bpmn:documentation>******************* Quick eShop  *******************
 
 
 Insira o endereço de entrega e selecione a transportadora. </bpmn:documentation>
@@ -40,7 +40,7 @@ Insira o endereço de entrega e selecione a transportadora. </bpmn:documentation
       <bpmn:outgoing>Flow_00npfsd</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:userTask id="AddCoupon" name="Adicionar Cupom">
-      <bpmn:documentation>******************* Quick E-shop *******************
+      <bpmn:documentation>******************* Quick eShop  *******************
 
 
 Possui cupom de descontos? Selecione abaixo. </bpmn:documentation>
@@ -48,7 +48,7 @@ Possui cupom de descontos? Selecione abaixo. </bpmn:documentation>
       <bpmn:outgoing>Flow_1qef97j</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:userTask id="AddWarranty" name="Adicionar Garantia">
-      <bpmn:documentation>******************* Quick E-shop *******************
+      <bpmn:documentation>******************* Quick eShop  *******************
 
 
 Selecione a seguradora abaixo. </bpmn:documentation>
@@ -118,7 +118,7 @@ Selecione a seguradora abaixo. </bpmn:documentation>
     <bpmn:sequenceFlow id="Flow_090nc2j" sourceRef="AddWarranty" targetRef="Gateway_15lkwqy" />
     <bpmn:sequenceFlow id="Flow_1qfi1y8" sourceRef="add_products" targetRef="Gateway_1hnhns6" />
     <bpmn:userTask id="add_products" name="Adicionar mais produtos">
-      <bpmn:documentation>******************* Quick E-shop *******************
+      <bpmn:documentation>******************* Quick eShop  *******************
 
 
 Deseja adicionar mais produtos? Confirme abaixo.</bpmn:documentation>
