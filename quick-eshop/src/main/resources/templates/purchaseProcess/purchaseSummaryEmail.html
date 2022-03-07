@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+  <head>
+    <title>Purchase Summary</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <p>Dear <span th:text="${purchase.userName}">userName</span></p>
+    <p>Here is a summary of your purchase <b th:text="${purchase.id}"></b></p>
+    <ul>
+      <li><b>Product</b>: <span th:text="${purchase.product.productName }"></span></li>
+      <li><b>Ammount</b>: <span th:text="${purchase.quantity }"></span></li>
+      <li><b>Freight</b>: <span th:text="${purchase.freight.freighter }"></span></li>
+      <li><b>Address</b>: <span th:text="${purchase.address }"></span></li>
+      <li><b>Warranty</b>: <span th:text="${purchase.warranty }"></span></li>
+      <li><b>Total Price</b>: <span th:text="${total }"></span></li>
+    </ul>
+    <p>
+      Regards,
+      <br />
+      <em>Quick eShop Team</em>
+    </p>
+  </body>
+</html>
