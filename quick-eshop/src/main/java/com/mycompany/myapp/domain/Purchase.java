@@ -41,6 +41,9 @@ public class Purchase implements Serializable {
     @Column(name = "with_coupon")
     private Boolean withCoupon;
 
+    @Column(name = "add_products")
+    private Boolean addProducts;
+
     @ManyToOne
     private Coupon coupon;
 
@@ -158,6 +161,19 @@ public class Purchase implements Serializable {
         this.withCoupon = withCoupon;
     }
 
+    public Boolean getAddProducts() {
+        return this.addProducts;
+    }
+
+    public Purchase addProducts(Boolean addProducts) {
+        this.addProducts = addProducts;
+        return this;
+    }
+
+    public void setAddProducts(Boolean addProducts) {
+        this.addProducts = addProducts;
+    }
+
     public Coupon getCoupon() {
         return this.coupon;
     }
@@ -241,6 +257,7 @@ public class Purchase implements Serializable {
             ", confirmation='" + getConfirmation() + "'" +
             ", withWarranty='" + getWithWarranty() + "'" +
             ", withCoupon='" + getWithCoupon() + "'" +
+            ", addProducts='" + getAddProducts() + "'" +
             "}";
     }
 }

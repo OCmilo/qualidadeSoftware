@@ -56,6 +56,10 @@ const Warranty = () => import('@/entities/warranty/warranty.vue');
 const WarrantyUpdate = () => import('@/entities/warranty/warranty-update.vue');
 // prettier-ignore
 const WarrantyDetails = () => import('@/entities/warranty/warranty-details.vue');
+// prettier-ignore
+const PurchaseProcess_AddProductsDetails = () => import('@/entities/purchase-process/add-products/add-products-details.vue');
+// prettier-ignore
+const PurchaseProcess_AddProductsExecute = () => import('@/entities/purchase-process/add-products/add-products-execute.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -243,6 +247,18 @@ export default [
     path: '/warranty/:warrantyId/view',
     name: 'WarrantyView',
     component: WarrantyDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/add_products/:taskInstanceId/view',
+    name: 'PurchaseProcess_AddProductsDetails',
+    component: PurchaseProcess_AddProductsDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/PurchaseProcess/task/add_products/:taskInstanceId/execute',
+    name: 'PurchaseProcess_AddProductsExecute',
+    component: PurchaseProcess_AddProductsExecute,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

@@ -49,6 +49,12 @@
             <span>{{ purchase.withCoupon }}</span>
           </dd>
           <dt>
+            <span v-text="$t('appApp.purchase.addProducts')">Add Products</span>
+          </dt>
+          <dd>
+            <span>{{ purchase.addProducts }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('appApp.purchase.coupon')">Coupon</span>
           </dt>
           <dd>

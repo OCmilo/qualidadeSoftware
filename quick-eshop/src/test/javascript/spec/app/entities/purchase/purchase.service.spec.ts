@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new PurchaseService();
-      elemDefault = new Purchase(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 0, false, false, false);
+      elemDefault = new Purchase(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 0, false, false, false, false);
     });
 
     describe('Service methods', () => {
@@ -62,6 +62,7 @@ describe('Service Tests', () => {
             confirmation: true,
             withWarranty: true,
             withCoupon: true,
+            addProducts: true,
           },
           elemDefault
         );

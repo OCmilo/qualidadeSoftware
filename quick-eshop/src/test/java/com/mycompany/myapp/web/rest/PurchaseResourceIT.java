@@ -52,6 +52,9 @@ class PurchaseResourceIT {
     private static final Boolean DEFAULT_WITH_COUPON = false;
     private static final Boolean UPDATED_WITH_COUPON = true;
 
+    private static final Boolean DEFAULT_ADD_PRODUCTS = false;
+    private static final Boolean UPDATED_ADD_PRODUCTS = true;
+
     private static final String ENTITY_API_URL = "/api/purchases";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -86,7 +89,8 @@ class PurchaseResourceIT {
             .quantity(DEFAULT_QUANTITY)
             .confirmation(DEFAULT_CONFIRMATION)
             .withWarranty(DEFAULT_WITH_WARRANTY)
-            .withCoupon(DEFAULT_WITH_COUPON);
+            .withCoupon(DEFAULT_WITH_COUPON)
+            .addProducts(DEFAULT_ADD_PRODUCTS);
         return purchase;
     }
 
@@ -104,7 +108,8 @@ class PurchaseResourceIT {
             .quantity(UPDATED_QUANTITY)
             .confirmation(UPDATED_CONFIRMATION)
             .withWarranty(UPDATED_WITH_WARRANTY)
-            .withCoupon(UPDATED_WITH_COUPON);
+            .withCoupon(UPDATED_WITH_COUPON)
+            .addProducts(UPDATED_ADD_PRODUCTS);
         return purchase;
     }
 
@@ -131,7 +136,8 @@ class PurchaseResourceIT {
             .andExpect(jsonPath("$.[*].quantity").value(hasItem(DEFAULT_QUANTITY.doubleValue())))
             .andExpect(jsonPath("$.[*].confirmation").value(hasItem(DEFAULT_CONFIRMATION.booleanValue())))
             .andExpect(jsonPath("$.[*].withWarranty").value(hasItem(DEFAULT_WITH_WARRANTY.booleanValue())))
-            .andExpect(jsonPath("$.[*].withCoupon").value(hasItem(DEFAULT_WITH_COUPON.booleanValue())));
+            .andExpect(jsonPath("$.[*].withCoupon").value(hasItem(DEFAULT_WITH_COUPON.booleanValue())))
+            .andExpect(jsonPath("$.[*].addProducts").value(hasItem(DEFAULT_ADD_PRODUCTS.booleanValue())));
     }
 
     @Test
@@ -152,7 +158,8 @@ class PurchaseResourceIT {
             .andExpect(jsonPath("$.quantity").value(DEFAULT_QUANTITY.doubleValue()))
             .andExpect(jsonPath("$.confirmation").value(DEFAULT_CONFIRMATION.booleanValue()))
             .andExpect(jsonPath("$.withWarranty").value(DEFAULT_WITH_WARRANTY.booleanValue()))
-            .andExpect(jsonPath("$.withCoupon").value(DEFAULT_WITH_COUPON.booleanValue()));
+            .andExpect(jsonPath("$.withCoupon").value(DEFAULT_WITH_COUPON.booleanValue()))
+            .andExpect(jsonPath("$.addProducts").value(DEFAULT_ADD_PRODUCTS.booleanValue()));
     }
 
     @Test

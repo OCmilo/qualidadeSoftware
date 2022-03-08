@@ -24,6 +24,7 @@
         "coupon": "Coupon",
         "freight": "Freight",
         "warranty": "Warranty",
+        "addProducts": "Add Products",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

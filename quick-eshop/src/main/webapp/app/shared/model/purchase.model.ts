@@ -12,6 +12,7 @@ export interface IPurchase {
   confirmation?: boolean | null;
   withWarranty?: boolean | null;
   withCoupon?: boolean | null;
+  addProducts?: boolean | null;
   coupon?: ICoupon | null;
   freight?: IFreight | null;
   product?: IProduct | null;
@@ -28,6 +29,7 @@ export class Purchase implements IPurchase {
     public confirmation?: boolean | null,
     public withWarranty?: boolean | null,
     public withCoupon?: boolean | null,
+    public addProducts?: boolean | null,
     public coupon?: ICoupon | null,
     public freight?: IFreight | null,
     public product?: IProduct | null,
@@ -36,5 +38,6 @@ export class Purchase implements IPurchase {
     this.confirmation = this.confirmation ?? false;
     this.withWarranty = this.withWarranty ?? false;
     this.withCoupon = this.withCoupon ?? false;
+    this.addProducts = this.addProducts ?? false;
   }
 }
